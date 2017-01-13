@@ -1,32 +1,61 @@
 <!DOCTYPE html>
 <html>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="main.css">
 	<head>
-		<title>CSS Layout</title>
-		<link rel="stylesheet" href="main.css">
+		<title>dinu.dev.ro</title>		
 	</head>
 	<body>
 
 		<header>
 			<nav>
-			<h1>My Page</h1>
+			<h1>Welcome</h1>
 				<ul>
 					<li><a href="#">Home</a></li>
 					<li><a href="Blog.html">Blog</a></li>
 					<li><a href="About.html">About</a></li>
 					<li><a href="Contact.html">Contact</a></li>
 					<li><a href="Links.html">Links</a></li> 
-
+				</ul>
 
 			</nav>
 		</header>
 
 		<div class="row">
-		<div class="col">col1</div>
-		<div class="col">col2</div>
-		<div class="col">col3</div>
+			<div class="col">Short bio:<br>Thank you for taking the time to check my website.</br>
+This is my first oficial project as an aspiring web developer.
+			</div>
+			<div class="col">Future plans:
+			<br>
+				I plan on aquiring as much knowledge I can.
+			</br>
+			</div>
+			<h3>Map tryouts
+			</h3>
+			<div id="map">
+			</div>
+			<script>
+			function initMap() 
+			{
+			var uluru = {lat : 44.426826, lng : 26.10239};
+			var map = new google.maps.Map(document.getElementById('map'),
+				{
+			zoom = 4,
+			center: uluru
+				});
+			var marker = new google.maps.Marker
+				({
+			position : uluru,
+			map : map
+				});
 
+			}
+			</script>
+			<script async defer
+			src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDEJJxj1fM87bF297q38FDonfqY7uZuc5w&ampcallback=initMap">
+			</script>
 		<footer> 
-			2016 My Site
+			2016 by OWicca
 		</footer>
 
 	</body>
