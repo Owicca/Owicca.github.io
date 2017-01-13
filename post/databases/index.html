@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <title>Databases — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/databases/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  <h1>Databases</h1>
+
+  
+    <time datetime="2020-08-03 00:00:00 &#43;0000 UTC">Post created: 3 Aug 2020</time>
+    <time datetime="2020-08-05 00:00:00 &#43;0000 UTC">Last updated: <b>5 Aug 2020</b></time>
+  
+
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+  
+</header>
+
+    <article>
+      
+
+<h3 id="general">General:</h3>
+
+<h3 id="misc">Misc:</h3>
+
+<h3 id="posgresql">Posgresql:</h3>
+
+<h3 id="what-are-the-basics">what are the basics?:</h3>
+
+<ul>
+<li>why postgresql?:
+
+<ul>
+<li>they say they are fast</li>
+<li>stored procedures and functions in a lot of languages: python, ruby, c, sql, javascript, r, perl</li>
+<li>a lot more built-in types + custom types</li>
+<li>can be used not only as a db, but as a development platform</li>
+<li>mature: 20 years of development</li>
+<li>licensing:
+
+<ul>
+<li>distribute, modify, commercial use allowed</li>
+<li>can&rsquo;t hold liable</li>
+<li>you must include copyright and license</li>
+</ul></li>
+</ul></li>
+<li>why not?:
+
+<ul>
+<li>mainly geared thowards big enterprise uses:
+
+<ul>
+<li>big installation size</li>
+<li>complex security settings</li>
+<li>not recommended as a cache server</li>
+<li>not recommended for simplistic crud applications</li>
+</ul></li>
+</ul></li>
+<li>what are some common administration tools?:
+
+<ul>
+<li>mantained by core developers:
+
+<ul>
+<li>psql(cli):</li>
+<li>pgAdmin(web):</li>
+<li>phpPgAdmin(web)</li>
+</ul></li>
+<li>third-party:
+
+<ul>
+<li>adminer(web)</li>
+</ul></li>
+</ul></li>
+<li>history and ecosystem</li>
+<li>miscelaneous:
+
+<ul>
+<li>drivers:</li>
+<li>php: pdo_pgsql</li>
+<li>java: JDBC</li>
+<li>.NET: npgsql</li>
+<li>python: psycopg2</li>
+<li>node: node-dbi</li>
+<li>important db objects:
+
+<ul>
+<li>databases</li>
+<li>schemas:
+
+<ul>
+<li>similar to namespaces</li>
+<li>on database creation a &ldquo;public&rdquo; schema is created</li>
+</ul></li>
+<li>tables:
+
+<ul>
+<li>they are inheritable</li>
+<li>a custom type is created</li>
+</ul></li>
+<li>views:
+
+<ul>
+<li>data abstraction that gathers data one or multiple tables</li>
+<li>read-only(except for materialized views)</li>
+</ul></li>
+<li>extensions:
+
+<ul>
+<li>add-ons</li>
+</ul></li>
+<li>functions:
+
+<ul>
+<li>custom computation</li>
+</ul></li>
+<li>languages:
+
+<ul>
+<li>defaults are sql, pl/pgsql and c</li>
+</ul></li>
+<li>operators:
+
+<ul>
+<li>symbolically named aliases</li>
+</ul></li>
+<li>foreign tables and foreign data wrappers:
+
+<ul>
+<li>link to databases from another server, local files, tables from other types of databases(oracle, mysql, etc)</li>
+<li>a form of rpc with drivers that handle the translation between formats</li>
+</ul></li>
+<li>triggers and trigger functions:
+
+<ul>
+<li>event based computation</li>
+</ul></li>
+<li>catalogs:
+
+<ul>
+<li>system schemas</li>
+<li>store builtin functions and metadata</li>
+<li>schemas:</li>
+<li>&ldquo;pg_catalog&rdquo;:
+
+<ul>
+<li>functions</li>
+<li>tables</li>
+<li>system views</li>
+<li>casts</li>
+<li>types</li>
+</ul></li>
+<li>&ldquo;information_schema&rdquo;:
+
+<ul>
+<li>metadata</li>
+</ul></li>
+</ul></li>
+<li>types</li>
+<li>full text search</li>
+<li>casts:
+
+<ul>
+<li>logic to cast a type to another</li>
+</ul></li>
+<li>squences</li>
+</ul></li>
+</ul></li>
+</ul>
+
+<h3 id="administration">Administration:</h3>
+
+<ul>
+<li>configuration:
+
+<ul>
+<li>&ldquo;postgresql.conf&rdquo;:
+
+<ul>
+<li>memory allocation</li>
+<li>storage location</li>
+<li>ip adresses to listen on</li>
+<li>location of logs</li>
+</ul></li>
+<li>&ldquo;pg_hba.conf&rdquo;(host-based authentication):
+
+<ul>
+<li>access controll</li>
+<li>role authentication methods:</li>
+<li>trust: no password needed, every os user connects to every database</li>
+<li>md5: requires a password to connect</li>
+<li>ident: check if the user has a mapping in pg_ident.conf</li>
+<li>cert: the user must have an installed cert, and be allowed from pg_ident.conf</li>
+</ul></li>
+<li>&ldquo;pg_ident.conf&rdquo;:
+
+<ul>
+<li>a map of an os user to an postgresql role</li>
+</ul></li>
+<li>reload configuration by:
+
+<ul>
+<li><code>pg_ctl reload</code></li>
+<li><code>systemctl reload &lt;postgres_name&gt;</code></li>
+<li>logged as a superuser: <code>select pg_config_reload()</code></li>
+</ul></li>
+<li>&ldquo;postmaster&rdquo; role is the global postgres service</li>
+</ul></li>
+<li>connection management:
+
+<ul>
+<li>cancel a running query:
+
+<ul>
+<li>search for an pid in <code>select * from pg_stat_activity</code></li>
+<li><code>select pg_cancel_backend(&lt;pid_found&gt;)</code></li>
+<li><code>select pg_terminate_backend(&lt;pid_found&gt;)</code></li>
+</ul></li>
+</ul></li>
+<li>roles:
+
+<ul>
+<li>users are roles with login privileges</li>
+<li>on setup an &ldquo;postgres&rdquo; user and a subsequent database, &ldquo;postgres&rdquo; are created</li>
+<li>create user: <code>CREATE ROLE &lt;role_name&gt; LOGIN PASSWORD '&lt;role_password&gt;' VALID UNTIL 'infinity'</code></li>
+<li>add roles to another role: <code>GRANT &lt;parent_role&gt; to &lt;child_role&gt;</code></li>
+</ul></li>
+<li>database creation:
+
+<ul>
+<li><code>CREATE DATABASE &lt;db_name&gt; [TEMPLATE &lt;template_name&gt;]</code></li>
+<li>templates:
+
+<ul>
+<li>default: &ldquo;template0&rdquo; and &ldquo;template1&rdquo;</li>
+</ul></li>
+<li>make a database a template: <code>UPDATE pg_database SET datistemplate = TRUE WHERE datname = '&lt;db_name&gt;'</code></li>
+<li>create a schema: <code>CREATE SCHEMA &lt;schema_name&gt;</code></li>
+<li>alter search path(effect on the next connection): <code>ALTER DATABASE &lt;db_name&gt; SET search_path = &lt;an_array_of_schemas&gt;</code></li>
+</ul></li>
+<li>privileges:
+
+<ul>
+<li>common: <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>ALTER</code>, <code>EXECUTE</code>, <code>DELETE</code>, <code>TRUNCATE</code></li>
+<li>each privilege must have an context</li>
+<li>grant privileges: <code>GRANT &lt;privilege&gt; ON &lt;table or database or schema or role&gt; TO &lt;target&gt;</code></li>
+<li>revoke privileges: <code>REVOKE &lt;privilege&gt; ON &lt;table or database or schema or role&gt; FROM &lt;target&gt;</code></li>
+<li>owning a database does not give access to contents(you can always DROP),
+explicit &ldquo;GRANT USAGE&rdquo; must be issued</li>
+</ul></li>
+<li>backup and restore:
+
+<ul>
+<li>utilities:
+
+<ul>
+<li>core:</li>
+<li><code>pg_dump</code>: backup specific databases</li>
+<li><code>pg_dumpall</code>:
+
+<ul>
+<li>backup all databases and some globals</li>
+<li>backup globals only: <code>pg_dumpall -h &lt;host&gt; -p &lt;port&gt; -U &lt;user&gt; -f &lt;file_name&gt; --globals-only</code></li>
+</ul></li>
+<li><code>pg_basebackup</code>: system-level disk backup</li>
+<li>third-party:</li>
+<li><code>pgBackTest</code></li>
+<li><code>Barman</code></li>
+</ul></li>
+<li>restoring backups:
+
+<ul>
+<li><code>psql</code> for plain-text backups: <code>psql -U &lt;user&gt; [-d &lt;db_name&gt;] -f &lt;backup_file.sql&gt;</code></li>
+<li><code>pg_restore</code> for compressed, tar, and directory backups:
+
+<ul>
+<li>entire backup: <code>pg_restore -d &lt;db_name&gt; -j 4 --verbose &lt;backup_file.sql&gt;</code></li>
+<li>just the structure: <code>pg_restore -d &lt;db_name&gt; -j 4 --section=pre-data --verbose &lt;backup_file.sql&gt;</code></li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>managing disk storage with tablespaces:
+
+<ul>
+<li>a tablespace is a mapping of a logical name to a path</li>
+<li>create: <code>CREATE TABLESPACE &lt;tbsp_name&gt; LOCATION &lt;os_path&gt;</code></li>
+<li>move object to tablespace: <code>ALTER &lt;OBJ_TYPE&gt; &lt;obj_name&gt; SET TABLESPACE &lt;tbsp_name&gt;</code></li>
+<li>move objects in bulk: <code>ALTER TABLESPACE &lt;tbsp_name&gt; MOVE ALL TO &lt;tbsp_name&gt;</code></li>
+</ul></li>
+<li>best practices:
+
+<ul>
+<li>read the log file first</li>
+<li>don&rsquo;t delete postgresql core and bin files:
+
+<ul>
+<li>safe locations to delete: &ldquo;pg_log/&rdquo;</li>
+</ul></li>
+<li>don&rsquo;t run postgres with root privileges</li>
+</ul></li>
+</ul>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

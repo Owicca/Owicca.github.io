@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <title>Sandbox — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/sandbox/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  <h1>Sandbox</h1>
+
+  
+    <time datetime="2020-04-14 22:00:00 &#43;0200 &#43;0200">Post created: 14 Apr 2020</time>
+    <time datetime="2020-04-14 00:00:00 &#43;0000 UTC">Last updated: <b>14 Apr 2020</b></time>
+  
+
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+  
+</header>
+
+    <article>
+      
+
+<h3 id="architecture">Architecture:</h3>
+
+<h3 id="goals">Goals:</h3>
+
+<ul>
+<li>fully open source(gpl 3 compilant)</li>
+<li>highly scallable and redundant(HA proxies and containers)</li>
+<li>support windows, linux and macos</li>
+</ul>
+
+<h3 id="requisites">Requisites:</h3>
+
+<ul>
+<li>backend controller: c#/asp.net core</li>
+<li>agents: c/c++(rust?)</li>
+<li>ui: js/react</li>
+<li>database: mysql or postgresql</li>
+</ul>
+
+<h3 id="development-roadmap">Development roadmap:</h3>
+
+<ul>
+<li>[x]think of a name:
+
+<ul>
+<li>[x]Wiccan</li>
+<li>[ ]Ocelote</li>
+</ul></li>
+<li>[ ]build the backend:
+
+<ul>
+<li>[ ]multiple database connections(db HA)</li>
+<li>[ ]multiple backends behind http HA</li>
+<li>[ ]architect a simple db schema</li>
+<li>[ ]add report schema:
+
+<ul>
+<li>[ ]static analysis string data</li>
+<li>[ ]disk usage binary data</li>
+<li>[ ]network usage binary data</li>
+</ul></li>
+<li>[ ]add login</li>
+</ul></li>
+<li>[ ]build agent for windows:
+
+<ul>
+<li>[ ]functionality:
+
+<ul>
+<li>[ ]system information and status</li>
+<li>[ ]monitor disk writes</li>
+<li>[ ]monitor network writes</li>
+<li>[ ]ultimately monitor api calls</li>
+<li>[ ]send executable and perform static analysis(create report)</li>
+</ul></li>
+</ul></li>
+</ul>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

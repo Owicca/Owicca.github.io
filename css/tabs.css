@@ -1,0 +1,29 @@
+.tab_header {
+  display: flex;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.tab_header > div {
+  display: block;
+  padding: .5rem 1rem;
+  text-decoration: none;
+  margin-bottom: -1px;
+  border: 1px solid transparent;
+  border-top-left-radius: .25rem;
+  border-top-right-radius: .25rem;
+}
+
+.tab_header > div.active {
+  color: #495057;
+  background-color: #fff;
+  border-color: #dee2e6 #dee2e6 #fff;
+}
+
+.tab {
+  display: none;
+  border-top: 1px solid red;
+}
+
+.tab.show {
+  display: initial;
+}

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Programming Tools on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/programming-tools/</link>
+    <description>Recent content in Programming Tools on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 26 Feb 2020 12:37:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/programming-tools/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Empire Framework Notes</title>
+      <link>https://www.dinudev.com/post/empire/</link>
+      <pubDate>Wed, 26 Feb 2020 12:37:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/empire/</guid>
+      <description>setup:  based on some distro detection techniques, install prerequisites and powershell(.dotnetcore) works with python 2 and/or 3 setup database from setup/setup_database.py:  sqlite3 setup users and passwords:      config:      staging_key text   install_path text   ip_whitelist text   ip_blacklist text   autorun_command text   autorun_data text   rootuser boolean   api_username text   api_password text   api_current_token text   api_permanent_token text   obfuscate integer   obfuscate_command text         agents:      id integer   session_id text   listener text   name text   language text   language_version text   delay integer   jitter real   external_ip text   internal_ip text   username text   high_integrity integer   process_name text   process_id text   hostname text   os_details text   session_key text   nonce text   checkin_time text   lastseen_time text   parent text   children text   servers text   profile text   functions text   kill_date text   working_hours text   lost_limit integer   taskings text   results tex         listeners:      id integer   name text   module text   listener_type text   listener_category text   enabled boolean   options blo         credentials:      id integer   credtype text   domain text   username text   password text   host text   os text   sid text   notes tex         taskings:      id integer   data text   agent text         results:      id integer   data text   agent text         reporting:      id integer   name text   event_type text   message text   time_stamp text   taskID integer         generate a self-signed certificate install python req:  network tools setup tools cryptographic tools iptools(manipulate ipv4/ip6 addresses) pydispatcher(signal dispatching mechanism) web framework(flask/jinja) pe/macho header readers dropbox(api wrapper) pyOpenSSL(openssl wrapper) pyinstaller(make an exe) zlib_wrapper netifaces(portable network interface information) pyminifier(minifier,obfuscator,compressor) xlutils(work with excel files)    architecture:  structure:  listeners:  pivot hop foreign   stagers(.</description>
+    </item>
+    
+    <item>
+      <title>Cuckoo Sandbox Notes</title>
+      <link>https://www.dinudev.com/post/cuckoo/</link>
+      <pubDate>Tue, 11 Feb 2020 12:36:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/cuckoo/</guid>
+      <description>Structure:  CWD is implemented so multiple configurations can work with the same cuckoo install logging is standard python2 logging:  INFO(all) DEBUG WARN   tries to rise soft a dir is created(&amp;ldquo;pidfiles&amp;rdquo;) that holds the pid with the id of the current cuckoo process (maybe an abstraction layer that merges win/linux process viewpoints?) check if curr version is up to date and warn if not check if dependencies have vulnerabilities/are out of date and warn  </description>
+    </item>
+    
+  </channel>
+</rss>
