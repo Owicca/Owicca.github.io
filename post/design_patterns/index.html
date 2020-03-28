@@ -1,0 +1,53 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.69.0-DEV"><title>Design Patterns — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/design_patterns/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com//main.css></head><body><div class=container><header><h1>Design Patterns</h1><time datetime="2020-02-28 11:35:00 +0200 EET">2020/02/28</time><nav class=site-nav><a href=/>Home</a>
+<a href=/post/>All posts</a></nav></header><article><h1 id=creational>Creational:</h1><h3 id=factory>Factory:</h3><ul><li>a class that creates other classes</li><li>when to use:<ul><li>the object setup requires a high level of complexity</li><li>generation of different objects is needed based on environment</li><li>when working with many small objects that share the same properties</li></ul></li></ul><h3 id=abstract-factory>Abstract Factory:</h3><ul><li>to be used when a system needs to be decouple from the way objects are generated</li><li>the system needs to work with multiple objects</li></ul><h3 id=mixin>Mixin:</h3><ul><li>a bucket of reusable functionality(think of traits in php)</li><li>collect functionality through extension</li><li>it is argued it creates object pollution</li><li>it is argued it adds an level of uncertainty regarding the origin of the functions(in large systems)</li></ul><h3 id=properties>Properties:</h3><ul><li>create objects based on a template of an existing object through cloning</li><li>in js <code>Object.create</code> does that for you</li><li>in js obj.<strong>proto</strong> is a non-constant pointer to its prototype(can be changed at runtime,
+with a massive speed penalty)</li></ul><h3 id=decorator>Decorator:</h3><ul><li>check python/java decorators</li></ul><h3 id=singleton>Singleton:</h3><ul><li>restricts the instantiation of an class to a single object</li><li>there must be exactly one instance and it must be accessible from exactly one point</li><li>when the sole instance needs to be subclassed, clients should be able to use an extended
+instance without modifying their code
+(this means <code>getInstance</code> becomes a factory)</li><li>singletons should not be interchangeable with static objects</li><li>the advantage of a singleton over a static object is that a singleton is lazy loaded
+(created when it&rsquo;s called)
+<code>let SingletonObj = function() {
+var instance = null;
+constructor() {
+return this.getInstance();
+}
+getInstance() {
+if(instance == null) {
+this.instance = new Obj();
+}
+return this.instance;
+}
+}</code></li></ul><h1 id=structural>Structural:</h1><h3 id=adapter>Adapter:</h3><ul><li>translate an interface for an object into an interface compatible with a specific system</li></ul><h3 id=bridge>Bridge:</h3><ul><li>decouple an abstraction from an implementation so that the two can vary independently</li><li>from:
+<code>getXById = function() {
+var id = this.id;
+$.ajax({
+url: '/getx?id=' + id,
+success: function(response) {
+console.log(response);
+}
+});
+}</code></li><li>to:
+<code>getXById = function(id, callback) {
+$.ajax({
+url: '/getx?id=' + id,
+success: callback,
+});
+}
+getXBridge = function() {
+var id = this.id;
+getXById(this.id, function() {
+console.log(response);
+});
+}
+$(".someElement").bind('click', getXBridge);</code></li></ul><h3 id=facade>Facade:</h3><ul><li>provide a convenient higher-level interface to a larger body of code,
+hiding its tru underlying complexity</li><li>it is possible to impose an performance cost</li><li>simplifying the API presented to other developers
+<code>//simplify an interface for listening to events cross-browser
+var addMyEven = function(el, ev, fn) {
+if(el.addEventListener) {
+el.addEventListener(ev,fn,false);
+} else if(el.attachEvent) {
+el.attachEvent("on"+ev, fn);
+} else {
+ele["on"+ev] = fn;
+}
+}</code></li></ul></article><nav class=site-nav><a href=/>Home</a>
+<a href=/post/>All posts</a>
+<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2020 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
