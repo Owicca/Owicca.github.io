@@ -1,19 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CS History on Down the wabbit's hole</title><link>https://www.dinudev.com/categories/cs-history/</link><description>Recent content in CS History on Down the wabbit's hole</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 22 Mar 2020 19:53:00 +0200</lastBuildDate><atom:link href="https://www.dinudev.com/categories/cs-history/index.xml" rel="self" type="application/rss+xml"/><item><title>HTTP 1.1 RFC</title><link>https://www.dinudev.com/post/http11/</link><pubDate>Sun, 22 Mar 2020 19:53:00 +0200</pubDate><guid>https://www.dinudev.com/post/http11/</guid><description>Network Working Group R. Fielding Request for Comments: 2068 UC Irvine Category: Standards Track J. Gettys J. Mogul DEC H. Frystyk T. Berners-Lee MIT/LCS January 1997
-Hypertext Transfer Protocol -- HTTP/1.1 Status of this Memo
-This document specifies an Internet standards track protocol for the Internet community, and requests discussion and suggestions for improvements. Please refer to the current edition of the &amp;ldquo;Internet Official Protocol Standards&amp;rdquo; (STD 1) for the standardization state and status of this protocol.</description></item><item><title>First Http Email - 1991</title><link>https://www.dinudev.com/post/first_http_email_1991/</link><pubDate>Thu, 13 Feb 2020 10:34:00 +0200</pubDate><guid>https://www.dinudev.com/post/first_http_email_1991/</guid><description>From: timbl@info .cern.ch (Tim Berners-Lee)
-Newsgroups: alt.hypertext
-Subject: Re: Qualifiers on Hypertext links...
-Message-ID: &amp;lt;6484@cernvax.cern.ch&amp;gt;
-Date: 6 Aug 91 14:56:20 GMT
-References: &amp;lt;1991Aug2.115241@ardor.enet.dec.com&amp;gt;
-Sender: news@cernvax.cern.ch
-Lines: 52
-` In article 1991Aug2.115241@ardor.enet.dec.com kannan@ardor.enet.dec.com (Nari
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CS History on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/cs-history/</link>
+    <description>Recent content in CS History on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 22 Mar 2020 19:53:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/cs-history/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>HTTP 1.1 RFC</title>
+      <link>https://www.dinudev.com/post/http11/</link>
+      <pubDate>Sun, 22 Mar 2020 19:53:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/http11/</guid>
+      <description>Network Working Group R. Fielding Request for Comments: 2068 UC Irvine Category: Standards Track J. Gettys J. Mogul DEC H. Frystyk T. Berners-Lee MIT/LCS January 1997
+ Hypertext Transfer Protocol -- HTTP/1.1  Status of this Memo
+This document specifies an Internet standards track protocol for the Internet community, and requests discussion and suggestions for improvements. Please refer to the current edition of the &amp;ldquo;Internet Official Protocol Standards&amp;rdquo; (STD 1) for the standardization state and status of this protocol.</description>
+    </item>
+    
+    <item>
+      <title>First Http Email - 1991</title>
+      <link>https://www.dinudev.com/post/first_http_email_1991/</link>
+      <pubDate>Thu, 13 Feb 2020 10:34:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/first_http_email_1991/</guid>
+      <description>From: timbl@info .cern.ch (Tim Berners-Lee)Newsgroups: alt.hypertextSubject: Re: Qualifiers on Hypertext links...Message-ID: &amp;lt;6484@cernvax.cern.ch&amp;gt;Date: 6 Aug 91 14:56:20 GMTReferences: &amp;lt;1991Aug2.115241@ardor.enet.dec.com&amp;gt;Sender: news@cernvax.cern.chLines: 52 ` In article 1991Aug2.115241@ardor.enet.dec.com kannan@ardor.enet.dec.com (Nari
 Kannan) writes:
-Is anyone reading this newsgroup aware of research or development efforts
+ Is anyone reading this newsgroup aware of research or development efforts
 in the following areas:
-1. Hypertext links enabling retrieval from multiple heterogeneous sources of
-information? The WorldWideWeb (WWW) project aims to allow links to be made to any information anywhere.</description></item><item><title>HTTP 1.1 RFC - pt2</title><link>https://www.dinudev.com/post/http7230/</link><pubDate>Thu, 13 Feb 2020 10:32:00 +0200</pubDate><guid>https://www.dinudev.com/post/http7230/</guid><description>Internet Engineering Task Force (IETF) R. Fielding, Ed. Request for Comments: 7230 Adobe Obsoletes: 2145, 2616 J. Reschke, Ed. Updates: 2817, 2818 greenbytes Category: Standards Track June 2014 ISSN: 2070-1721
+1. Hypertext links enabling retrieval from multiple heterogeneous sources   of
+ information? The WorldWideWeb (WWW) project aims to allow links to be made to any information anywhere.</description>
+    </item>
+    
+    <item>
+      <title>HTTP 1.1 RFC - pt2</title>
+      <link>https://www.dinudev.com/post/http7230/</link>
+      <pubDate>Thu, 13 Feb 2020 10:32:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/http7230/</guid>
+      <description>Internet Engineering Task Force (IETF) R. Fielding, Ed. Request for Comments: 7230 Adobe Obsoletes: 2145, 2616 J. Reschke, Ed. Updates: 2817, 2818 greenbytes Category: Standards Track June 2014 ISSN: 2070-1721
 Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing
 Abstract
-The Hypertext Transfer Protocol (HTTP) is a stateless application- level protocol for distributed, collaborative, hypertext information systems. This document provides an overview of HTTP architecture and its associated terminology, defines the &amp;ldquo;http&amp;rdquo; and &amp;ldquo;https&amp;rdquo; Uniform Resource Identifier (URI) schemes, defines the HTTP/1.</description></item></channel></rss>
+The Hypertext Transfer Protocol (HTTP) is a stateless application- level protocol for distributed, collaborative, hypertext information systems. This document provides an overview of HTTP architecture and its associated terminology, defines the &amp;ldquo;http&amp;rdquo; and &amp;ldquo;https&amp;rdquo; Uniform Resource Identifier (URI) schemes, defines the HTTP/1.</description>
+    </item>
+    
+  </channel>
+</rss>

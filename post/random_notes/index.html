@@ -1,4 +1,179 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.69.0-DEV"><title>Random Notes — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/random_notes/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com//main.css></head><body><div class=container><header><h1>Random Notes</h1><time datetime="2020-02-24 15:44:00 +0200 EET">2020/02/24</time><nav class=site-nav><a href=/>Home</a>
-<a href=/post/>All posts</a></nav></header><article><h3 id=network-upgrade>Network upgrade:</h3><ul><li><p>Before:</p><ul><li>3.65 dl 1.74 up</li><li>Connection failed</li><li>0.25 dl 0.01 up</li><li>0.56 dl 0.00 up</li><li>0.12 dl 0.00 up</li></ul></li><li><p>After</p><ul><li>4.91 dl 6.61 up</li><li>10.1 dl 6.09 up</li><li>9.08 dl 7.44 up</li><li>16.4 dl 7.04 up</li><li>11.9 dl 6.03 up</li></ul></li></ul><h3 id=some-algorithm>Some algorithm:</h3><ol><li>get a directory and a hash</li><li>in directory there can be 0 or more children</li><li>if there are more than 0 children get the hash keys of the children</li><li>iterate through the keys</li><li>truncate the curent key to the hash size and compare them</li><li>if they are the same, if the child is a file return the file path, if the child is a directory, goroutine recursively</li><li>else go to the next</li><li>if no match is found, return nil</li></ol><h3 id=how-to-be-as-pompous-as-you-can>How to be as pompous as you can:</h3><ul><li>only the awake may think</li><li>seeing is for open eyes</li><li>cognition is a lie</li><li>i dream the world awake</li><li>dreaming is a vestige</li><li>sleep is pretend</li><li>a dream is a cowardly thought</li><li>sleep is not civilized</li><li>the mind is a tyrant</li><li>this is your time now</li><li>i will never dream again</li><li>stay out of your bedrom</li><li>there is work to be done</li><li>dreams are just screaming with pictures</li><li>the pure of mind do not slumber</li><li>no good thought follows instinct</li><li>the lie of sleep seeks many vessels</li><li>we are our own gods</li><li>let cognizance nourish itself</li><li>logic is the final burden</li><li>the primitive mind deserves its nightmares</li><li>when we sleep we die</li><li>i am an idea thinking itself</li><li>they are no faces</li><li>the subconscious is a parasite</li><li>dreaming is a cancer on the face of sleep</li><li>they follow night to bleed dreams</li><li>your home has another door</li><li>unconsciousness is a threat</li><li>we are not meant to dream</li><li>you owe the messenger</li><li>what is true unmakes the false</li><li>sleep is a scavenger</li><li>this message will repeat until there are none to read it</li></ul><h3 id=set-offline-in-lol-chat>Set &ldquo;offline&rdquo; in lol chat:</h3><ul><li>RADS > Projects > lol_air_client_config_[your server here] > releases > 0.0.0.55 > deploy > lol.properties</li><li>xmpp_server_url</li><li>cmd block connection: <code>netsh advfirewall firewall add rule name="blocklolchat" dir=out remoteip={your.region.ip} protocol=TCP action=block</code></li><li>cmd unblock connection: <code>netsh advfirewall firewall delete rule name="blocklolchat"</code></li></ul></article><nav class=site-nav><a href=/>Home</a>
-<a href=/post/>All posts</a>
-<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2020 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.69.0-DEV" />
+  <title>Random Notes — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/random_notes/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  
+  <h1>Random Notes</h1>
+
+  
+  <time datetime="2020-02-24 15:44:00 &#43;0200 EET">2020/02/24</time>
+  
+
+  
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+</header>
+
+	
+	
+	<h3>Table of Contents</h3>
+	<aside>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#network-upgrade">Network upgrade:</a></li>
+        <li><a href="#some-algorithm">Some algorithm:</a></li>
+        <li><a href="#how-to-be-as-pompous-as-you-can">How to be as pompous as you can:</a></li>
+        <li><a href="#set-offline-in-lol-chat">Set &ldquo;offline&rdquo; in lol chat:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</aside>
+	
+    <article>
+      <h3 id="network-upgrade">Network upgrade:</h3>
+<ul>
+<li>
+<p>Before:</p>
+<ul>
+<li>3.65 dl 1.74 up</li>
+<li>Connection failed</li>
+<li>0.25 dl 0.01 up</li>
+<li>0.56 dl 0.00 up</li>
+<li>0.12 dl 0.00 up</li>
+</ul>
+</li>
+<li>
+<p>After</p>
+<ul>
+<li>4.91 dl 6.61 up</li>
+<li>10.1 dl 6.09 up</li>
+<li>9.08 dl 7.44 up</li>
+<li>16.4 dl 7.04 up</li>
+<li>11.9 dl 6.03 up</li>
+</ul>
+</li>
+</ul>
+<h3 id="some-algorithm">Some algorithm:</h3>
+<ol>
+<li>get a directory and a hash</li>
+<li>in directory there can be 0 or more children</li>
+<li>if there are more than 0 children get the hash keys of the children</li>
+<li>iterate through the keys</li>
+<li>truncate the curent key to the hash size and compare them</li>
+<li>if they are the same, if the child is a file return the file path, if the child is a directory, goroutine recursively</li>
+<li>else go to the next</li>
+<li>if no match is found, return nil</li>
+</ol>
+<h3 id="how-to-be-as-pompous-as-you-can">How to be as pompous as you can:</h3>
+<ul>
+<li>only the awake may think</li>
+<li>seeing is for open eyes</li>
+<li>cognition is a lie</li>
+<li>i dream the world awake</li>
+<li>dreaming is a vestige</li>
+<li>sleep is pretend</li>
+<li>a dream is a cowardly thought</li>
+<li>sleep is not civilized</li>
+<li>the mind is a tyrant</li>
+<li>this is your time now</li>
+<li>i will never dream again</li>
+<li>stay out of your bedrom</li>
+<li>there is work to be done</li>
+<li>dreams are just screaming with pictures</li>
+<li>the pure of mind do not slumber</li>
+<li>no good thought follows instinct</li>
+<li>the lie of sleep seeks many vessels</li>
+<li>we are our own gods</li>
+<li>let cognizance nourish itself</li>
+<li>logic is the final burden</li>
+<li>the primitive mind deserves its nightmares</li>
+<li>when we sleep we die</li>
+<li>i am an idea thinking itself</li>
+<li>they are no faces</li>
+<li>the subconscious is a parasite</li>
+<li>dreaming is a cancer on the face of sleep</li>
+<li>they follow night to bleed dreams</li>
+<li>your home has another door</li>
+<li>unconsciousness is a threat</li>
+<li>we are not meant to dream</li>
+<li>you owe the messenger</li>
+<li>what is true unmakes the false</li>
+<li>sleep is a scavenger</li>
+<li>this message will repeat until there are none to read it</li>
+</ul>
+<h3 id="set-offline-in-lol-chat">Set &ldquo;offline&rdquo; in lol chat:</h3>
+<ul>
+<li>RADS &gt; Projects &gt; lol_air_client_config_[your server here] &gt; releases &gt; 0.0.0.55 &gt; deploy &gt; lol.properties</li>
+<li>xmpp_server_url</li>
+<li>cmd block connection: <code>netsh advfirewall firewall add rule name=&quot;blocklolchat&quot; dir=out remoteip={your.region.ip} protocol=TCP action=block</code></li>
+<li>cmd unblock connection: <code>netsh advfirewall firewall delete rule name=&quot;blocklolchat&quot;</code></li>
+</ul>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

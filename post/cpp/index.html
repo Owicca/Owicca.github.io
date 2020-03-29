@@ -1,6 +1,118 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.69.0-DEV"><title>CPP — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/cpp/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com//main.css></head><body><div class=container><header><h1>CPP</h1><time datetime="2020-03-01 17:27:00 +0200 EET">2020/03/01</time><nav class=site-nav><a href=/>Home</a>
-<a href=/post/>All posts</a></nav></header><article><h3 id=general>General:</h3><ul><li>the public data/function members are your interface</li><li>put the interface first</li><li>methods with implementation declared in the class are generated inline at every use,
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.69.0-DEV" />
+  <title>CPP — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/cpp/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  
+  <h1>CPP</h1>
+
+  
+  <time datetime="2020-03-01 17:27:00 &#43;0200 EET">2020/03/01</time>
+  
+
+  
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+</header>
+
+	
+	
+	<h3>Table of Contents</h3>
+	<aside>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#general">General:</a></li>
+        <li><a href="#io">I/O:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</aside>
+	
+    <article>
+      <h3 id="general">General:</h3>
+<ul>
+<li>the public data/function members are your interface</li>
+<li>put the interface first</li>
+<li>methods with implementation declared in the class are generated inline at every use,
 giving a speed boost(no jump to common code),
-inlined methods do not benefit from the boost if they are larger than 4-5 lines</li></ul><h3 id=io>I/O:</h3><ul><li>a stream can be in four states:<ul><li><code>good()</code>: read/write was successful</li><li><code>eof()</code>: internal file pointer is at the end of the line</li><li><code>fail()</code>: format error level of error(you should <code>clear()</code> to go back to a <code>good()</code>)</li><li><code>bad()</code>: disk error level of error</li></ul></li></ul></article><nav class=site-nav><a href=/>Home</a>
-<a href=/post/>All posts</a>
-<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2020 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+inlined methods do not benefit from the boost if they are larger than 4-5 lines</li>
+</ul>
+<h3 id="io">I/O:</h3>
+<ul>
+<li>a stream can be in four states:
+<ul>
+<li><code>good()</code>: read/write was successful</li>
+<li><code>eof()</code>: internal file pointer is at the end of the line</li>
+<li><code>fail()</code>: format error level of error(you should <code>clear()</code> to go back to a <code>good()</code>)</li>
+<li><code>bad()</code>: disk error level of error</li>
+</ul>
+</li>
+</ul>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

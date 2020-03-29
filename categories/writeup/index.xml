@@ -1,5 +1,28 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Writeup on Down the wabbit's hole</title><link>https://www.dinudev.com/categories/writeup/</link><description>Recent content in Writeup on Down the wabbit's hole</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Sun, 29 Dec 2019 21:56:00 +0200</lastBuildDate><atom:link href="https://www.dinudev.com/categories/writeup/index.xml" rel="self" type="application/rss+xml"/><item><title>Writeup - Trickbot</title><link>https://www.dinudev.com/post/writeup_trickbot/</link><pubDate>Sun, 29 Dec 2019 21:56:00 +0200</pubDate><guid>https://www.dinudev.com/post/writeup_trickbot/</guid><description>Stages: vba dropper in word document
-vba trick bot is executed:
-loads part of himself in heap and sets process to suspended (enables it to modify before executing child):
-execute child and exit first child execution:
-loads named resource(&amp;ldquo;IDR_X86BOT&amp;rdquo; || &amp;ldquo;IDR_X64BOT&amp;rdquo;) from himself(encrypted) in heap decrypts the data in heap call second child entrypoint second child execution:</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Writeup on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/writeup/</link>
+    <description>Recent content in Writeup on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 29 Dec 2019 21:56:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/writeup/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Writeup - Trickbot</title>
+      <link>https://www.dinudev.com/post/writeup_trickbot/</link>
+      <pubDate>Sun, 29 Dec 2019 21:56:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/writeup_trickbot/</guid>
+      <description>Stages:   vba dropper in word document
+  vba trick bot is executed:
+ loads part of himself in heap and sets process to suspended    (enables it to modify before executing child):
+ execute child and exit    first child execution:
+ loads named resource(&amp;ldquo;IDR_X86BOT&amp;rdquo; || &amp;ldquo;IDR_X64BOT&amp;rdquo;) from himself(encrypted) in heap decrypts the data in heap call second child entrypoint    second child execution:</description>
+    </item>
+    
+  </channel>
+</rss>

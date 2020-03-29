@@ -1,18 +1,502 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.69.0-DEV"><title>CCNA — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/ccna/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com//main.css></head><body><div class=container><header><h1>CCNA</h1><time datetime="2020-02-16 15:33:00 +0200 EET">2020/02/16</time><nav class=site-nav><a href=/>Home</a>
-<a href=/post/>All posts</a></nav></header><article><h3 id=ch1-internetworking>ch1 internetworking:</h3><ul><li>Chapter concepts<ul><li>Infrastructure components:<ul><li>firewalls</li><li>access points</li><li>wireless controllers</li></ul></li><li>Networking topologies:<ul><li>star</li><li>mesh</li><li>hybrid</li></ul></li></ul></li><li>What is an internetwork:<ul><li>two or more networks connected via a router and
-configured with a logical network addressing scheme with a
-protocol such as ip or ipv6</li></ul></li><li>network segmentation:<ul><li>use switches to segment each sw interface into a separate
-collision domain</li><li>hubs connect network segments</li><li>routers break up a broadcast domain</li></ul></li><li>network broadcast:<ul><li>every device on the network must read and process the broadcast, unless its a router</li></ul></li><li>collision domain:<ul><li>a device sends a packet out on a network segment and
-every other device is forced to pay attention no matter what</li><li>if two devices try to send packets at the same time,
-a collision occurs and they need to retransmit the packet sequentially</li></ul></li><li>devices:<ul><li>routers:<ul><li>break up broadcast domains</li><li>break up collision domains</li><li>don&rsquo;t forward broadcasts by default</li><li>can filter the net based on layer 3(network layer) ip address(logical addressing)</li><li>packet switching</li><li>packet filtering:<ul><li>via access lists</li></ul></li><li>internetwork communication:<ul><li>connect two or more networks together</li></ul></li><li>path selection:<ul><li>uses a routing table to map networks to paths</li></ul></li><li>L3 switches</li><li>provide connection between virtual lans(vlans)</li><li>can provide quality of service(QOS) for specific types of network traffic</li><li>it only cares where a network is located and how to get to it</li></ul></li><li>switches:<ul><li>forward and filter frames</li><li>L2 switches</li><li>optimize LAN performance</li><li>does not break up domains by default</li><li>switch frames from a port to another withing a switched network</li><li>each port is a different collision domain</li><li>in a switched network, you still need a router to provide communication between VLANS</li><li>it only cares about uniquelly identifying a lan device</li></ul></li><li>wlan device(wireless nic)</li><li>access points:<ul><li>extend a collision domain</li><li>they are in their own broadcast domain(vlan)</li></ul></li><li>firewalls:<ul><li>controll incoming and outgoing net traffic</li><li>they are usually an ips(intrusion protection system)</li></ul></li></ul></li><li>common lan traffic congestion reasons:<ul><li>too many hosts in a collision or broadcast domain</li><li>broadcast storms</li><li>too much multicast traffic</li><li>low bandwidth</li><li>adding hubs for connectivity to the network</li><li>a bunch of arp broadcasts</li></ul></li></ul><h3 id=communication-modes>Communication modes:</h3><ul><li>simplex: one-way communication(say something and not get a reply)</li><li>half-duplex: two-way communication(receiver has to wait for the sender to finish sending the message, then it can send a response back)</li><li>full-duplex: two-way communication(devices receive and transmit at the same time)</li></ul><h3 id=communication-types>Communication types:</h3><ul><li>connection-oriented:<ul><li>caracteristics:<ul><li>virtual circuit(three-way handshake)</li><li>uses sequencing</li><li>uses acknowledgments</li><li>uses flow control</li></ul></li><li>steps:<ul><li>first establish a connection-oriented session with a &ldquo;three-way handshake&rdquo;:<ul><li>segment from sender to receiver to request for synchronization(SYN)</li><li>segment from receiver to sender to acknowledge(ACK) the request and establish connection parameters</li><li>segment from sender to receiver to acknowledge(ACK) that the connection agreement has been accepted and
-the actual connection has been established</li></ul></li><li>transfer data</li><li>termination call that tears down the virtual circuit</li></ul></li></ul></li></ul><h3 id=flow-control>Flow control:</h3><p>(provide a way for the receiver to control the amount of data sent by the sender)</p><ul><li>the segments delivered are acknowledged upon reception</li><li>any segments not acknowledged are retransmitted</li><li>segments are sequenced back into their proper order upon arrival at their destination</li><li>when a receiving buffer is full, sender gets a &ldquo;not ready&rdquo; message that signals to stop
-sending segment traffic to its overwhelmed receiver,
-and &ldquo;ready&rdquo; when the buffer can manage new segments</li></ul><h3 id=windowing>Windowing:</h3><ul><li>the quantity of data segments, in bytes, that the transmitting machine is allowed to send
-without receiving an acknowledgment</li></ul><h3 id=acknowledgments>Acknowledgments:</h3><ul><li>the sender sends a segment(sets a timeout value) and waits for an acknowledgment,
-if an acknowledgment is received, send the next segment, if the timeout values is passed,
-resend the timeouted segment</li></ul><h3 id=routing>Routing:</h3><ul><li>when a packet is received on an interface, the destination ip is checked</li><li>if the destination is not that router, the ip is checked in the routing table</li><li>if the ip is not found in the routing table, drop the packet</li><li>if the ip is found in the routing table, send the packet to that interface to be framed and sent out</li><li>keywords:<ul><li>data packet:<ul><li>transport data</li></ul></li><li>route update packet:<ul><li>used to build and update routing tables</li><li>update neighboring routers about the networks connected to all routers:<ul><li>RIPv2</li><li>EIGRP</li><li>OSPF</li></ul></li></ul></li></ul><ul><li>network address:<ul><li>protocol-specific network address</li></ul></li><li>interface:<ul><li>exit interface a packet will take when destined for a specific network</li></ul></li><li>metric:<ul><li>distance to the remote network:<ul><li>different protocol use different metrics:<ul><li>hop count(RIP)</li><li>bandwidth</li><li>delay of the line</li><li>tick count(1/18 of a second)</li></ul></li></ul></li></ul></li></ul></li></ul><h3 id=topologies>Topologies:</h3><ul><li>categories:<ul><li>physical: physical layout of the devices, mostly cabling and cabling layout</li><li>logical: the logical path a signal travels on the physical topology</li></ul></li><li>types:<ul><li>physical:<ul><li><a href=https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopologies.svg>https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopologies.svg</a></li><li>bus topology: every host is connected to a single cable</li><li>ring topology: last device is connected to the first forming a circle or a ring</li><li>star topology: a central cabling device connects all other lan devices(twisted pair)</li><li>mesh topology: every network device is cabled together with connection to each other
-(highly reliable;fiber or twisted pair)</li><li>hybrid:</li></ul></li></ul></li></ul><h3 id=osi-model>OSI Model:</h3><p>(Open Systems Interconection reference model)</p><ul><li>main goal was interoperability between network devices and software</li><li>structure:
-(upper layers;how apps within end stations communicate with each other and with the user)<ul><li>application(7):<ul><li>file, print, message, database, and application services</li><li>provides a user interface</li></ul></li><li>presentation(6)<ul><li>protocols that define how standard data should be formatted</li><li>data encryption, compression, and translation services</li><li>presents data</li><li>handles processing such as encryption</li></ul></li><li>session(5):<ul><li>set up, manage, and dismantle sessions</li><li>dialog control</li><li>keeps different applications data separate
-(lower layers; end to end data transmission)</li></ul></li><li>transport(4):<ul><li>segment and reassemble data into a single data stream</li><li>end-to-end connection</li><li>provides reliable or unreliable delivery</li><li>performs error correction before retransmit</li></ul></li><li>network(3):<ul><li>routing</li><li>provides logical addressing, which routers use for path determination</li><li>transports traffic between devices that aren&rsquo;t locally attached</li></ul></li><li>data link(2):<ul><li>framing</li><li>combines packets into bytes and bytes into frames</li><li>provides access to media using MAC address</li><li>performs error detection not correction</li><li>flow control</li><li>network topology</li></ul></li><li>physical(1):<ul><li>physical topology</li><li>moves bits between devices</li><li>specifies voltage, wire speed, and pinout cables</li></ul></li></ul></li></ul><h1 id=11>1.1:</h1><ol><li>transport</li><li>physical</li><li>network</li><li>presentation</li><li>session</li><li>data-link</li><li>transport</li><li>network</li><li>physical</li><li>data-link</li><li>session</li><li>data-link</li><li>transport</li><li>network</li><li>physical</li><li>bits frames packets segments</li><li>transport</li><li>data-link</li><li>network</li><li>20 bit hex</li></ol><h1 id=12>1.2:</h1><ol><li>router</li><li>transport</li><li>switch</li><li>physical and data-link</li><li>transport</li><li>router</li><li>network</li><li>data-link</li><li>hub</li><li>switch</li><li>hub??</li><li>router</li></ol><h1 id=13>1.3:</h1><ol><li>: collision | broadcast<ul><li>A: 1 | 1</li><li>B: 2 | 1</li><li>C: 4 | 1</li><li>D: 3 | 3</li></ul></li></ol><h3 id=review>Review:</h3><ol><li>a</li><li>b</li><li>c</li><li>c</li><li>transport-segment|data-link-frame|physical-bits|network-packet</li><li>b</li><li>b</li><li>transport-end-to-end connection|physical-conversion to bits|data-link-framing|network-routing</li><li>c</li><li>d</li><li>d and b</li><li>data-link</li><li>c</li><li>a</li><li>c</li><li>a</li><li>c</li><li>b</li><li>a</li><li>a</li></ol></article><nav class=site-nav><a href=/>Home</a>
-<a href=/post/>All posts</a>
-<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2020 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.69.0-DEV" />
+  <title>CCNA — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/ccna/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  
+  <h1>CCNA</h1>
+
+  
+  <time datetime="2020-02-16 15:33:00 &#43;0200 EET">2020/02/16</time>
+  
+
+  
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+</header>
+
+	
+	
+	<h3>Table of Contents</h3>
+	<aside>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#ch1-internetworking">ch1 internetworking:</a></li>
+        <li><a href="#communication-modes">Communication modes:</a></li>
+        <li><a href="#communication-types">Communication types:</a></li>
+        <li><a href="#flow-control">Flow control:</a></li>
+        <li><a href="#windowing">Windowing:</a></li>
+        <li><a href="#acknowledgments">Acknowledgments:</a></li>
+        <li><a href="#routing">Routing:</a></li>
+        <li><a href="#topologies">Topologies:</a></li>
+        <li><a href="#osi-model">OSI Model:</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#review">Review:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</aside>
+	
+    <article>
+      <h3 id="ch1-internetworking">ch1 internetworking:</h3>
+<ul>
+<li>Chapter concepts
+<ul>
+<li>Infrastructure components:
+<ul>
+<li>firewalls</li>
+<li>access points</li>
+<li>wireless controllers</li>
+</ul>
+</li>
+<li>Networking topologies:
+<ul>
+<li>star</li>
+<li>mesh</li>
+<li>hybrid</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>What is an internetwork:
+<ul>
+<li>two or more networks connected via a router and 
+configured with a logical network addressing scheme with a 
+protocol such as ip or ipv6</li>
+</ul>
+</li>
+<li>network segmentation:
+<ul>
+<li>use switches to segment each sw interface into a separate 
+collision domain</li>
+<li>hubs connect network segments</li>
+<li>routers break up a broadcast domain</li>
+</ul>
+</li>
+<li>network broadcast:
+<ul>
+<li>every device on the network must read and process the broadcast, unless its a router</li>
+</ul>
+</li>
+<li>collision domain:
+<ul>
+<li>a device sends a packet out on a network segment and 
+every other device is forced to pay attention no matter what</li>
+<li>if two devices try to send packets at the same time,
+a collision occurs and they need to retransmit the packet sequentially</li>
+</ul>
+</li>
+<li>devices:
+<ul>
+<li>routers:
+<ul>
+<li>break up broadcast domains</li>
+<li>break up collision domains</li>
+<li>don&rsquo;t forward broadcasts by default</li>
+<li>can filter the net based on layer 3(network layer) ip address(logical addressing)</li>
+<li>packet switching</li>
+<li>packet filtering:
+<ul>
+<li>via access lists</li>
+</ul>
+</li>
+<li>internetwork communication:
+<ul>
+<li>connect two or more networks together</li>
+</ul>
+</li>
+<li>path selection:
+<ul>
+<li>uses a routing table to map networks to paths</li>
+</ul>
+</li>
+<li>L3 switches</li>
+<li>provide connection between virtual lans(vlans)</li>
+<li>can provide quality of service(QOS) for specific types of network traffic</li>
+<li>it only cares where a network is located and how to get to it</li>
+</ul>
+</li>
+<li>switches:
+<ul>
+<li>forward and filter frames</li>
+<li>L2 switches</li>
+<li>optimize LAN performance</li>
+<li>does not break up domains by default</li>
+<li>switch frames from a port to another withing a switched network</li>
+<li>each port is a different collision domain</li>
+<li>in a switched network, you still need a router to provide communication between VLANS</li>
+<li>it only cares about uniquelly identifying a lan device</li>
+</ul>
+</li>
+<li>wlan device(wireless nic)</li>
+<li>access points:
+<ul>
+<li>extend a collision domain</li>
+<li>they are in their own broadcast domain(vlan)</li>
+</ul>
+</li>
+<li>firewalls:
+<ul>
+<li>controll incoming and outgoing net traffic</li>
+<li>they are usually an ips(intrusion protection system)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>common lan traffic congestion reasons:
+<ul>
+<li>too many hosts in a collision or broadcast domain</li>
+<li>broadcast storms</li>
+<li>too much multicast traffic</li>
+<li>low bandwidth</li>
+<li>adding hubs for connectivity to the network</li>
+<li>a bunch of arp broadcasts</li>
+</ul>
+</li>
+</ul>
+<h3 id="communication-modes">Communication modes:</h3>
+<ul>
+<li>simplex: one-way communication(say something and not get a reply)</li>
+<li>half-duplex: two-way communication(receiver has to wait for the sender to finish sending the message, then it can send a response back)</li>
+<li>full-duplex: two-way communication(devices receive and transmit at the same time)</li>
+</ul>
+<h3 id="communication-types">Communication types:</h3>
+<ul>
+<li>connection-oriented:
+<ul>
+<li>caracteristics:
+<ul>
+<li>virtual circuit(three-way handshake)</li>
+<li>uses sequencing</li>
+<li>uses acknowledgments</li>
+<li>uses flow control</li>
+</ul>
+</li>
+<li>steps:
+<ul>
+<li>first establish a connection-oriented session with a &ldquo;three-way handshake&rdquo;:
+<ul>
+<li>segment from sender to receiver to request for synchronization(SYN)</li>
+<li>segment from receiver to sender to acknowledge(ACK) the request and establish connection parameters</li>
+<li>segment from sender to receiver to acknowledge(ACK) that the connection agreement has been accepted and
+the actual connection has been established</li>
+</ul>
+</li>
+<li>transfer data</li>
+<li>termination call that tears down the virtual circuit</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="flow-control">Flow control:</h3>
+<p>(provide a way for the receiver to control the amount of data sent by the sender)</p>
+<ul>
+<li>the segments delivered are acknowledged upon reception</li>
+<li>any segments not acknowledged are retransmitted</li>
+<li>segments are sequenced back into their proper order upon arrival at their destination</li>
+<li>when a receiving buffer is full, sender gets a &ldquo;not ready&rdquo; message that signals to stop 
+sending segment traffic to its overwhelmed receiver, 
+and &ldquo;ready&rdquo; when the buffer can manage new segments</li>
+</ul>
+<h3 id="windowing">Windowing:</h3>
+<ul>
+<li>the quantity of data segments, in bytes, that the transmitting machine is allowed to send 
+without receiving an acknowledgment</li>
+</ul>
+<h3 id="acknowledgments">Acknowledgments:</h3>
+<ul>
+<li>the sender sends a segment(sets a timeout value) and waits for an acknowledgment,
+if an acknowledgment is received, send the next segment, if the timeout values is passed, 
+resend the timeouted segment</li>
+</ul>
+<h3 id="routing">Routing:</h3>
+<ul>
+<li>when a packet is received on an interface, the destination ip is checked</li>
+<li>if the destination is not that router, the ip is checked in the routing table</li>
+<li>if the ip is not found in the routing table, drop the packet</li>
+<li>if the ip is found in the routing table, send the packet to that interface to be framed and sent out</li>
+<li>keywords:
+<ul>
+<li>data packet:
+<ul>
+<li>transport data</li>
+</ul>
+</li>
+<li>route update packet:
+<ul>
+<li>used to build and update routing tables</li>
+<li>update neighboring routers about the networks connected to all routers:
+<ul>
+<li>RIPv2</li>
+<li>EIGRP</li>
+<li>OSPF</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>network address:
+<ul>
+<li>protocol-specific network address</li>
+</ul>
+</li>
+<li>interface:
+<ul>
+<li>exit interface a packet will take when destined for a specific network</li>
+</ul>
+</li>
+<li>metric:
+<ul>
+<li>distance to the remote network:
+<ul>
+<li>different protocol use different metrics:
+<ul>
+<li>hop count(RIP)</li>
+<li>bandwidth</li>
+<li>delay of the line</li>
+<li>tick count(1/18 of a second)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="topologies">Topologies:</h3>
+<ul>
+<li>categories:
+<ul>
+<li>physical: physical layout of the devices, mostly cabling and cabling layout</li>
+<li>logical: the logical path a signal travels on the physical topology</li>
+</ul>
+</li>
+<li>types:
+<ul>
+<li>physical:
+<ul>
+<li><a href="https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopologies.svg">https://upload.wikimedia.org/wikipedia/commons/9/97/NetworkTopologies.svg</a></li>
+<li>bus topology: every host is connected to a single cable</li>
+<li>ring topology: last device is connected to the first forming a circle or a ring</li>
+<li>star topology: a central cabling device connects all other lan devices(twisted pair)</li>
+<li>mesh topology: every network device is cabled together with connection to each other
+(highly reliable;fiber or twisted pair)</li>
+<li>hybrid:</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="osi-model">OSI Model:</h3>
+<p>(Open Systems Interconection reference model)</p>
+<ul>
+<li>main goal was interoperability between network devices and software</li>
+<li>structure:
+(upper layers;how apps within end stations communicate with each other and with the user)
+<ul>
+<li>application(7):
+<ul>
+<li>file, print, message, database, and application services</li>
+<li>provides a user interface</li>
+</ul>
+</li>
+<li>presentation(6)
+<ul>
+<li>protocols that define how standard data should be formatted</li>
+<li>data encryption, compression, and translation services</li>
+<li>presents data</li>
+<li>handles processing such as encryption</li>
+</ul>
+</li>
+<li>session(5):
+<ul>
+<li>set up, manage, and dismantle sessions</li>
+<li>dialog control</li>
+<li>keeps different applications data separate
+(lower layers; end to end data transmission)</li>
+</ul>
+</li>
+<li>transport(4):
+<ul>
+<li>segment and reassemble data into a single data stream</li>
+<li>end-to-end connection</li>
+<li>provides reliable or unreliable delivery</li>
+<li>performs error correction before retransmit</li>
+</ul>
+</li>
+<li>network(3):
+<ul>
+<li>routing</li>
+<li>provides logical addressing, which routers use for path determination</li>
+<li>transports traffic between devices that aren&rsquo;t locally attached</li>
+</ul>
+</li>
+<li>data link(2):
+<ul>
+<li>framing</li>
+<li>combines packets into bytes and bytes into frames</li>
+<li>provides access to media using MAC address</li>
+<li>performs error detection not correction</li>
+<li>flow control</li>
+<li>network topology</li>
+</ul>
+</li>
+<li>physical(1):
+<ul>
+<li>physical topology</li>
+<li>moves bits between devices</li>
+<li>specifies voltage, wire speed, and pinout cables</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="11">1.1:</h1>
+<ol>
+<li>transport</li>
+<li>physical</li>
+<li>network</li>
+<li>presentation</li>
+<li>session</li>
+<li>data-link</li>
+<li>transport</li>
+<li>network</li>
+<li>physical</li>
+<li>data-link</li>
+<li>session</li>
+<li>data-link</li>
+<li>transport</li>
+<li>network</li>
+<li>physical</li>
+<li>bits frames packets segments</li>
+<li>transport</li>
+<li>data-link</li>
+<li>network</li>
+<li>20 bit hex</li>
+</ol>
+<h1 id="12">1.2:</h1>
+<ol>
+<li>router</li>
+<li>transport</li>
+<li>switch</li>
+<li>physical and data-link</li>
+<li>transport</li>
+<li>router</li>
+<li>network</li>
+<li>data-link</li>
+<li>hub</li>
+<li>switch</li>
+<li>hub??</li>
+<li>router</li>
+</ol>
+<h1 id="13">1.3:</h1>
+<ol>
+<li>:	collision | broadcast
+<ul>
+<li>A: 1 | 1</li>
+<li>B: 2 | 1</li>
+<li>C: 4 | 1</li>
+<li>D: 3 | 3</li>
+</ul>
+</li>
+</ol>
+<h3 id="review">Review:</h3>
+<ol>
+<li>a</li>
+<li>b</li>
+<li>c</li>
+<li>c</li>
+<li>transport-segment|data-link-frame|physical-bits|network-packet</li>
+<li>b</li>
+<li>b</li>
+<li>transport-end-to-end connection|physical-conversion to bits|data-link-framing|network-routing</li>
+<li>c</li>
+<li>d</li>
+<li>d and b</li>
+<li>data-link</li>
+<li>c</li>
+<li>a</li>
+<li>c</li>
+<li>a</li>
+<li>c</li>
+<li>b</li>
+<li>a</li>
+<li>a</li>
+</ol>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

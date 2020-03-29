@@ -1,1 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>RE on Down the wabbit's hole</title><link>https://www.dinudev.com/categories/re/</link><description>Recent content in RE on Down the wabbit's hole</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><lastBuildDate>Mon, 02 Mar 2020 13:14:00 +0200</lastBuildDate><atom:link href="https://www.dinudev.com/categories/re/index.xml" rel="self" type="application/rss+xml"/><item><title>RE and Malware RE</title><link>https://www.dinudev.com/post/re_malware_re/</link><pubDate>Mon, 02 Mar 2020 13:14:00 +0200</pubDate><guid>https://www.dinudev.com/post/re_malware_re/</guid><description>For reverse engineering: http://www.amazon.com/Practical-Reverse-Engineering-Reversing-Obfuscation/dp/1118787315/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-1&amp;amp;keywords=reverse+engineering http://www.amazon.com/Reversing-Secrets-Engineering-Eldad-Eilam/dp/0764574817/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-2&amp;amp;keywords=reverse+engineering http://www.amazon.com/IDA-Pro-Book-Unofficial-Disassembler/dp/1593272898/ref=sr_1_7?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-7&amp;amp;keywords=reverse+engineering For malware analysis and malware techniques: http://www.amazon.com/Practical-Malware-Analysis-Hands--Dissecting/dp/1593272901/ref=sr_1_10?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-10&amp;amp;keywords=reverse+engineering http://www.amazon.com/Malware-Analysts-Cookbook-DVD-Techniques/dp/0470613033/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459367&amp;amp;sr=1-2&amp;amp;keywords=malware+analysis http://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098/ref=sr_1_5?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459367&amp;amp;sr=1-5&amp;amp;keywords=malware+analysis For programming: Complete Reference C and Complete Reference C++ NASM Manual Intel Software Developer Manual (http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html) Methodology: Get the Malware Perform static analysis on the malware (Grab file properties, hashes, sizes, do open source research on it, dependencies, imports, exports, etc) Perform Dynamic Analysis on the malware (Execute it in a sandboxed environment running system/network/registry monitoring tools and see what it does) If necessary, reverse it Reversing requires: OllyDbg and IDA Pro, running in different VMs.</description></item><item><title>RE Labs</title><link>https://www.dinudev.com/post/re_labs/</link><pubDate>Fri, 31 Jan 2020 21:35:00 +0200</pubDate><guid>https://www.dinudev.com/post/re_labs/</guid><description>Lab1 analysis: if dword_10026058 check if fdwReason dll_process_attach || dll_thread_attach call a function, if result is 0, return DllEntryPoint with 0 call after_checking_for_attach if result is 0 return process with DllEntryPoint with 0</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>RE on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/re/</link>
+    <description>Recent content in RE on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Mar 2020 13:14:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/re/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>RE and Malware RE</title>
+      <link>https://www.dinudev.com/post/re_malware_re/</link>
+      <pubDate>Mon, 02 Mar 2020 13:14:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/re_malware_re/</guid>
+      <description>For reverse engineering:  http://www.amazon.com/Practical-Reverse-Engineering-Reversing-Obfuscation/dp/1118787315/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-1&amp;amp;keywords=reverse+engineering http://www.amazon.com/Reversing-Secrets-Engineering-Eldad-Eilam/dp/0764574817/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-2&amp;amp;keywords=reverse+engineering http://www.amazon.com/IDA-Pro-Book-Unofficial-Disassembler/dp/1593272898/ref=sr_1_7?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-7&amp;amp;keywords=reverse+engineering  For malware analysis and malware techniques:  http://www.amazon.com/Practical-Malware-Analysis-Hands--Dissecting/dp/1593272901/ref=sr_1_10?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-10&amp;amp;keywords=reverse+engineering http://www.amazon.com/Malware-Analysts-Cookbook-DVD-Techniques/dp/0470613033/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459367&amp;amp;sr=1-2&amp;amp;keywords=malware+analysis http://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098/ref=sr_1_5?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459367&amp;amp;sr=1-5&amp;amp;keywords=malware+analysis  For programming:  Complete Reference C and Complete Reference C++ NASM Manual Intel Software Developer Manual (http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html)  Methodology:  Get the Malware Perform static analysis on the malware (Grab file properties, hashes, sizes, do open source research on it, dependencies, imports, exports, etc) Perform Dynamic Analysis on the malware (Execute it in a sandboxed environment running system/network/registry monitoring tools and see what it does) If necessary, reverse it  Reversing requires:  OllyDbg and IDA Pro, running in different VMs.</description>
+    </item>
+    
+    <item>
+      <title>RE Labs</title>
+      <link>https://www.dinudev.com/post/re_labs/</link>
+      <pubDate>Fri, 31 Jan 2020 21:35:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/re_labs/</guid>
+      <description>Lab1 analysis:  if dword_10026058 check if fdwReason dll_process_attach || dll_thread_attach call a function, if result is 0, return DllEntryPoint with 0 call after_checking_for_attach if result is 0 return process with DllEntryPoint with 0  </description>
+    </item>
+    
+  </channel>
+</rss>
