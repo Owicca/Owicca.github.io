@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mathematics on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/mathematics/</link>
+    <description>Recent content in Mathematics on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Mar 2020 22:53:07 +0300</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/mathematics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Math</title>
+      <link>https://www.dinudev.com/post/math/</link>
+      <pubDate>Tue, 31 Mar 2020 22:53:07 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/post/math/</guid>
+      <description>General:  along with the basics(numbers and operations with numbers) go for:  ch8 #1 ch9 #1,#2(adition of pair numbers and the geometric interpretation)    Ch1:  operations with numbers relations among numbers properties of the relations among numbers:  addition multiplication inequalities positivity square roots n-th roots   #1 =&amp;gt; Integers:  countable numbers: 1, 2, 3, &amp;hellip;. , n natural numbers(positive integers): 0, 1, 2, 3, &amp;hellip;.</description>
+    </item>
+    
+  </channel>
+</rss>

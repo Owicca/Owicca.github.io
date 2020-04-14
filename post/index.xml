@@ -6,10 +6,46 @@
     <description>Recent content in Posts on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2020 21:49:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 07:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://www.dinudev.com/post/powershell/</link>
+      <pubDate>Fri, 10 Apr 2020 07:00:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/powershell/</guid>
+      <description>Snap-ins:  ms is moving away from the concept of snapins and more thowards modules structure:  name: PSSnapin files:  one or more dlls 0 or more xml configuration files     they have to be installed and registered to be used control:  Add-PSSnapin Remove-PSSnapin Get-PSSnapin   help for loaded snapins: Get-Command -PSSnapin &amp;lt;snapinname&amp;gt;  Modules:  more self-contained and easier to distribute they dont need registration, ps will look in certain paths when searching for a command ($env:PSModulePath) if a module is not in modulepath you can add it with Import-Module if multiple modules are loaded and have a command with the same name, the last loaded module&amp;rsquo;s command will be called user modules location: $Home\Documents\WindowsPowerShell\Modules  Profiles:  a script that is run on shell init system profiles location: a profile location:  current user, current host: $Home\Documents\WindowsPowerShell\Profile.</description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://www.dinudev.com/post/csharp/</link>
+      <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/csharp/</guid>
+      <description>General:  expression-bodied members: public string Func(param) =&amp;gt; &amp;quot;result&amp;quot; + param object and collection initializer: new Agent() {Name = &amp;quot;James&amp;quot;, Surname = &amp;quot;Bond&amp;quot;} string interpolation: var str = &amp;quot;string&amp;quot;; $&amp;quot;This is a {string}&amp;quot; using static: public class Cls{public static string staticString = &amp;#34;str&amp;#34;;}using static Cls;Console.WriteLine(staticString)  deconstruction: public static (string, int) Func(string){var rnd = new Random();return (string, rnd.Next());}var (someString, someInt) = Func(&amp;#34;test&amp;#34;);// with types(string someString, int someInts) = Func(&amp;#34;test&amp;#34;);// with discards(\_, someInt) = Func(&amp;#34;test&amp;#34;);  blazor are razor pages running in the browser, a mono runtime compiled to web assembly  Generics:  type safety at compile time without knowing the type beforehand  Representing nullable values: *</description>
+    </item>
+    
+    <item>
+      <title>COM</title>
+      <link>https://www.dinudev.com/post/com/</link>
+      <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/com/</guid>
+      <description>COM(Component Object Model):  the designers took the best of classical, academic OOP and the best from their experiences, took into account human nature and capitalism although the main focus is encapsulation, not inheritance, COM relies on interface inheritance and much less so on implementation inheritance  </description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>https://www.dinudev.com/post/math/</link>
+      <pubDate>Tue, 31 Mar 2020 22:53:07 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/post/math/</guid>
+      <description>General:  along with the basics(numbers and operations with numbers) go for:  ch8 #1 ch9 #1,#2(adition of pair numbers and the geometric interpretation)    Ch1:  operations with numbers relations among numbers properties of the relations among numbers:  addition multiplication inequalities positivity square roots n-th roots   #1 =&amp;gt; Integers:  countable numbers: 1, 2, 3, &amp;hellip;. , n natural numbers(positive integers): 0, 1, 2, 3, &amp;hellip;.</description>
+    </item>
     
     <item>
       <title>Classical Music</title>
@@ -17,7 +53,7 @@
       <pubDate>Sat, 28 Mar 2020 21:49:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/music_classical/</guid>
-      <description> https://www.reddit.com/r/classicalmusic/comments/ehaft/im_new_to_classical_music_where_should_i_start/ https://www.talkclassical.com/4633-most-powerful-epic-angry.html https://www.gramophone.co.uk/reviews Verdi Requiem vivaldi four seasons summer III presto beethoven egmont beethoven 5th mussorgsky night on bald mountain mozart nachtmusik janacek glagolitic mass Chopin&amp;rsquo;s Etudes and Preludes Rimsky-Korsakov: Scheherazade - op.35 gustav holst the planets  </description>
+      <description>   Composer Name Subname     Verdi Requiem    vivaldi four seasons summer III presto   beethoven egmont    beethoven 5th    mussorgsky night on bald mountain    mozart nachtmusik    janacek glagolitic mass    Chopin Etudes and Preludes    Rimsky-Korsakov Scheherazade op.35   gustav holst the planets     </description>
     </item>
     
     <item>
@@ -64,7 +100,7 @@ This document specifies an Internet standards track protocol for the Internet co
       <pubDate>Mon, 09 Mar 2020 15:36:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/random_urls/</guid>
-      <description>Urls:  https://www.viewbug.com/member/beamieyoung https://mirelapetcu.com/ tejal mewar https://lindahollinger.photography/ federica molinari http://www.kalua.pl/gallery/collodion-between-two-moons/ https://pattycarroll.com/ https://www.funtoo.org/Windows_10_Virtualization_with_KVM https://unix.stackexchange.com/questions/47082/how-to-improve-windows-perfomance-when-running-inside-kvm https://www.linuxtechi.com/create-revert-delete-kvm-virtual-machine-snapshot-virsh-command/ https://dennisnotes.com/note/20180614-ubuntu-18.04-qemu-setup/ http://www.azertech.net/content/windows7-kvm-qemu-qcow2-snapshots https://kerneltalks.com/disk-management/how-to-guide-lvm-snapshot/ http://heim.ifi.uio.no/~trygver/themes/mvc/mvc-index.html  </description>
+      <description>Urls:  https://www.viewbug.com/member/beamieyoung https://mirelapetcu.com/ tejal mewar https://lindahollinger.photography/ federica molinari http://www.kalua.pl/gallery/collodion-between-two-moons/ https://pattycarroll.com/ https://unix.stackexchange.com/questions/47082/how-to-improve-windows-perfomance-when-running-inside-kvm https://www.linuxtechi.com/create-revert-delete-kvm-virtual-machine-snapshot-virsh-command/ https://dennisnotes.com/note/20180614-ubuntu-18.04-qemu-setup/ http://www.azertech.net/content/windows7-kvm-qemu-qcow2-snapshots https://kerneltalks.com/disk-management/how-to-guide-lvm-snapshot/ http://heim.ifi.uio.no/~trygver/themes/mvc/mvc-index.html  </description>
     </item>
     
     <item>
@@ -73,7 +109,7 @@ This document specifies an Internet standards track protocol for the Internet co
       <pubDate>Sat, 07 Mar 2020 02:02:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/russian/</guid>
-      <description>Social media urls:  https://vk.com/ https://ok.ru/ https://mail.ru/ https://www.avito.ru/rossiya  News urls:  https://www.pravdareport.com/ https://meduza.io/ https://www.themoscowtimes.com/ https://tass.ru/ https://russia-insider.com/en  Learning urls:  http://masterrussian.com/ http://www.russianlessons.net/  Random urls:  https://forum.ixbt.com/ https://civitas.ru/forum.php https://www.sql.ru/forum http://www.ourprivate.net/forum/index.php https://forum.privet.com/ https://club443.ru/ https://rsdn.org/ https://russificateforum.com/ https://cooljugator.com/ru/  Grammar:  End of word consonants are pronounced like their voiceless counterparts:  б п в ф г к д т ж ш з с   Consonants are voiceless when followed by other voiceless consonants and the other way around Plurals are built with infinitive + &amp;lsquo;и&amp;rsquo;/&amp;lsquo;ь&amp;rsquo; &amp;lsquo;что&amp;rsquo; is used for alive objects, and &amp;lsquo;кто&amp;rsquo; for inanimate objects.</description>
+      <description>Social media urls:  https://vk.com/ https://ok.ru/ https://mail.ru/ https://www.avito.ru/rossiya  News urls:  https://www.pravdareport.com/ https://meduza.io/ https://www.themoscowtimes.com/ https://tass.ru/ https://russia-insider.com/en  Learning urls:  http://masterrussian.com/ http://www.russianlessons.net/  Random urls:  https://forum.ixbt.com/ https://civitas.ru/forum.php https://www.sql.ru/forum http://www.ourprivate.net/forum/index.php https://forum.privet.com/ https://club443.ru/ https://rsdn.org/ https://russificateforum.com/ https://cooljugator.com/ru/  General Grammar:  End of word consonants are pronounced like their voiceless counterparts:  б п в ф г к д т ж ш з с   Consonants are voiceless when followed by other voiceless consonants and the other way around Plurals are built with infinitive + &amp;lsquo;и&amp;rsquo;/&amp;lsquo;ь&amp;rsquo; &amp;lsquo;что&amp;rsquo; is used for alive objects, and &amp;lsquo;кто&amp;rsquo; for inanimate objects.</description>
     </item>
     
     <item>
@@ -91,7 +127,7 @@ This document specifies an Internet standards track protocol for the Internet co
       <pubDate>Mon, 02 Mar 2020 13:14:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/re_malware_re/</guid>
-      <description>For reverse engineering:  http://www.amazon.com/Practical-Reverse-Engineering-Reversing-Obfuscation/dp/1118787315/ref=sr_1_1?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-1&amp;amp;keywords=reverse+engineering http://www.amazon.com/Reversing-Secrets-Engineering-Eldad-Eilam/dp/0764574817/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-2&amp;amp;keywords=reverse+engineering http://www.amazon.com/IDA-Pro-Book-Unofficial-Disassembler/dp/1593272898/ref=sr_1_7?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-7&amp;amp;keywords=reverse+engineering  For malware analysis and malware techniques:  http://www.amazon.com/Practical-Malware-Analysis-Hands--Dissecting/dp/1593272901/ref=sr_1_10?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459302&amp;amp;sr=1-10&amp;amp;keywords=reverse+engineering http://www.amazon.com/Malware-Analysts-Cookbook-DVD-Techniques/dp/0470613033/ref=sr_1_2?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459367&amp;amp;sr=1-2&amp;amp;keywords=malware+analysis http://www.amazon.com/Art-Memory-Forensics-Detecting-Malware/dp/1118825098/ref=sr_1_5?s=books&amp;amp;ie=UTF8&amp;amp;qid=1450459367&amp;amp;sr=1-5&amp;amp;keywords=malware+analysis  For programming:  Complete Reference C and Complete Reference C++ NASM Manual Intel Software Developer Manual (http://www.intel.com/content/www/us/en/processors/architectures-software-developer-manuals.html)  Methodology:  Get the Malware Perform static analysis on the malware (Grab file properties, hashes, sizes, do open source research on it, dependencies, imports, exports, etc) Perform Dynamic Analysis on the malware (Execute it in a sandboxed environment running system/network/registry monitoring tools and see what it does) If necessary, reverse it  Reversing requires:  OllyDbg and IDA Pro, running in different VMs.</description>
+      <description>For reverse engineering:  Practical Reverse Engineering - Bruce Dang Reversing Secrets Engineering - Eldad Eilam The IDA Pro Book - Chris Eagle  For malware analysis and malware techniques:  Practical Malware Analysis - Michael Sikorski, Andrew Honig Malware Analyst&amp;rsquo;s Cookbook - Michael Ligh, Steven Adair, Blake Hartstein, Matthew Richard The Art of Memory Forensics - Michael Hale Ligh, Andrew Case, Jamie Levy, AAron Walters  For programming:  Complete Reference C and Complete Reference C++ NASM Manual Intel Software Developer Manual (http://www.</description>
     </item>
     
     <item>
@@ -100,7 +136,7 @@ This document specifies an Internet standards track protocol for the Internet co
       <pubDate>Mon, 02 Mar 2020 13:14:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/russian_dictionary/</guid>
-      <description>ru_word ru_pronunciacion en_translation ru_plural ru_plural_pronunciacion gender     она ana she      ои on him      они oni they      наше nașie our      оио ano it      него niego his              там tam there      далеко dalieco far away      вот vot here      здесъ zdiesi here      где gdie where is      етот etat this      ест iest eats      едят ediat plural of &amp;ldquo;to eat&amp;rdquo;      ем iem I eat      уже uja already      toже tojă too/also/either      как cac how      это eto to be      у u by/near/at      на na on/for/at      жить jiti to live      сейчас siechas now      пьёт piot to drink      сказать scazati to say      скажите scajitie tell me      можете mojietie can you/could you      ещё ieșio more/still      раз ras time      почему pociemu why      зная znaia to know      понемаю paniemaiu to understand      говорить gavariti to speak      курить curiti to smoke      ехать ehati to go(by transport)      давать davati to give      звать zvati to call      изучать izuchati to study              мужчина mujshina man      женщина jenshina woman      малъчик malicic a boy      брат brat brother      сестра siestra sister              утро utra morning      день dieni day/afternoon дени dieni m   вечер viecher evening      ночь nocha night   f           добрый утро dobrai utra good morning      добрый день dobrai dieni good afternoon      добрый вечер dobrai viecher good evening      спокойной ночи spacoinai nocha good night/quiet/still              извините iezvienitie excuse me      простите prastitie excuse me/i&amp;rsquo;m sorry      пожалуйста pajalusta your&amp;rsquo;re welcome/don&amp;rsquo;t mention it/please      как дела cac diela how are you doing?</description>
+      <description>ru_word ru_pronunciacion en_translation ru_plural ru_plural_pronunciacion gender     она ana she      ои on him      они oni they      наше nașie our      оио ano it      него niego his              там tam there      далеко dalieco far away      вот vot here      здесъ zdiesi here      где gdie where is      етот etat this      ест iest eats      едят ediat plural of &amp;ldquo;to eat&amp;rdquo;      ем iem I eat      уже uja already      toже tojă too/also/either      как cac how      это eto to be      у u by/near/at      на na on/for/at      жить jiti to live      сейчас siechas now      теперь tiepieri now/presently      пьёт piot to drink      сказать scazati to say      скажите scajitie tell me      можете mojietie can you/could you      ещё ieșio more/still      раз ras time      почему pociemu why      зная znaia to know      понемаю paniemaiu to understand      говорить gavariti to speak      курить curiti to smoke      ехать ehati to go(by transport)      давать davati to give      звать zvati to call      изучать izuchati to study              мужчина mujshina man      женщина jenshina woman      малъчик malicic a boy      брат brat brother      сестра siestra sister              утро utra morning      день dieni day/afternoon дени dieni m   вечер viecher evening      ночь nocha night   f           добрый утро dobrai utra good morning      добрый день dobrai dieni good afternoon      добрый вечер dobrai viecher good evening      спокойной ночи spacoinai nocha good night/quiet/still              извините iezvienitie excuse me      простите prastitie excuse me/i&amp;rsquo;m sorry      пожалуйста pajalusta your&amp;rsquo;re welcome/don&amp;rsquo;t mention it/please      как дела cac diela how are you doing?</description>
     </item>
     
     <item>

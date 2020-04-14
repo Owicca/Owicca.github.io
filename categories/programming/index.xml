@@ -6,10 +6,28 @@
     <description>Recent content in Programming on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Mar 2020 13:14:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 07:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://www.dinudev.com/post/powershell/</link>
+      <pubDate>Fri, 10 Apr 2020 07:00:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/powershell/</guid>
+      <description>Snap-ins:  ms is moving away from the concept of snapins and more thowards modules structure:  name: PSSnapin files:  one or more dlls 0 or more xml configuration files     they have to be installed and registered to be used control:  Add-PSSnapin Remove-PSSnapin Get-PSSnapin   help for loaded snapins: Get-Command -PSSnapin &amp;lt;snapinname&amp;gt;  Modules:  more self-contained and easier to distribute they dont need registration, ps will look in certain paths when searching for a command ($env:PSModulePath) if a module is not in modulepath you can add it with Import-Module if multiple modules are loaded and have a command with the same name, the last loaded module&amp;rsquo;s command will be called user modules location: $Home\Documents\WindowsPowerShell\Modules  Profiles:  a script that is run on shell init system profiles location: a profile location:  current user, current host: $Home\Documents\WindowsPowerShell\Profile.</description>
+    </item>
+    
+    <item>
+      <title>C#</title>
+      <link>https://www.dinudev.com/post/csharp/</link>
+      <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/csharp/</guid>
+      <description>General:  expression-bodied members: public string Func(param) =&amp;gt; &amp;quot;result&amp;quot; + param object and collection initializer: new Agent() {Name = &amp;quot;James&amp;quot;, Surname = &amp;quot;Bond&amp;quot;} string interpolation: var str = &amp;quot;string&amp;quot;; $&amp;quot;This is a {string}&amp;quot; using static: public class Cls{public static string staticString = &amp;#34;str&amp;#34;;}using static Cls;Console.WriteLine(staticString)  deconstruction: public static (string, int) Func(string){var rnd = new Random();return (string, rnd.Next());}var (someString, someInt) = Func(&amp;#34;test&amp;#34;);// with types(string someString, int someInts) = Func(&amp;#34;test&amp;#34;);// with discards(\_, someInt) = Func(&amp;#34;test&amp;#34;);  blazor are razor pages running in the browser, a mono runtime compiled to web assembly  Generics:  type safety at compile time without knowing the type beforehand  Representing nullable values: *</description>
+    </item>
     
     <item>
       <title>Javascript</title>

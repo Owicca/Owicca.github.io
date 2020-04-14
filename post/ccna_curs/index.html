@@ -55,13 +55,6 @@
       <ul>
         <li><a href="#1703">17/03:</a></li>
         <li><a href="#resetare-switch-din-cli">Resetare switch din cli:</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
         <li><a href="#cam-table-on-the-switch">Cam table on the switch:</a></li>
         <li><a href="#create-vlan">Create vlan:</a></li>
         <li><a href="#set-interface-on-some-vlan">Set interface on some vlan:</a></li>
@@ -158,21 +151,15 @@
 <h3 id="resetare-switch-din-cli">Resetare switch din cli:</h3>
 <ul>
 <li>
-<h1 id="erase-startup-config">erase startup-config</h1>
-</li>
-<li>
-<h1 id="erase-vlandat">erase Vlan.dat</h1>
-</li>
-<li>
-<h1 id="reload">reload</h1>
-</li>
-<li>
 <p>foloseste pe vlan capacitate insumata a computerelor disponibile:</p>
 <ul>
 <li>numarul de hosturi</li>
 <li>bandwidthul fiecarui host</li>
 <li>fiecare host este full duplex? atunci x2</li>
 </ul>
+<p>erase startup-config
+erase Vlan.dat
+reload</p>
 </li>
 </ul>
 <h3 id="cam-table-on-the-switch">Cam table on the switch:</h3>
@@ -182,72 +169,46 @@
 <li>vlan id</li>
 </ul>
 <h3 id="create-vlan">Create vlan:</h3>
-<ul>
-<li>(config)# vlan 10</li>
-<li>(config)# name <!-- raw HTML omitted --></li>
-</ul>
+<pre><code>(config)# vlan 10
+(config)# name &lt;string&gt;
+</code></pre>
 <h3 id="set-interface-on-some-vlan">Set interface on some vlan:</h3>
-<ul>
-<li>(config)# interface f0/10</li>
-<li>(interf)# switchport mode access</li>
-<li>(interf)# switchport access vlan 10</li>
-</ul>
+<pre><code>(config)# interface f0/10
+(interf)# switchport mode access
+(interf)# switchport access vlan 10
+</code></pre>
 <h3 id="delete-vlaninterfaces-in-deleted-vlans-become-down-and-have-status-err_disable">Delete vlan(interfaces in deleted vlans become down and have status ERR_DISABLE):</h3>
-<ul>
-<li>(config)# no vlan</li>
-</ul>
+<pre><code>(config)# no vlan
+</code></pre>
 <h3 id="add-interface-to-trunk">Add interface to trunk:</h3>
-<ul>
-<li>
-<p>(config)# interface f0/15</p>
-</li>
-<li>
-<p>(config)# switchport trunk allowed vlan 10,20
-OR</p>
-</li>
-<li>
-<p>(config)# switchport trunk allowed vlan 10</p>
-</li>
-<li>
-<p>(config)# switchport trunk allowed vlan 20</p>
-</li>
-<li>
-<p>(config)# switchport trunk allowed vlan remove 10</p>
-</li>
-</ul>
+<pre><code>(config)# interface f0/15
+(config)# switchport trunk allowed vlan 10,20
+</code></pre>
+<p>OR
+(config)# switchport trunk allowed vlan 10
+(config)# switchport trunk allowed vlan 20</p>
+<pre><code>(config)# switchport trunk allowed vlan remove 10
+</code></pre>
 <h3 id="dtp">DTP:</h3>
 <ul>
-<li>
-<p>dynamic desirable:</p>
+<li>dynamic desirable:
 <ul>
 <li>can accept and propose</li>
 </ul>
 </li>
-<li>
-<p>dynamic auto:</p>
+<li>dynamic auto:
 <ul>
 <li>only accepts</li>
 </ul>
 </li>
-<li></li>
-<li>
-<p>you can propose</p>
-</li>
-<li>
-<p>you can accept a proposition</p>
-</li>
-<li>
-<p>you can accept, the other end can accept and no one propositions</p>
-</li>
-<li>
-<p>(config)# interface range f0/15-25</p>
-</li>
+<li>you can propose</li>
+<li>you can accept a proposition</li>
+<li>you can accept, the other end can accept and no one propositions</li>
 </ul>
-<p>pentru a dezactiva dtp trebuie sa setezi trunk intai</p>
-<ul>
-<li>(config-if)# switchport mode trunk</li>
-<li>(config-if)# switchport nonegotiate</li>
-</ul>
+<p><code>(config)# interface range f0/15-25</code></p>
+<p>Pentru a dezactiva dtp trebuie sa setezi trunk intai:</p>
+<pre><code>(config-if)# switchport mode trunk
+(config-if)# switchport nonegotiate</code></pre>
 
     </article>
 

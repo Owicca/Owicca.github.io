@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 28 Mar 2020 21:49:00 +0200</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2020 07:00:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Programming</title>
+      <link>https://www.dinudev.com/categories/programming/</link>
+      <pubDate>Fri, 10 Apr 2020 07:00:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS</title>
+      <link>https://www.dinudev.com/categories/os/</link>
+      <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mathematics</title>
+      <link>https://www.dinudev.com/categories/mathematics/</link>
+      <pubDate>Tue, 31 Mar 2020 22:53:07 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/mathematics/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Music</title>
@@ -48,29 +75,11 @@
     </item>
     
     <item>
-      <title>OS</title>
-      <link>https://www.dinudev.com/categories/os/</link>
-      <pubDate>Mon, 16 Mar 2020 17:19:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/os/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Languages</title>
       <link>https://www.dinudev.com/categories/languages/</link>
       <pubDate>Sat, 07 Mar 2020 02:02:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/languages/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Programming</title>
-      <link>https://www.dinudev.com/categories/programming/</link>
-      <pubDate>Mon, 02 Mar 2020 13:14:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/programming/</guid>
       <description></description>
     </item>
     
