@@ -3,27 +3,57 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.dinudev.com/post/asm/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.dinudev.com/categories/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/post/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/programming/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/net/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/windows/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/tdd/</loc>
+    <lastmod>2020-04-17T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/malware-analysis/</loc>
+    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/sandbox/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/post/powershell/</loc>
-    <lastmod>2020-04-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/programming/</loc>
     <lastmod>2020-04-10T00:00:00+00:00</lastmod>
   </url>
   
@@ -34,11 +64,6 @@
   
   <url>
     <loc>https://www.dinudev.com/post/com/</loc>
-    <lastmod>2020-04-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/os/</loc>
     <lastmod>2020-04-03T00:00:00+00:00</lastmod>
   </url>
   
@@ -90,6 +115,11 @@
   <url>
     <loc>https://www.dinudev.com/post/windows_c_cpp/</loc>
     <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/os/</loc>
+    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -180,11 +210,6 @@
   <url>
     <loc>https://www.dinudev.com/post/stoicism/</loc>
     <lastmod>2020-02-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/malware-analysis/</loc>
-    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>

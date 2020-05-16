@@ -105,10 +105,30 @@ the last loaded module&rsquo;s command will be called</li>
 <li>system profiles location: <code>a</code></li>
 <li>profile location:
 <ol>
-<li>current user, current host: <code>$Home\Documents\WindowsPowerShell\Profile.ps1</code></li>
-<li>current user, all hosts: <code>$Home\Documents\Profile.ps1</code></li>
-<li>all users, current host: <code>$PsHome\Microsoft.PowerShell_profile.ps1</code></li>
-<li>all users, all hosts: <code>$PsHome\Profile.ps1</code></li>
+<li>current user, current host:
+<ul>
+<li><code>$PROFILE.CurrentUserCurrentHost</code></li>
+<li><code>$Home\Documents\WindowsPowerShell\Profile.ps1</code></li>
+</ul>
+</li>
+<li>current user, all hosts:
+<ul>
+<li><code>$PROFILE.CurrentUserAllHosts</code></li>
+<li><code>$Home\Documents\Profile.ps1</code></li>
+</ul>
+</li>
+<li>all users, current host:
+<ul>
+<li><code>$PROFILE.AllUsersCurrentHost</code></li>
+<li><code>$PsHome\Microsoft.PowerShell_profile.ps1</code></li>
+</ul>
+</li>
+<li>all users, all hosts:
+<ul>
+<li><code>$PROFILE.AllUsersAllHosts</code></li>
+<li><code>$PsHome\Profile.ps1</code></li>
+</ul>
+</li>
 </ol>
 </li>
 </ul>

@@ -57,6 +57,10 @@
         <li><a href="#generics">Generics:</a></li>
         <li><a href="#representing-nullable-values">Representing nullable values:</a></li>
         <li><a href="#iterators">Iterators:</a></li>
+      </ul>
+    </li>
+    <li><a href="#c-3">C# 3:</a>
+      <ul>
         <li><a href="#delegates">Delegates:</a></li>
         <li><a href="#asyncawait">async/await:</a></li>
         <li><a href="#pattern-matching">Pattern matching:</a></li>
@@ -70,7 +74,6 @@
       <h3 id="general">General:</h3>
 <ul>
 <li>expression-bodied members: <code>public string Func(param) =&gt; &quot;result&quot; + param</code></li>
-<li>object and collection initializer: <code>new Agent() {Name = &quot;James&quot;, Surname = &quot;Bond&quot;}</code></li>
 <li>string interpolation: <code>var str = &quot;string&quot;; $&quot;This is a {string}&quot;</code></li>
 <li><code>using static</code>:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Cls</span>
@@ -94,6 +97,14 @@ Console.WriteLine(staticString)
 </span><span style="color:#75715e"></span>(<span style="color:#960050;background-color:#1e0010">\</span>_, someInt) = Func(<span style="color:#e6db74">&#34;test&#34;</span>);
 </code></pre></div></li>
 <li>blazor are razor pages running in the browser, a mono runtime compiled to web assembly</li>
+<li><code>Func&lt;string, int, decimal&gt;</code>: a delegate type with <code>string, int</code> parameters
+and <code>decimal</code> return type</li>
+<li>delegate that does not return a value:
+<ul>
+<li><code>Action</code></li>
+<li><code>Action&lt;T&gt;</code>(<code>T</code> is the param to the delegate)</li>
+</ul>
+</li>
 </ul>
 <h3 id="generics">Generics:</h3>
 <ul>
@@ -102,7 +113,96 @@ Console.WriteLine(staticString)
 <h3 id="representing-nullable-values">Representing nullable values:</h3>
 <p>*</p>
 <h3 id="iterators">Iterators:</h3>
-<p>*</p>
+<ul>
+<li>lazy computation at run-time</li>
+</ul>
+<h2 id="c-3">C# 3:</h2>
+<ul>
+<li>
+<p>object and collection initializer:</p>
+<ul>
+<li><code>new Agent() {Name = &quot;James&quot;, Surname = &quot;Bond&quot;}</code></li>
+<li><code>new Agency() { Agents = { new Agent() {Name = &quot;James&quot;, Surname = &quot;Bond&quot;}, new Agent() {Name = &quot;Bond&quot;, Surname = &quot;James&quot;} } }</code></li>
+</ul>
+</li>
+<li>
+<p>Expresion trees:</p>
+<ul>
+<li>code available for inspection at execution-time</li>
+<li>data structure that represents executable code</li>
+<li>it is much easier to translate a data structure to SQL instead of IL to SQL</li>
+<li>only expression-bodied lambda expressions can be converted to expression trees,
+this is less of a problem with the addition of object and collection initializers
+(which are initialized as single expressions)</li>
+<li><code>Expression&lt;Func&lt;int, int, int&gt;&gt; adder = (x, y) =&gt; x + y; Console.WriteLine(adder);</code>
+is equivalent of 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">	ParameterExpression xParameter = Expression.Parameter(<span style="color:#66d9ef">typeof</span>(<span style="color:#66d9ef">int</span>), <span style="color:#e6db74">&#34;x&#34;</span>);
+	ParameterExpression yParameter = Expression.Parameter(<span style="color:#66d9ef">typeof</span>(<span style="color:#66d9ef">int</span>), <span style="color:#e6db74">&#34;y&#34;</span>);
+	Expression body = Expression.Add(xParameter, yParameter);
+	ParameterExpression[] parameters = <span style="color:#66d9ef">new</span>[] { xParameter, yParameter };
+	Expression&lt;Func&lt;<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>&gt;&gt; adder = Expression.Lambda&lt;Func&lt;<span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>, <span style="color:#66d9ef">int</span>&gt;&gt;(body, parameters);
+	Console.WriteLine(adder);
+	
+</code></pre></div></li>
+<li>used to execute queries against remote data sources</li>
+</ul>
+</li>
+<li>
+<p>Extension Methods:</p>
+<ul>
+<li>static methods that can be called as if they&rsquo;re instance methods based on their first parameter</li>
+<li><code>ExampleClass.Method(x, y);</code> is equivalent of <code>x.Method(y)</code></li>
+<li>the compiler will prefer a valid method over the extension method
+*
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">	<span style="color:#66d9ef">string</span>[] words = { <span style="color:#e6db74">&#34;keys&#34;</span>, <span style="color:#e6db74">&#34;coat&#34;</span>, <span style="color:#e6db74">&#34;laptop&#34;</span>, <span style="color:#e6db74">&#34;bottle&#34;</span> };
+	IEnumerable&lt;<span style="color:#66d9ef">string</span>&gt; query = words
+		.Where(word =&gt; word.Length &gt; <span style="color:#ae81ff">4</span>)
+		.OrderBy(word =&gt; word)
+		.Select(word =&gt; word.ToUpper());
+	
+</code></pre></div>
+but without extension methods we have
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">	<span style="color:#66d9ef">string</span>[] words = { <span style="color:#e6db74">&#34;keys&#34;</span>, <span style="color:#e6db74">&#34;coat&#34;</span>, <span style="color:#e6db74">&#34;laptop&#34;</span>, <span style="color:#e6db74">&#34;bottle&#34;</span> };
+	IEnumerable&lt;<span style="color:#66d9ef">string</span>&gt; query = Enumerable.Select(
+		Enumerable.OrderBy(
+			Enumerable.Where(words, word =&gt; word.Length &gt; <span style="color:#ae81ff">4</span>),
+			word =&gt; word),
+		word =&gt; word.ToUpper());
+	
+</code></pre></div></li>
+</ul>
+</li>
+<li>
+<p>Query Expressions(LINQ native):</p>
+<ul>
+<li>query expressions are first translated to c# and THEN processed</li>
+<li>not every LINQ method has a counterpart in query expressions</li>
+<li></li>
+</ul>
+<p><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">	<span style="color:#66d9ef">string</span>[] words = { <span style="color:#e6db74">&#34;keys&#34;</span>, <span style="color:#e6db74">&#34;coat&#34;</span>, <span style="color:#e6db74">&#34;laptop&#34;</span>, <span style="color:#e6db74">&#34;bottle&#34;</span> };
+	IEnumerable&lt;<span style="color:#66d9ef">string</span>&gt; query = words
+		.Where(word =&gt; word.Length &gt; <span style="color:#ae81ff">4</span>)
+		.OrderBy(word =&gt; word)
+		.Select(word =&gt; word.ToUpper());
+	
+</code></pre></div>
+is translated to a query expression as
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">	IEnumerable&lt;<span style="color:#66d9ef">string</span>&gt; query = <span style="color:#66d9ef">from</span> word <span style="color:#66d9ef">in</span> words
+		<span style="color:#66d9ef">where</span> word.Length &gt; <span style="color:#ae81ff">4</span>
+		<span style="color:#66d9ef">orderby</span> word
+		<span style="color:#66d9ef">select</span> word.ToUpper();
+	
+</code></pre></div></p>
+<ul>
+<li>range variables:
+<ul>
+<li>per item input within each clause of the query</li>
+<li><code>for word in words</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="delegates">Delegates:</h3>
 <ul>
 <li>are associations with methods of same signature</li>
