@@ -64,6 +64,7 @@
         <li><a href="#delegates">Delegates:</a></li>
         <li><a href="#asyncawait">async/await:</a></li>
         <li><a href="#pattern-matching">Pattern matching:</a></li>
+        <li><a href="#entrypoint">Entrypoint:</a></li>
       </ul>
     </li>
   </ul>
@@ -118,15 +119,13 @@ and <code>decimal</code> return type</li>
 </ul>
 <h2 id="c-3">C# 3:</h2>
 <ul>
-<li>
-<p>object and collection initializer:</p>
+<li>object and collection initializer:
 <ul>
 <li><code>new Agent() {Name = &quot;James&quot;, Surname = &quot;Bond&quot;}</code></li>
 <li><code>new Agency() { Agents = { new Agent() {Name = &quot;James&quot;, Surname = &quot;Bond&quot;}, new Agent() {Name = &quot;Bond&quot;, Surname = &quot;James&quot;} } }</code></li>
 </ul>
 </li>
-<li>
-<p>Expresion trees:</p>
+<li>Expresion trees:
 <ul>
 <li>code available for inspection at execution-time</li>
 <li>data structure that represents executable code</li>
@@ -147,8 +146,7 @@ is equivalent of
 <li>used to execute queries against remote data sources</li>
 </ul>
 </li>
-<li>
-<p>Extension Methods:</p>
+<li>Extension Methods:
 <ul>
 <li>static methods that can be called as if they&rsquo;re instance methods based on their first parameter</li>
 <li><code>ExampleClass.Method(x, y);</code> is equivalent of <code>x.Method(y)</code></li>
@@ -172,8 +170,7 @@ but without extension methods we have
 </code></pre></div></li>
 </ul>
 </li>
-<li>
-<p>Query Expressions(LINQ native):</p>
+<li>Query Expressions(LINQ native):
 <ul>
 <li>query expressions are first translated to c# and THEN processed</li>
 <li>not every LINQ method has a counterpart in query expressions</li>
@@ -236,8 +233,36 @@ anonHandler(<span style="color:#e6db74">&#34;CAPS LOCK&#34;</span>);
 </ul>
 <h3 id="asyncawait">async/await:</h3>
 <ul>
-<li>async produce a asynchronous result(usually a Task or Task<!-- raw HTML omitted -->) from a function</li>
-<li>await consumes async operations</li>
+<li>lifecycle:
+<ul>
+<li>an async function HAS to return a void, Task or Task<!-- raw HTML omitted -->(the token):
+<ul>
+<li>inside the function, a return can return a void or a TResult and a wrapper will be returned:
+<ul>
+<li>void for void</li>
+<li>Task for void</li>
+<li>Task<!-- raw HTML omitted --> for TResult</li>
+</ul>
+</li>
+<li>wrappers are returned to ease the chain async processing of multiple async function calls</li>
+</ul>
+</li>
+<li>an await can only be used on a token and blocks the processing until the result is returned(void or a TResult type)</li>
+</ul>
+</li>
+<li>returned vs completed:
+<ul>
+<li>an async method returns when an await is not yet completed</li>
+<li>the task returned from an async method completes after all the awaits have been completed and the final <code>return</code></li>
+</ul>
+</li>
+<li>contexts where using await is forbidden:
+<ul>
+<li>outside of an <code>async</code> function</li>
+<li>within an unsafe context</li>
+<li>within a lock</li>
+</ul>
+</li>
 </ul>
 <h3 id="pattern-matching">Pattern matching:</h3>
 <ul>
@@ -276,6 +301,17 @@ anonHandler(<span style="color:#e6db74">&#34;CAPS LOCK&#34;</span>);
 	}
 }
 </code></pre></div></li>
+</ul>
+<h3 id="entrypoint">Entrypoint:</h3>
+<ul>
+<li>must be a method</li>
+<li>must be called <code>Main</code></li>
+<li>must be static</li>
+<li>must return void or int</li>
+<li>either parameterless or have a single <code>string[]</code></li>
+<li>nongeneric and declared in a nongeneric type</li>
+<li>can&rsquo;t be async</li>
+<li>can&rsquo;t be a partial method without implementation</li>
 </ul>
 
     </article>

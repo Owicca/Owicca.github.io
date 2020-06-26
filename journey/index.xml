@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Journeys on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/journey/</link>
+    <description>Recent content in Journeys on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 07 Jun 2020 14:42:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/journey/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Info</title>
+      <link>https://www.dinudev.com/journey/1_info/</link>
+      <pubDate>Sun, 07 Jun 2020 14:42:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/journey/1_info/</guid>
+      <description>Introduction: The best way to learn something fast is to start doing it. This is the beginning of my journey in malware research.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -6,10 +6,37 @@
     <description>Recent content in Categories on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2020 22:18:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 10:13:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Roadmaps</title>
+      <link>https://www.dinudev.com/categories/roadmaps/</link>
+      <pubDate>Thu, 25 Jun 2020 10:13:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/roadmaps/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Computer Science</title>
+      <link>https://www.dinudev.com/categories/computer-science/</link>
+      <pubDate>Mon, 22 Jun 2020 22:18:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/computer-science/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scripting</title>
+      <link>https://www.dinudev.com/categories/scripting/</link>
+      <pubDate>Sun, 14 Jun 2020 21:45:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/scripting/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Programming</title>
@@ -75,20 +102,20 @@
     </item>
     
     <item>
-      <title>Random</title>
-      <link>https://www.dinudev.com/categories/random/</link>
-      <pubDate>Mon, 16 Mar 2020 22:34:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/random/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>OS</title>
       <link>https://www.dinudev.com/categories/os/</link>
       <pubDate>Mon, 16 Mar 2020 17:19:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Random</title>
+      <link>https://www.dinudev.com/categories/random/</link>
+      <pubDate>Mon, 09 Mar 2020 15:36:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/random/</guid>
       <description></description>
     </item>
     
@@ -111,15 +138,6 @@
     </item>
     
     <item>
-      <title>Computer Science</title>
-      <link>https://www.dinudev.com/categories/computer-science/</link>
-      <pubDate>Sun, 01 Mar 2020 17:22:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/computer-science/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Programming Tools</title>
       <link>https://www.dinudev.com/categories/programming-tools/</link>
       <pubDate>Wed, 26 Feb 2020 12:37:00 +0200</pubDate>
@@ -134,24 +152,6 @@
       <pubDate>Mon, 24 Feb 2020 11:29:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/philosophy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Malware RE</title>
-      <link>https://www.dinudev.com/categories/malware-re/</link>
-      <pubDate>Sun, 29 Dec 2019 21:56:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/malware-re/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Writeup</title>
-      <link>https://www.dinudev.com/categories/writeup/</link>
-      <pubDate>Sun, 29 Dec 2019 21:56:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/writeup/</guid>
       <description></description>
     </item>
     

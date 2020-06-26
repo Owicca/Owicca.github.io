@@ -39,15 +39,6 @@
     </item>
     
     <item>
-      <title>PowerShell</title>
-      <link>https://www.dinudev.com/post/powershell/</link>
-      <pubDate>Fri, 10 Apr 2020 07:00:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/powershell/</guid>
-      <description>Snap-ins:  ms is moving away from the concept of snapins and more thowards modules structure:  name: PSSnapin files:  one or more dlls 0 or more xml configuration files     they have to be installed and registered to be used control:  Add-PSSnapin Remove-PSSnapin Get-PSSnapin   help for loaded snapins: Get-Command -PSSnapin &amp;lt;snapinname&amp;gt;  Modules:  more self-contained and easier to distribute they dont need registration, ps will look in certain paths when searching for a command ($env:PSModulePath) if a module is not in modulepath you can add it with Import-Module if multiple modules are loaded and have a command with the same name, the last loaded module&amp;rsquo;s command will be called user modules location: $Home\Documents\WindowsPowerShell\Modules  Profiles:  a script that is run on shell init system profiles location: a profile location:  current user, current host:  $PROFILE.</description>
-    </item>
-    
-    <item>
       <title>C#</title>
       <link>https://www.dinudev.com/post/csharp/</link>
       <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
@@ -72,15 +63,6 @@
       
       <guid>https://www.dinudev.com/post/crs_file_format/</guid>
       <description>Goals:  learn about file formats obfuscate files  File format:  encrypt the raw data from the file and write to an image(RAW) compute header items dynamic addresses based on RAW size:  header items addresses should not be linked in any way (if you know one address you should not be able to deduce/compute the others)    </description>
-    </item>
-    
-    <item>
-      <title>CPP</title>
-      <link>https://www.dinudev.com/post/cpp/</link>
-      <pubDate>Sun, 01 Mar 2020 17:27:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/cpp/</guid>
-      <description>General:  the public data/function members are your interface put the interface first methods with implementation declared in the class are generated inline at every use, giving a speed boost(no jump to common code), inlined methods do not benefit from the boost if they are larger than 4-5 lines  I/O:  a stream can be in four states:  good(): read/write was successful eof(): internal file pointer is at the end of the line fail(): format error level of error(you should clear() to go back to a good()) bad(): disk error level of error    </description>
     </item>
     
     <item>

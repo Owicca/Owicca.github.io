@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.69.0-DEV" />
+  <title>SICP — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/sicp/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  
+  <h1>SICP</h1>
+
+  
+  <time datetime="2020-06-22 22:18:00 &#43;0000 UTC">2020/06/22</time>
+  
+
+  
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+</header>
+
+	
+	
+	<h3>Table of Contents</h3>
+	<aside>
+		<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#building-abstractions-with-procedures">Building Abstractions with Procedures:</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+	</aside>
+	
+    <article>
+      <h3 id="building-abstractions-with-procedures">Building Abstractions with Procedures:</h3>
+<ul>
+<li>complex software is built modularly so that the parts can be constructed, replaced and debugged separatedly</li>
+<li>three mechanisms to create complex expressions:
+<ul>
+<li>primitive expressions</li>
+<li>means of combinations: used to build compound elements from simpler ones</li>
+<li>means of abstraction: how compound elements can be named and manipulated as units</li>
+</ul>
+</li>
+<li>primitives:
+<ul>
+<li>data: stuff</li>
+<li>procedures: descriptions of the rules for manipulating data</li>
+</ul>
+</li>
+<li>tree accumulation:
+<ul>
+<li>evaluate the values of every child of the node(recursively)</li>
+<li>and THEN evaluate the value of the node</li>
+</ul>
+</li>
+<li>lexical scoping: variables in a procedure are bound by the enclosing block scope(they are looked up in the environment)</li>
+<li>block scoping: variables and definitions in a procedure are bound(private) to the scope of said procedure</li>
+<li>recursivity alone, enables every mathematical computation if tail-call optimization is present</li>
+<li>process types:
+<ul>
+<li>iterative:
+<ul>
+<li>the environment needs to only keep track of the counter and check if the limit was reached</li>
+<li>the program variables provide a complete description of the state of the process at any point</li>
+<li>a fixed number of state variables, 
+a fixed rule that states how the variables should be updated as the process moves from state to state and 
+optional end test that specifies the conditions under which the process should end</li>
+</ul>
+</li>
+<li>recursive:
+<ul>
+<li>procedure vs process:
+<ul>
+<li>a recursive procedure refers to itself</li>
+<li>a recursive process expresses the way a process evolves</li>
+</ul>
+</li>
+<li>the environment needs to keep track of the deffered operations</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>tail-recursivenes refers to an iterative process(in constant space) described as an recursive procedure</li>
+</ul>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

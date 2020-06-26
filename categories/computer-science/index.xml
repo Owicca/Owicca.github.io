@@ -6,10 +6,19 @@
     <description>Recent content in Computer Science on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 01 Mar 2020 17:22:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 22 Jun 2020 22:18:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/computer-science/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>SICP</title>
+      <link>https://www.dinudev.com/post/sicp/</link>
+      <pubDate>Mon, 22 Jun 2020 22:18:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/post/sicp/</guid>
+      <description>Building Abstractions with Procedures:  complex software is built modularly so that the parts can be constructed, replaced and debugged separatedly three mechanisms to create complex expressions:  primitive expressions means of combinations: used to build compound elements from simpler ones means of abstraction: how compound elements can be named and manipulated as units   primitives:  data: stuff procedures: descriptions of the rules for manipulating data   tree accumulation:  evaluate the values of every child of the node(recursively) and THEN evaluate the value of the node   lexical scoping: variables in a procedure are bound by the enclosing block scope(they are looked up in the environment) block scoping: variables and definitions in a procedure are bound(private) to the scope of said procedure recursivity alone, enables every mathematical computation if tail-call optimization is present process types:  iterative:  the environment needs to only keep track of the counter and check if the limit was reached the program variables provide a complete description of the state of the process at any point a fixed number of state variables, a fixed rule that states how the variables should be updated as the process moves from state to state and optional end test that specifies the conditions under which the process should end   recursive:  procedure vs process:  a recursive procedure refers to itself a recursive process expresses the way a process evolves   the environment needs to keep track of the deffered operations     tail-recursivenes refers to an iterative process(in constant space) described as an recursive procedure  </description>
+    </item>
     
     <item>
       <title>Computer Science</title>

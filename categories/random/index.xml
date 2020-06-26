@@ -6,19 +6,10 @@
     <description>Recent content in Random on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 16 Mar 2020 22:34:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2020 15:36:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/random/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Windows c/cpp Notes</title>
-      <link>https://www.dinudev.com/post/windows_c_cpp/</link>
-      <pubDate>Mon, 16 Mar 2020 22:34:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/windows_c_cpp/</guid>
-      <description>Function Error Handling:  VOID: this function cannot possibly fail BOOL: return 0; test return to see if it&amp;rsquo;s different from FALSE  </description>
-    </item>
     
     <item>
       <title>Random urls</title>

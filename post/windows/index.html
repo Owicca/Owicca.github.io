@@ -65,6 +65,14 @@
         <li><a href="#terminal-services">Terminal Services:</a></li>
         <li><a href="#registry">Registry:</a></li>
         <li><a href="#security">Security:</a></li>
+        <li><a href="#boot">BOOT:</a></li>
+        <li><a href="#kernel-memory-space">Kernel memory space:</a></li>
+        <li><a href="#user-mode-memory-allocations">User-mode Memory Allocations:</a></li>
+        <li><a href="#memory-management-apis">Memory Management APIs:</a></li>
+        <li><a href="#kernel-objects-and-handles">Kernel objects and handles:</a></li>
+        <li><a href="#processes-and-threads">Processes and Threads:</a></li>
+        <li><a href="#win32-api">Win32 API:</a></li>
+        <li><a href="#input-and-output">Input and Output:</a></li>
       </ul>
     </li>
   </ul>
@@ -317,6 +325,220 @@ and is isolated from the os using hardware-assisted virtualization</li>
 <li><strong>local group policy editor</strong></li>
 </ul>
 </li>
+</ul>
+<h3 id="boot">BOOT:</h3>
+<ul>
+<li>Physical Address Extension(PAE):
+<ul>
+<li>x86 can only use a maximum of 4GB of RAM</li>
+<li>with PAE enabled it can access up to 64GB</li>
+<li>x86_64 does this natively so pae is not needed there</li>
+</ul>
+</li>
+<li>Data Execution Prevention(DEP):
+<ul>
+<li>mark one or more pages of memory as non-executable(data pages)</li>
+<li>protects agains buffer overruns</li>
+<li>prevents code from begin run from default heap, stacks, and memory pools</li>
+<li>if there is an attempt to execute code from an DEP marked page,
+a memory access violation exception occurs, and if it is not handled,
+the calling process is terminated</li>
+</ul>
+</li>
+</ul>
+<h3 id="kernel-memory-space">Kernel memory space:</h3>
+<ul>
+<li>Paged and Nonpaged Pools:
+<ul>
+<li>kernel-mode heaps used by all the kernel components</li>
+<li>paged is the default allocation storage</li>
+<li>nonpaged is used for areas that are forbidden to be flushed to the disk</li>
+</ul>
+</li>
+<li>System cache:
+<ul>
+<li>where the cache manager maps all the currently cached files</li>
+<li>when a file is opened, a cached copy is made in the system cacche and
+when the file is accessed, the data is first accessed from the system cache copy</li>
+</ul>
+</li>
+<li>Terminal Services Session Space:
+<ul>
+<li>component that allows for multiple, remote GUI sessions on a single system</li>
+</ul>
+</li>
+<li>Page Tables:
+<ul>
+<li>virtual-memory mapping of currently active page tables</li>
+</ul>
+</li>
+<li>Hyper Space:
+<ul>
+<li>mapping the current process&rsquo;s working set</li>
+</ul>
+</li>
+<li>System Working Set:
+<ul>
+<li>global data structure that manages systems physical memory use(pageable memory only)</li>
+<li>kernel memory space contains pageable memory(system cache, paged pool), this manages it</li>
+</ul>
+</li>
+<li>System Page-Table Entries(PTE):
+<ul>
+<li>used for large kernel allocations of any kind</li>
+<li><code>MmAllocateMappingAddress</code></li>
+</ul>
+</li>
+<li>extra:
+<ul>
+<li>Section Objects(memory mapped files):
+<ul>
+<li>special chunk of memory managed by the operating system</li>
+<li>types:
+<ul>
+<li>Pagefile-Backend:
+<ul>
+<li>temporary storage of information</li>
+<li>share data between two or more processes/between applications and the kernel</li>
+<li>it can be paged out to a pagefile</li>
+</ul>
+</li>
+<li>File-Backend:
+<ul>
+<li>a mapping of a physical file into memory</li>
+<li>instead of using ReadFile/WriteFile, a simple pointer to the mapping can be passed and used</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Virtual Address Descriptor(VAD) Tree:
+<ul>
+<li>binary tree that describes every address range that is curently in use by a process</li>
+<li>types:
+<ul>
+<li>mapped allocation:
+<ul>
+<li>memory mapped files mapped into the address space(section objects and loaded executables)</li>
+</ul>
+</li>
+<li>private allocation:
+<ul>
+<li>allocations local to each process: heaps, thread stacks</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="user-mode-memory-allocations">User-mode Memory Allocations:</h3>
+<ul>
+<li>Private Allocations:
+<ul>
+<li>when using <code>VirtualAlloc</code></li>
+<li>alocates hole pages</li>
+<li>used for stacks and heaps</li>
+<li>types:
+<ul>
+<li>Heaps:
+<ul>
+<li>every heap allocation will call this: <code>VirtualAlloc</code></li>
+<li>heaps provided by the win32 api: <code>HeapAlloc</code>, <code>HeapFree</code></li>
+<li>heaps provided by runtime libraries: <code>malloc</code></li>
+</ul>
+</li>
+<li>Stacks:
+<ul>
+<li>regular private allocations</li>
+<li>one for every thread</li>
+</ul>
+</li>
+<li>Executables:
+<ul>
+<li>system runs an application code by loading it into memory as a memory-mapped file</li>
+</ul>
+</li>
+<li>Mapped Views(Sections):
+<ul>
+<li>create a memory-mapped file and load it into your address space(can be used as a shared memory space)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="memory-management-apis">Memory Management APIs:</h3>
+<ul>
+<li>this process:
+<ul>
+<li>VirtualAlloc</li>
+<li>VirtualProtect</li>
+<li>VirtualQuery</li>
+<li>VirtualFree</li>
+</ul>
+</li>
+<li>another process:
+<ul>
+<li>VirtualAllocEx</li>
+<li>VirtualProtectEx</li>
+<li>VirtualQueryEx</li>
+<li>VirtualFreeEx</li>
+</ul>
+</li>
+<li>dedicated api:
+<ul>
+<li><code>ReadProcessMemory</code></li>
+<li><code>WriteProcessMemory</code></li>
+</ul>
+</li>
+<li>section object related:
+<ul>
+<li><code>CreateFileMapping</code></li>
+<li><code>MapViewOfFileEx</code></li>
+<li><code>UnmapViewOfFile</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="kernel-objects-and-handles">Kernel objects and handles:</h3>
+<ul>
+<li>sections, files, device objects, synchronization objects, processes and threads</li>
+<li>data structures stored in the non-paged pool</li>
+</ul>
+<h3 id="processes-and-threads">Processes and Threads:</h3>
+<ul>
+<li>process initialization:
+<ul>
+<li><code>CreateProcess</code>:
+<ul>
+<li>create process object</li>
+<li>allocate new memory address space for the process</li>
+<li>map NTDLL.DLL and the program executable in the created address space</li>
+<li>create first thread and allocate stack space for it</li>
+</ul>
+</li>
+<li>first thread runs in NTDLL.DLL&rsquo;s LdrpInitialize</li>
+<li>LdrpInitialize recursivelly maps all the executables that are needed(from the import tables)</li>
+<li>now LdrpRunInitializeRoutines that initializes(call the entrypoint with DLL_PROCESS_ATTACH constant)
+all the staticly linked dlls in the current address space</li>
+<li>after dll initialization LdrpInitialize calls BaseProcessStart from KERNEL32.DLL,
+which calls the executables WinMain</li>
+</ul>
+</li>
+</ul>
+<h3 id="win32-api">Win32 API:</h3>
+<ul>
+<li>Kernel</li>
+<li>User</li>
+<li>GDI</li>
+</ul>
+<h3 id="input-and-output">Input and Output:</h3>
+<ul>
+<li></li>
 </ul>
 
     </article>

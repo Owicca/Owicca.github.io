@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Roadmaps on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/roadmaps/</link>
+    <description>Recent content in Roadmaps on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Jun 2020 10:13:00 +0200</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/roadmaps/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Malware Researcher Roadmap</title>
+      <link>https://www.dinudev.com/post/malware_research_roadmap/</link>
+      <pubDate>Thu, 25 Jun 2020 10:13:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/malware_research_roadmap/</guid>
+      <description>Final goal:  malware researcher/analyst  Basics:  http://catb.org/%7Eesr/faqs/smart-questions.html math:  college linear algebra probability and statistics   networking:  CCNA   system administration:  https://www.reddit.com/r/sysadmin/wiki/learn https://www.reddit.com/r/sysadmin/wiki/bootcamp windows:  MCSE AD, DC, DNS, DHCP, GPO   linux: RHCSA7/8   tooling:  the ida pro book - eagle   reverse engineering:  Reversing: Secrets of Reverse Engineering - eldad eilam (choose one) Reverse Engineering for Begginers - dennis yurichev   malware analysis:   begginer:</description>
+    </item>
+    
+  </channel>
+</rss>

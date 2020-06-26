@@ -6,10 +6,46 @@
     <description>Recent content on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2020 22:18:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 25 Jun 2020 10:13:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Malware Researcher Roadmap</title>
+      <link>https://www.dinudev.com/post/malware_research_roadmap/</link>
+      <pubDate>Thu, 25 Jun 2020 10:13:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/malware_research_roadmap/</guid>
+      <description>Final goal:  malware researcher/analyst  Basics:  http://catb.org/%7Eesr/faqs/smart-questions.html math:  college linear algebra probability and statistics   networking:  CCNA   system administration:  https://www.reddit.com/r/sysadmin/wiki/learn https://www.reddit.com/r/sysadmin/wiki/bootcamp windows:  MCSE AD, DC, DNS, DHCP, GPO   linux: RHCSA7/8   tooling:  the ida pro book - eagle   reverse engineering:  Reversing: Secrets of Reverse Engineering - eldad eilam (choose one) Reverse Engineering for Begginers - dennis yurichev   malware analysis:   begginer:</description>
+    </item>
+    
+    <item>
+      <title>SICP</title>
+      <link>https://www.dinudev.com/post/sicp/</link>
+      <pubDate>Mon, 22 Jun 2020 22:18:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/post/sicp/</guid>
+      <description>Building Abstractions with Procedures:  complex software is built modularly so that the parts can be constructed, replaced and debugged separatedly three mechanisms to create complex expressions:  primitive expressions means of combinations: used to build compound elements from simpler ones means of abstraction: how compound elements can be named and manipulated as units   primitives:  data: stuff procedures: descriptions of the rules for manipulating data   tree accumulation:  evaluate the values of every child of the node(recursively) and THEN evaluate the value of the node   lexical scoping: variables in a procedure are bound by the enclosing block scope(they are looked up in the environment) block scoping: variables and definitions in a procedure are bound(private) to the scope of said procedure recursivity alone, enables every mathematical computation if tail-call optimization is present process types:  iterative:  the environment needs to only keep track of the counter and check if the limit was reached the program variables provide a complete description of the state of the process at any point a fixed number of state variables, a fixed rule that states how the variables should be updated as the process moves from state to state and optional end test that specifies the conditions under which the process should end   recursive:  procedure vs process:  a recursive procedure refers to itself a recursive process expresses the way a process evolves   the environment needs to keep track of the deffered operations     tail-recursivenes refers to an iterative process(in constant space) described as an recursive procedure  </description>
+    </item>
+    
+    <item>
+      <title>Bash</title>
+      <link>https://www.dinudev.com/post/bash/</link>
+      <pubDate>Sun, 14 Jun 2020 21:45:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/bash/</guid>
+      <description>Environment variables:  HISTCONTROL:  don&amp;rsquo;t add to history certain lines options:  ignorespace: don&amp;rsquo;t add lines that start with a space ignoredups: don&amp;rsquo;t add duplicates ignoreboth: ignorespace AND ignoredups      Commands:  shopt:  toggle values of variables controlling shell behaviour:  -s: set option name  histappend: append instead of overwriting history list to file pointed by HISTFILE        Conditions:   -a: file exists</description>
+    </item>
+    
+    <item>
+      <title>Info</title>
+      <link>https://www.dinudev.com/journey/1_info/</link>
+      <pubDate>Sun, 07 Jun 2020 14:42:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/journey/1_info/</guid>
+      <description>Introduction: The best way to learn something fast is to start doing it. This is the beginning of my journey in malware research.</description>
+    </item>
     
     <item>
       <title>Assembly</title>
@@ -113,15 +149,6 @@ This document specifies an Internet standards track protocol for the Internet co
     </item>
     
     <item>
-      <title>Windows c/cpp Notes</title>
-      <link>https://www.dinudev.com/post/windows_c_cpp/</link>
-      <pubDate>Mon, 16 Mar 2020 22:34:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/windows_c_cpp/</guid>
-      <description>Function Error Handling:  VOID: this function cannot possibly fail BOOL: return 0; test return to see if it&amp;rsquo;s different from FALSE  </description>
-    </item>
-    
-    <item>
       <title>Windows</title>
       <link>https://www.dinudev.com/post/windows/</link>
       <pubDate>Mon, 16 Mar 2020 17:19:00 +0200</pubDate>
@@ -168,12 +195,12 @@ This document specifies an Internet standards track protocol for the Internet co
     </item>
     
     <item>
-      <title>Russian Dictionary</title>
+      <title>Russian Dictionary Of Irregular Stuff</title>
       <link>https://www.dinudev.com/post/russian_dictionary/</link>
       <pubDate>Mon, 02 Mar 2020 13:14:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/russian_dictionary/</guid>
-      <description>ru_word ru_pronunciacion en_translation ru_plural ru_plural_pronunciacion gender     она ana she      ои on him      они oni they      наше nașie our      оио ano it      него niego his              там tam there      далеко dalieco far away      вот vot here      здесъ zdiesi here      где gdie where is      етот etat this      ест iest eats      едят ediat plural of &amp;ldquo;to eat&amp;rdquo;      ем iem I eat      уже uja already      toже tojă too/also/either      как cac how      это eto to be      у u by/near/at      на na on/for/at      жить jiti to live      сейчас siechas now      теперь tiepieri now/presently      пьёт piot to drink      сказать scazati to say      скажите scajitie tell me      можете mojietie can you/could you      ещё ieșio more/still      раз ras time      почему pociemu why      зная znaia to know      понемаю paniemaiu to understand      говорить gavariti to speak      курить curiti to smoke      ехать ehati to go(by transport)      давать davati to give      звать zvati to call      изучать izuchati to study              мужчина mujshina man      женщина jenshina woman      малъчик malicic a boy      брат brat brother      сестра siestra sister              утро utra morning      день dieni day/afternoon дени dieni m   вечер viecher evening      ночь nocha night   f           добрый утро dobrai utra good morning      добрый день dobrai dieni good afternoon      добрый вечер dobrai viecher good evening      спокойной ночи spacoinai nocha good night/quiet/still              извините iezvienitie excuse me      простите prastitie excuse me/i&amp;rsquo;m sorry      пожалуйста pajalusta your&amp;rsquo;re welcome/don&amp;rsquo;t mention it/please      как дела cac diela how are you doing?</description>
+      <description>   ru_word ru_pronunciacion en_translation ru_plural ru_plural_pronunciacion gender     день dieni day/afternoon дени dieni m   путь puti path   m   рубль rubli rouble   m   камень camieni stone   m   родитель raditieli parents   m   уровень uravieni level   m   лагерь lagheri camp   m   корабль carabli ship   m   конь coni horse/knight(in chess)   m           господь gaspoti god/the lord   m   медведь miedvieti bear медведи miedviedi m   гость gosti guests   m   парень parieni boy/fellow/guy   m   король caroli king   m   царь țari tzar/czar/king/ruler  m    зверь zvieri wild animal/beast   m   житель jitieli inhabitant/resident/dweller   m   секретарь siecrietari secretary   m           учитель ucitieli teacher/instructor   m   писатель pisatieli writer   m   читатель citatieli reader   m           ночь nocha night   f   очень приятно oceni priatna pleased(very pleasant) tot meet you      кровать cravati bed   f   дверь dvieri door двери dvieri f   кравать cravati bed   f   кровь crofi blood   f   вещь vieși thing/stuff/matter   f   помощь pomosi help/assistance/support/relief/aid   f   мышь mâiș mouse мыши mâiși f   мать mati mother   f   жизнь jizni life   f   часть chasti part/share/department   f   мысль mâsli thought/ideea   f   смерть smierti death   f   власть vlasti power   f   любовь liubofi love   f   возможность vazmojnasti possibility   f   грудь grudi breast/chest   f   огонь agoni fire   f   очередь ochierieti line/queue/turn   f   боль boli pain   f   речь riechi speech   f   связь sviazi bond/tie/connection/relation   f   цель țieli goal/object/target   f   знать znati aristocracy/nobility/the elite   f   память pamiati memory   f   ладонь ladoni palm   f   болезнь baliezni disease   f   роль roli role   f   дочь doci daughter   f   тень tieni shadow   f   лошадь loșati horse   f   площадь ploșati square/area   f   область oblasti oblast/province/field   f   деятельность dieiatielinăsti activiti   f   степень stiepieni degree/extent/power(in mathematics)   f   пыиль pâili dust/sprai   f   даль dali distance(in poetry)/long way off   f   председатель priedsiedatieli chairman/president   m   честь ciesti honour/regard/respect   f   кость costi bone   f   личность lichinăsti personality/person   f   скорость scorosti speed   f    </description>
     </item>
     
     <item>
@@ -183,15 +210,6 @@ This document specifies an Internet standards track protocol for the Internet co
       
       <guid>https://www.dinudev.com/post/crs_file_format/</guid>
       <description>Goals:  learn about file formats obfuscate files  File format:  encrypt the raw data from the file and write to an image(RAW) compute header items dynamic addresses based on RAW size:  header items addresses should not be linked in any way (if you know one address you should not be able to deduce/compute the others)    </description>
-    </item>
-    
-    <item>
-      <title>CPP</title>
-      <link>https://www.dinudev.com/post/cpp/</link>
-      <pubDate>Sun, 01 Mar 2020 17:27:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/cpp/</guid>
-      <description>General:  the public data/function members are your interface put the interface first methods with implementation declared in the class are generated inline at every use, giving a speed boost(no jump to common code), inlined methods do not benefit from the boost if they are larger than 4-5 lines  I/O:  a stream can be in four states:  good(): read/write was successful eof(): internal file pointer is at the end of the line fail(): format error level of error(you should clear() to go back to a good()) bad(): disk error level of error    </description>
     </item>
     
     <item>
@@ -247,8 +265,10 @@ This document specifies an Internet standards track protocol for the Internet co
       <pubDate>Sun, 16 Feb 2020 21:18:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/malware_techniques_re/</guid>
-      <description>empire:  stagers:  backdoorLnkMacro:  backdoor .lnk on desktop that on click will attempt to download and run an empire agent structure:  xls file with data macro to be injected into the xls xml holds data about empire install        targetEXE = &amp;ldquo;iexplore,Firefox, CHROME &amp;quot; killDate = 02/22/2020
-shellVar = &amp;lsquo;fwpjyHSAr&amp;rsquo; lnkVar = &amp;lsquo;bIzKAcPke&amp;rsquo; fsoVar = &amp;lsquo;fYvrDnMq&amp;rsquo; folderVar = &amp;lsquo;shwYkAlvB&amp;rsquo; fileVar = &amp;lsquo;WYuEVPGxH&amp;rsquo; encKey = &amp;lsquo;XAglS;^I_Yye@zam&amp;rsquo; envIV = 220</description>
+      <description>Smashing the stack:  when you make a call, you push the address to return to onto the stack overwrite that address  empire:   discontinued but a fork is currently mantained by BC Security:
+  launchers:
+ powershell:    stagers:
+ backdoorLnkMacro:  backdoor .lnk on desktop that on click will attempt to download and run an empire agent structure:  xls file new or with data macro to be injected into the xls xml holds data about empire install, this will be hosted on the c2   behaviour:  two-stage macro:  stage 1: vbscript that backdoors all the .</description>
     </item>
     
     <item>
@@ -306,15 +326,6 @@ The Hypertext Transfer Protocol (HTTP) is a stateless application- level protoco
     </item>
     
     <item>
-      <title>RE Labs</title>
-      <link>https://www.dinudev.com/post/re_labs/</link>
-      <pubDate>Fri, 31 Jan 2020 21:35:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/re_labs/</guid>
-      <description>Lab1 analysis:  if dword_10026058 check if fdwReason dll_process_attach || dll_thread_attach call a function, if result is 0, return DllEntryPoint with 0 call after_checking_for_attach if result is 0 return process with DllEntryPoint with 0  </description>
-    </item>
-    
-    <item>
       <title>Data Structures and Algorithms</title>
       <link>https://www.dinudev.com/post/dsa/</link>
       <pubDate>Wed, 08 Jan 2020 11:35:00 +0200</pubDate>
@@ -323,19 +334,6 @@ The Hypertext Transfer Protocol (HTTP) is a stateless application- level protoco
       <description>Foundation:  what is an algorithm? why use an algorithm? categories  Algorithms:   searching:
  Binary search:  input: sorted list of elements guess the middle number and eliminate half the remaining numbers every time big o(list of n):  best avg worst: O(log n)   return position of element in list or null      sorting:
  selection sort:  big o:  worst: O(n^2) avg: O(n^2) best: O(n^2)     merge sort:  big o:  worst: O(n log n) avg: O(n log n) best: O(n log n)     Quicksort:  base case recursive case big o:  worst: O(n^2) avg: O(n log n) best: O(n log n)        Data structures:  primitives:  int float char   compound:  Array:  runtimes:  reading: O(1) insertion: O(n) deletion: O(n)   random access contigous spaces in memory to extend you have to find a bigger free space and copy the data there random access is easy, because they are contigous, to access item at index n, BASE + n(based on the fact that n is lower that BASE[MAX]) all elements must be of the same data type   Linked list:  runtimes:  reading: O(n) insertion: O(1) deletion: O(1)   deletion is O(1) only if you can access instantly the element sequential access each item holds a pointer to the next item in the list solves arrays problem of contigous memory allocation by randomly asigning one unit of space for every item in the list good if you want to access all the elements of the list at once if you want to access the last, you need to start from the first and go through every one, until you find the searched one   hash map:  model relations from one item to another an array that uses an hash function to store the values a hash function:  for every string value a different number is created for the same string the same number is created, no matter the ammount of calls knows the array size and returns valid indexes (n=array lengt, hash &amp;gt;= 0, hash &amp;lt; n - 1)   runtime:  worst:  insert: O(n) delete: O(n) read: O(n)   avg:  insert: O(1) delete: O(1) read: O(1)     collision solutions:  start a linked list at the index with multiple values   implement:  take into account the load factor:  items in htable/total slots in htable at &amp;gt;1 load factor the access time is O(n), multiple values with the same hash resize storage when lf is greater than 0.</description>
-    </item>
-    
-    <item>
-      <title>Writeup - Trickbot</title>
-      <link>https://www.dinudev.com/post/writeup_trickbot/</link>
-      <pubDate>Sun, 29 Dec 2019 21:56:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/writeup_trickbot/</guid>
-      <description>Stages:   vba dropper in word document
-  vba trick bot is executed:
- loads part of himself in heap and sets process to suspended    (enables it to modify before executing child):
- execute child and exit    first child execution:
- loads named resource(&amp;ldquo;IDR_X86BOT&amp;rdquo; || &amp;ldquo;IDR_X64BOT&amp;rdquo;) from himself(encrypted) in heap decrypts the data in heap call second child entrypoint    second child execution:</description>
     </item>
     
   </channel>

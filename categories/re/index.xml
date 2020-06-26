@@ -20,14 +20,5 @@
       <description>For reverse engineering:  Practical Reverse Engineering - Bruce Dang Reversing Secrets Engineering - Eldad Eilam The IDA Pro Book - Chris Eagle  For malware analysis and malware techniques:  Practical Malware Analysis - Michael Sikorski, Andrew Honig Malware Analyst&amp;rsquo;s Cookbook - Michael Ligh, Steven Adair, Blake Hartstein, Matthew Richard The Art of Memory Forensics - Michael Hale Ligh, Andrew Case, Jamie Levy, AAron Walters  For programming:  Complete Reference C and Complete Reference C++ NASM Manual Intel Software Developer Manual (http://www.</description>
     </item>
     
-    <item>
-      <title>RE Labs</title>
-      <link>https://www.dinudev.com/post/re_labs/</link>
-      <pubDate>Fri, 31 Jan 2020 21:35:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/re_labs/</guid>
-      <description>Lab1 analysis:  if dword_10026058 check if fdwReason dll_process_attach || dll_thread_attach call a function, if result is 0, return DllEntryPoint with 0 call after_checking_for_attach if result is 0 return process with DllEntryPoint with 0  </description>
-    </item>
-    
   </channel>
 </rss>
