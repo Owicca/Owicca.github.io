@@ -7,3 +7,24 @@ td:first-of-type,
 td:nth-of-type(4) {
 	font-weight: bold;
 }
+
+td.reset {
+	border: initial;
+	padding: 0;
+}
+
+td:first-of-type,
+td:nth-of-type(4) {
+	font-weight: initial;
+}
+
+/*body {
+	background-color: #44443f;
+}
+body > div {
+	background-color: #f5f5f0;
+	padding: 0 20px 0;
+}
+body > div.container {
+	max-width: 800px;
+}*/

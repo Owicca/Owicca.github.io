@@ -6,18 +6,18 @@
     <description>Recent content in Networking on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 24 Mar 2020 15:04:00 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 02 Jul 2020 10:16:22 +0300</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/networking/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>CCNA Course</title>
-      <link>https://www.dinudev.com/post/ccna_curs/</link>
-      <pubDate>Tue, 24 Mar 2020 15:04:00 +0200</pubDate>
+      <title>Networking</title>
+      <link>https://www.dinudev.com/post/networking/</link>
+      <pubDate>Thu, 02 Jul 2020 10:16:22 +0300</pubDate>
       
-      <guid>https://www.dinudev.com/post/ccna_curs/</guid>
-      <description>17/03:  conectiunea intre doua layere diferite se face prin straight cable tipuri de porturi vlan:  access vlan   tipuri vlan:  user vlan(any kind of traffic) default vlan(always vlan1; can&amp;rsquo;t be renamed or deleted) management vlan(interfata cu ip pentru remote management) voice vlan(for voip) native vlan(frames will be forced to be 802.3 instead of 802.1Q)   cate un port pentru fiecare vlan(porturi access) presupune si cate un cablu/port pentru fiecare vlan(ramanem repede fara porturi libere;dezavantaj) frame ethernet 802.</description>
+      <guid>https://www.dinudev.com/post/networking/</guid>
+      <description>introduction in tcp/ip networking:  what is a network?:  multiple computers connected together eases the process of moving data from a computer to another   what is a networking model?  big vendors each had their own communication protocols, these propietary protocols would work for their devices but not combined with other devices ISO(international organization for standardization) first tried to standardize a less complex, vendor-neutral network model, which was OSI(open systems interconnection) key terms:  adjacent-layer interaction(communication between two layers on the same computer) same-layer interaction(communication at the same layer between two computers) de-encapsulation: remove and parse header and trailer metadata encapsulation: generate and add header and trailer metadata frame(PDU at data-link) packet(PDU at network layer) segment(PDU at transport layer) protocol data unit(PDU):  a generic way to refer to messages(segments, packets, frames) data unit that will be sent to the lower layer it contains:  current layer header higher layer data unit         what is tcp/ip?</description>
     </item>
     
     <item>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="OWicca">
+  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <title>Networking — Down the wabbit&#39;s hole</title>
+
+  <meta name="description" content="">
+  <link rel="canonical" href="https://www.dinudev.com/post/networking/">
+  <link href="" rel="alternate"
+    type="application/rss+xml" title="Down the wabbit&#39;s hole">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
+  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+</head>
+
+
+<body>
+  <div class="container">
+
+    <header>
+  <h1>Networking</h1>
+
+  
+    <time datetime="2020-07-02 10:16:22 &#43;0300 EEST">Post created: 07/07/2020</time>
+    <time datetime="2020-07-02 10:16:22 &#43;0300 EEST">Last updated: <b>07/07/2020</b></time>
+  
+
+  <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+
+  
+</nav>
+
+  
+</header>
+
+    <article>
+      <h3 id="introduction-in-tcpip-networking">introduction in tcp/ip networking:</h3>
+<ul>
+<li>what is a network?:
+<ul>
+<li>multiple computers connected together</li>
+<li>eases the process of moving data from a computer to another</li>
+</ul>
+</li>
+<li>what is a networking model?
+<ul>
+<li>big vendors each had their own communication protocols,
+these propietary protocols would work for their devices but not combined with other devices</li>
+<li>ISO(international organization for standardization) first tried to standardize a less complex, vendor-neutral network model, which was OSI(open systems interconnection)</li>
+<li>key terms:
+<ul>
+<li>adjacent-layer interaction(communication between two layers on the same computer)</li>
+<li>same-layer interaction(communication at the same layer between two computers)</li>
+<li>de-encapsulation: remove and parse header and trailer metadata</li>
+<li>encapsulation: generate and add header and trailer metadata</li>
+<li>frame(PDU at data-link)</li>
+<li>packet(PDU at network layer)</li>
+<li>segment(PDU at transport layer)</li>
+<li>protocol data unit(PDU):
+<ul>
+<li>a generic way to refer to messages(segments, packets, frames)</li>
+<li>data unit that will be sent to the lower layer</li>
+<li>it contains:
+<ul>
+<li>current layer header</li>
+<li>higher layer data unit</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>what is tcp/ip?
+<ul>
+<li>a networking model:
+<ul>
+<li>the most popular one</li>
+<li>OSI is used only by its terminology so is it the only one?</li>
+</ul>
+</li>
+<li>created by the US DOD and volunteers</li>
+<li>broken into layers:
+<ul>
+<li>physical:
+<ul>
+<li>how to transmit bits over each individual link</li>
+<li>functions related to physical transmision of the data</li>
+<li>protocols and rules that control the use of the physical media</li>
+</ul>
+</li>
+<li>data link: sending data over one type of physical link(one protocol for ethernet lan and another for wireless lan)</li>
+<li>network:
+<ul>
+<li>deliver data over the entire path from the original sending computer to the final destination computer</li>
+<li>popular protocols are IP(internet protocol)</li>
+</ul>
+</li>
+<li>transport:
+<ul>
+<li>popular protocols are TCP(transport control protocol) and UDP(user datagram protocol)</li>
+</ul>
+</li>
+<li>application: an interface between software running on a computer and the network itself</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="fundamentals-of-ethernet-lans">fundamentals of ethernet lans:</h3>
+<ul>
+<li>
+<p>an overview of lans:</p>
+<ul>
+<li>what is a lan?:
+<ul>
+<li>a network of interconnected networks and/or computers locally situated</li>
+<li>types:
+<ul>
+<li>ethernet(cable linked)</li>
+<li>wireless(no cable used)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>what is a WAN?
+<ul>
+<li>a network of interconnected networks and/or computers situated far away</li>
+</ul>
+</li>
+<li>soho lan:
+<ul>
+<li>what are the components and function of a SOHO LAN?(small office/home office):
+<ul>
+<li>an ethernet switch</li>
+<li>ethernet cables</li>
+<li>an router</li>
+<li>an wi-fi ap</li>
+<li>the switch, the router and the ap are compressed in the same device</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>enterprise lan:
+<ul>
+<li>how does an enterprise lan differ from a soho lan?:
+<ul>
+<li>they are structurally the same, but the enterprise is used on a larger scale</li>
+<li>SOHO usually support up to 20 devices, enterprise can support thousands</li>
+<li>the switch, the router and the ap are each their own device, much more powerfull than the small parts of an SOHO router</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>the variety of physical layer standards:
+<ul>
+<li>what is a fiber cable?:
+<ul>
+<li>data is sent through fiberglass strands inside the cable, the data is encoded as light signals</li>
+</ul>
+</li>
+<li>what is a standard?:
+<ul>
+<li>rules for governing the transmission of data</li>
+<li>some standards control HOW to send data over a cable and the SPEED</li>
+<li>others define how ethernet devices should behave to be part of an ethernet LAN</li>
+</ul>
+</li>
+<li>enumerate a few standards:
+<ul>
+<li>the T stands for UTP</li>
+<li>the X stands for fiber</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="right">speed</th>
+<th align="right">common name</th>
+<th align="right">informal IEEE</th>
+<th align="right">formal IEE</th>
+<th align="right">cable type, maximum length</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="right">10 Mbps</td>
+<td align="right">ethernet</td>
+<td align="right">10BASE-T</td>
+<td align="right">802.3</td>
+<td align="right">copper, 100m</td>
+</tr>
+<tr>
+<td align="right">100 Mbps</td>
+<td align="right">fast ethernet</td>
+<td align="right">100BASE-T</td>
+<td align="right">802.3u</td>
+<td align="right">copper, 100m</td>
+</tr>
+<tr>
+<td align="right">1000 Mbps</td>
+<td align="right">Gigabit ethernet</td>
+<td align="right">1000BASE-LX</td>
+<td align="right">802.3z</td>
+<td align="right">fiber, 5000m</td>
+</tr>
+<tr>
+<td align="right">1000 Mbps</td>
+<td align="right">Gigabit ethernet</td>
+<td align="right">1000BASE-T</td>
+<td align="right">802.3ab</td>
+<td align="right">cooper, 100m</td>
+</tr>
+<tr>
+<td align="right">10 Gbps</td>
+<td align="right">10 Gig Ethernet</td>
+<td align="right">10GBASE-T</td>
+<td align="right">802.3an</td>
+<td align="right">cooper, 100m</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>consistent behaviour over all links using the ethernet data-link layer</li>
+</ul>
+</li>
+<li>
+<p>building physical ethernet lans with utp:</p>
+<ul>
+<li>twisted pairs</li>
+<li>UTP ethernet link</li>
+<li>UTP cable pinouts for 10BASE-T and 100BASE-T:
+<ul>
+<li>straight-through cable pinout</li>
+<li>choosing the right cable pinouts</li>
+</ul>
+</li>
+<li>UTP cable pinouts for 1000BASE-T:</li>
+</ul>
+</li>
+<li>
+<p>building physical ethernet lans with fiber:</p>
+<ul>
+<li>fiber cabling transmission concepts</li>
+<li>using fiber ethernet</li>
+</ul>
+</li>
+<li>
+<p>sending data in ethernet networks:</p>
+<ul>
+<li>ethernet data-link protocols:
+<ul>
+<li>ethernet addressing</li>
+<li>identifiying network layer protocols with the ethernet type field</li>
+<li>error detection with FCS</li>
+</ul>
+</li>
+<li>sending ethernet frames with switches and hubs
+<ul>
+<li>sending in modern ethernet lans using full duplex</li>
+<li>using half duplex with lan hubs</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+    </article>
+
+    <nav class="site-nav">
+  <a href="/">Home</a>
+  <a href="/post/">All posts</a>
+
+  
+
+  
+  <a href="https://github.com/Owicca">GitHub</a>
+
+  
+</nav>
+
+
+    <footer class="site-footer">
+  <span class="owner">©2020 OWicca</span>
+
+  
+
+  
+</footer>
+
+
+  </div>
+
+  
+<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+</body>
+
+</html>

@@ -4,27 +4,72 @@
   
   <url>
     <loc>https://www.dinudev.com/categories/</loc>
-    <lastmod>2020-06-25T10:13:00+02:00</lastmod>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/</loc>
-    <lastmod>2020-06-25T10:13:00+02:00</lastmod>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.dinudev.com/post/malware_research_roadmap/</loc>
-    <lastmod>2020-06-25T10:13:00+02:00</lastmod>
+    <loc>https://www.dinudev.com/post/dutch/</loc>
+    <lastmod>2020-07-07T22:09:00+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/languages/</loc>
+    <lastmod>2020-07-07T22:09:00+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/post/</loc>
-    <lastmod>2020-06-25T10:13:00+02:00</lastmod>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/os/</loc>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/rh/</loc>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/learning/</loc>
+    <lastmod>2020-07-04T14:25:22+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/sq3r/</loc>
+    <lastmod>2020-07-04T14:25:22+03:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/networking/</loc>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/networking/</loc>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/developer_roadmap/</loc>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/categories/roadmaps/</loc>
-    <lastmod>2020-06-25T10:13:00+02:00</lastmod>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/post/malware_research_roadmap/</loc>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -39,12 +84,12 @@
   
   <url>
     <loc>https://www.dinudev.com/post/bash/</loc>
-    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/categories/scripting/</loc>
-    <lastmod>2020-06-14T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-08T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -128,31 +173,6 @@
   </url>
   
   <url>
-    <loc>https://www.dinudev.com/post/ccna_curs/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/networking/</loc>
-    <lastmod>2020-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/cs-history/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/post/http11/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/os/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://www.dinudev.com/post/windows/</loc>
     <lastmod>2020-02-28T00:00:00+00:00</lastmod>
   </url>
@@ -165,11 +185,6 @@
   <url>
     <loc>https://www.dinudev.com/post/random_urls/</loc>
     <lastmod>2020-04-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/categories/languages/</loc>
-    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -229,12 +244,12 @@
   
   <url>
     <loc>https://www.dinudev.com/categories/philosophy/</loc>
-    <lastmod>2020-02-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/post/stoicism/</loc>
-    <lastmod>2020-02-29T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-07T00:00:00+00:00</lastmod>
   </url>
   
   <url>
@@ -244,17 +259,17 @@
   
   <url>
     <loc>https://www.dinudev.com/post/ccna/</loc>
-    <lastmod>2020-03-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-02T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://www.dinudev.com/categories/cs-history/</loc>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://www.dinudev.com/post/first_http_email_1991/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://www.dinudev.com/post/http7230/</loc>
-    <lastmod>2020-02-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-07-09T00:00:00+00:00</lastmod>
   </url>
   
   <url>

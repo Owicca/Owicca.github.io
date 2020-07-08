@@ -6,15 +6,51 @@
     <description>Recent content in Categories on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jun 2020 10:13:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2020 22:09:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Languages</title>
+      <link>https://www.dinudev.com/categories/languages/</link>
+      <pubDate>Tue, 07 Jul 2020 22:09:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/languages/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>OS</title>
+      <link>https://www.dinudev.com/categories/os/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning</title>
+      <link>https://www.dinudev.com/categories/learning/</link>
+      <pubDate>Sat, 04 Jul 2020 14:25:22 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://www.dinudev.com/categories/networking/</link>
+      <pubDate>Thu, 02 Jul 2020 10:16:22 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/networking/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Roadmaps</title>
       <link>https://www.dinudev.com/categories/roadmaps/</link>
-      <pubDate>Thu, 25 Jun 2020 10:13:00 +0200</pubDate>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/categories/roadmaps/</guid>
       <description></description>
@@ -84,47 +120,11 @@
     </item>
     
     <item>
-      <title>Networking</title>
-      <link>https://www.dinudev.com/categories/networking/</link>
-      <pubDate>Tue, 24 Mar 2020 15:04:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/networking/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>CS History</title>
-      <link>https://www.dinudev.com/categories/cs-history/</link>
-      <pubDate>Sun, 22 Mar 2020 19:53:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/cs-history/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>OS</title>
-      <link>https://www.dinudev.com/categories/os/</link>
-      <pubDate>Mon, 16 Mar 2020 17:19:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/os/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Random</title>
       <link>https://www.dinudev.com/categories/random/</link>
       <pubDate>Mon, 09 Mar 2020 15:36:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/random/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Languages</title>
-      <link>https://www.dinudev.com/categories/languages/</link>
-      <pubDate>Sat, 07 Mar 2020 02:02:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/languages/</guid>
       <description></description>
     </item>
     
@@ -152,6 +152,15 @@
       <pubDate>Mon, 24 Feb 2020 11:29:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/philosophy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>CS History</title>
+      <link>https://www.dinudev.com/categories/cs-history/</link>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/cs-history/</guid>
       <description></description>
     </item>
     

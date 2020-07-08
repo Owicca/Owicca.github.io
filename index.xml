@@ -6,18 +6,74 @@
     <description>Recent content on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 25 Jun 2020 10:13:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 07 Jul 2020 22:09:00 +0200</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Dutch</title>
+      <link>https://www.dinudev.com/post/dutch/</link>
+      <pubDate>Tue, 07 Jul 2020 22:09:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/post/dutch/</guid>
+      <description>Letter pronunciation:  odd letters:  g: hei(gutural h) h: ha j: iei q: cu w: uei   vowel combinations(diphtongs):HB8zTn7wF91xCksxx7aB2kD2  ij:  normally &amp;ldquo;ai&amp;rdquo; inside -lijk: &amp;ldquo;uh&amp;rdquo;   ou and au: &amp;ldquo;au&amp;rdquo; oe: &amp;ldquo;uu&amp;rdquo; ui: &amp;ldquo;au&amp;rdquo; eu: &amp;ldquo;eou&amp;rdquo; eeuw / ieuw: &amp;ldquo;eeu&amp;rdquo; / &amp;ldquo;ieu&amp;rdquo;   consonant combinations:  ch: g or &amp;ldquo;ș&amp;rdquo; sj: &amp;ldquo;ș&amp;rdquo; sch: sg ng: nasal &amp;ldquo;nnnn&amp;rdquo;   misc:  c can be pronounced as either s or k i:  short as &amp;ldquo;e&amp;rdquo; long as &amp;ldquo;i&amp;rdquo; when in words ending with -ig or -is: &amp;ldquo;ă&amp;rdquo;   q:  only used in foreign words followed by u: &amp;ldquo;kuh&amp;rdquo;   v:  prononunced quite close to f   w(&amp;ldquo;uei&amp;rdquo;):  when followed by r it is pronounced v: wraak   y(y-grec):  as i: xylofoon as j: rayon   letters that swap pronunciation at the end of the word:       hard soft     b p   d t    Verbs and pronouns:  subject forms of the personal pronoun:      enkelvoud(singular) meervoud(plural)     1e persoon(1st person) ik wij/we   2e persoon(2nd person) jij/je(informeel), u(formeel) jullie(informeel), u(formeel)   3e persoon(3rd person) hij(mannelijk), zij/ze(vrouwelijk), het(neuter) zij/ze     tenses:  present tense:  verbs followed by jij or je drop the ending -t verb ending for u is always -t verbs with stems that end in -t or -d:  -t do not add another t -d add a t or drop the -d when inverted(followed by jij or je)   irregular infinitives:  some one-syllable verbs have a stem ending in simply -n   spelling in verb conjugation          enkelvoud meervoud     1e persoon stem stem + en   2e persoon stem + t stem + en   3e persoon steam + t steam + en    Misc:  geen and niet(no, none, not):  geen is used for nouns niet for other types of words    Nouns:   het / de rules:   </description>
+    </item>
+    
+    <item>
+      <title>Red Hat</title>
+      <link>https://www.dinudev.com/post/rh/</link>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/post/rh/</guid>
+      <description>Virtual machines and automated installations:  what is kvm(kernel-based virtual machine)?  a kernel module that allows compatible processors to run vms() each vm is a regular process each vm has dedicated virtual hardware   how do you configure it on a fresh install?:  install:  # yum install &amp;quot;Virtualization Host&amp;quot; &amp;quot;Virtualization Client&amp;quot;:  qemu-kvm: main kvm package libvirt: hypervisor manager as a daemon libvirt-client: virsh and the API that controls vms virt-install virt-manager: GUI virsh virt-top virt-viewer: GUI to connect to vm consoles   check for kernel modules:  # lsmod | grep kvm:  kvm_intelkvm kvm_amdkvm   if not enabled # modprobe kvm_intel or # modeprobe kvm_amd   enable if not enabled change images location:  ` $ mkdir &amp;lt;path/to/folder&amp;gt; $ su - root  semanage fcontext -a -t virt_image_t &amp;lsquo;&amp;lt;path/to/folder&amp;gt;(/.</description>
+    </item>
+    
+    <item>
+      <title>SQ3R Method</title>
+      <link>https://www.dinudev.com/post/sq3r/</link>
+      <pubDate>Sat, 04 Jul 2020 14:25:22 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/post/sq3r/</guid>
+      <description>a typical student:  takes learning/reading as a chore reads the textbox mechanically and if anything is hard to understand, it just keeps reading reading is thought of in terms of quantity  effectivenes of &amp;ldquo;trial and error&amp;rdquo; student methods:   a test imediatelly after the learning session has 53% success in memory recollection
+  a test after multiple rereadings averages about 70% retention
+  reading 9, 8, 45, 6, 2, 4, 6, 8 just gives you the impressions that you learned the sequence because the numbers are familiar</description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://www.dinudev.com/post/networking/</link>
+      <pubDate>Thu, 02 Jul 2020 10:16:22 +0300</pubDate>
+      
+      <guid>https://www.dinudev.com/post/networking/</guid>
+      <description>introduction in tcp/ip networking:  what is a network?:  multiple computers connected together eases the process of moving data from a computer to another   what is a networking model?  big vendors each had their own communication protocols, these propietary protocols would work for their devices but not combined with other devices ISO(international organization for standardization) first tried to standardize a less complex, vendor-neutral network model, which was OSI(open systems interconnection) key terms:  adjacent-layer interaction(communication between two layers on the same computer) same-layer interaction(communication at the same layer between two computers) de-encapsulation: remove and parse header and trailer metadata encapsulation: generate and add header and trailer metadata frame(PDU at data-link) packet(PDU at network layer) segment(PDU at transport layer) protocol data unit(PDU):  a generic way to refer to messages(segments, packets, frames) data unit that will be sent to the lower layer it contains:  current layer header higher layer data unit         what is tcp/ip?</description>
+    </item>
+    
+    <item>
+      <title>Developer Roadmap</title>
+      <link>https://www.dinudev.com/post/developer_roadmap/</link>
+      <pubDate>Fri, 26 Jun 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/post/developer_roadmap/</guid>
+      <description>Programming:   general:
+  SICP - Abelson, Sussman
+  Refactoring - Martin Fowler
+  Domain Driven Design - Eric Evans
+  introduction to algorithms - CLRS
+  clean code - robert c. martin
+  code complete 2 - mcconnell
+  the pragmatic programmer - hunt, thomas
+  the clean coder - robert c. martin
+  Design Patterns - &amp;ldquo;Gang of Four&amp;rdquo;</description>
+    </item>
+    
+    <item>
       <title>Malware Researcher Roadmap</title>
       <link>https://www.dinudev.com/post/malware_research_roadmap/</link>
-      <pubDate>Thu, 25 Jun 2020 10:13:00 +0200</pubDate>
+      <pubDate>Thu, 25 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/post/malware_research_roadmap/</guid>
-      <description>Final goal:  malware researcher/analyst  Basics:  http://catb.org/%7Eesr/faqs/smart-questions.html math:  college linear algebra probability and statistics   networking:  CCNA   system administration:  https://www.reddit.com/r/sysadmin/wiki/learn https://www.reddit.com/r/sysadmin/wiki/bootcamp windows:  MCSE AD, DC, DNS, DHCP, GPO   linux: RHCSA7/8   tooling:  the ida pro book - eagle   reverse engineering:  Reversing: Secrets of Reverse Engineering - eldad eilam (choose one) Reverse Engineering for Begginers - dennis yurichev   malware analysis:   begginer:</description>
+      <description>Final goal:  malware researcher/analyst  Basics:  http://catb.org/%7Eesr/faqs/smart-questions.html math:  college linear algebra probability and statistics   networking:  CCNA   system administration:  https://www.reddit.com/r/sysadmin/wiki/learn https://www.reddit.com/r/sysadmin/wiki/bootcamp windows:  MCSE AD DC DNS DHCP GPO   linux: RHCSA7/8   tooling:  the ida pro book - eagle   reverse engineering:  Reversing: Secrets of Reverse Engineering - eldad eilam Reverse Engineering for Begginers - dennis yurichev   malware analysis:  begginer:  practical binary analysis - dennis andriesse practical malware analysis - sikorski, honig malware analyst&amp;rsquo;s cookbook - ligh, adair, hartstein, richard   middle:  Rootkits and Bootkits - matrosov, rodionov, bratus the rootkit arsenal - blunden the art of memory forensics(a long tutorial on volatility framework) - ligh   high:  the shellcoder&amp;rsquo;s handbook(very high level):  this might be out of date        After basics resources(understand thoroughly each and every item there):  https://github.</description>
     </item>
     
     <item>
@@ -98,7 +154,7 @@
       <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/csharp/</guid>
-      <description>General:  expression-bodied members: public string Func(param) =&amp;gt; &amp;quot;result&amp;quot; + param string interpolation: var str = &amp;quot;string&amp;quot;; $&amp;quot;This is a {string}&amp;quot; using static: public class Cls{public static string staticString = &amp;#34;str&amp;#34;;}using static Cls;Console.WriteLine(staticString)  deconstruction: public static (string, int) Func(string){var rnd = new Random();return (string, rnd.Next());}var (someString, someInt) = Func(&amp;#34;test&amp;#34;);// with types(string someString, int someInts) = Func(&amp;#34;test&amp;#34;);// with discards(\_, someInt) = Func(&amp;#34;test&amp;#34;);  blazor are razor pages running in the browser, a mono runtime compiled to web assembly Func&amp;lt;string, int, decimal&amp;gt;: a delegate type with string, int parameters and decimal return type delegate that does not return a value:  Action Action&amp;lt;T&amp;gt;(T is the param to the delegate)    Generics:  type safety at compile time without knowing the type beforehand  Representing nullable values: *</description>
+      <description>General:  expression-bodied members: public string Func(param) =&amp;gt; &amp;quot;result&amp;quot; + param string interpolation: var str = &amp;quot;string&amp;quot;; $&amp;quot;This is a {string}&amp;quot; using static: public class Cls { public static string staticString = &amp;#34;str&amp;#34;; } using static Cls; Console.WriteLine(staticString)  deconstruction: public static (string, int) Func(string) { var rnd = new Random(); return (string, rnd.Next()); } var (someString, someInt) = Func(&amp;#34;test&amp;#34;); // with types (string someString, int someInts) = Func(&amp;#34;test&amp;#34;); // with discards (\_, someInt) = Func(&amp;#34;test&amp;#34;);  blazor are razor pages running in the browser, a mono runtime compiled to web assembly Func&amp;lt;string, int, decimal&amp;gt;: a delegate type with string, int parameters and decimal return type delegate that does not return a value:  Action Action&amp;lt;T&amp;gt;(T is the param to the delegate)    Generics:  type safety at compile time without knowing the type beforehand  Representing nullable values: *</description>
     </item>
     
     <item>
@@ -126,26 +182,6 @@
       
       <guid>https://www.dinudev.com/post/music_classical/</guid>
       <description>   Composer Name Subname     Verdi Requiem    vivaldi four seasons summer III presto   beethoven egmont    beethoven 5th    mussorgsky night on bald mountain    mozart nachtmusik    janacek glagolitic mass    Chopin Etudes and Preludes    Rimsky-Korsakov Scheherazade op.35   gustav holst the planets    Maurice Ravel Bolero     </description>
-    </item>
-    
-    <item>
-      <title>CCNA Course</title>
-      <link>https://www.dinudev.com/post/ccna_curs/</link>
-      <pubDate>Tue, 24 Mar 2020 15:04:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/ccna_curs/</guid>
-      <description>17/03:  conectiunea intre doua layere diferite se face prin straight cable tipuri de porturi vlan:  access vlan   tipuri vlan:  user vlan(any kind of traffic) default vlan(always vlan1; can&amp;rsquo;t be renamed or deleted) management vlan(interfata cu ip pentru remote management) voice vlan(for voip) native vlan(frames will be forced to be 802.3 instead of 802.1Q)   cate un port pentru fiecare vlan(porturi access) presupune si cate un cablu/port pentru fiecare vlan(ramanem repede fara porturi libere;dezavantaj) frame ethernet 802.</description>
-    </item>
-    
-    <item>
-      <title>HTTP 1.1 RFC</title>
-      <link>https://www.dinudev.com/post/http11/</link>
-      <pubDate>Sun, 22 Mar 2020 19:53:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/http11/</guid>
-      <description>Network Working Group R. Fielding Request for Comments: 2068 UC Irvine Category: Standards Track J. Gettys J. Mogul DEC H. Frystyk T. Berners-Lee MIT/LCS January 1997
- Hypertext Transfer Protocol -- HTTP/1.1  Status of this Memo
-This document specifies an Internet standards track protocol for the Internet community, and requests discussion and suggestions for improvements. Please refer to the current edition of the &amp;ldquo;Internet Official Protocol Standards&amp;rdquo; (STD 1) for the standardization state and status of this protocol.</description>
     </item>
     
     <item>
@@ -265,10 +301,7 @@ This document specifies an Internet standards track protocol for the Internet co
       <pubDate>Sun, 16 Feb 2020 21:18:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/malware_techniques_re/</guid>
-      <description>Smashing the stack:  when you make a call, you push the address to return to onto the stack overwrite that address  empire:   discontinued but a fork is currently mantained by BC Security:
-  launchers:
- powershell:    stagers:
- backdoorLnkMacro:  backdoor .lnk on desktop that on click will attempt to download and run an empire agent structure:  xls file new or with data macro to be injected into the xls xml holds data about empire install, this will be hosted on the c2   behaviour:  two-stage macro:  stage 1: vbscript that backdoors all the .</description>
+      <description>Smashing the stack:  when you make a call, you push the address to return to onto the stack overwrite that address  empire:  source discontinued but a fork is currently mantained by BC Security: launchers:  powershell python   stagers:  backdoorLnkMacro:  backdoor .lnk on desktop that on click will attempt to download and run an empire agent structure:  xls file new or with data macro to be injected into the xls xml holds data about empire install, this will be hosted on the c2   behaviour:  two-stage macro:  stage 1: vbscript that backdoors all the .</description>
     </item>
     
     <item>
@@ -283,27 +316,10 @@ This document specifies an Internet standards track protocol for the Internet co
     <item>
       <title>First Http Email - 1991</title>
       <link>https://www.dinudev.com/post/first_http_email_1991/</link>
-      <pubDate>Thu, 13 Feb 2020 10:34:00 +0200</pubDate>
+      <pubDate>Thu, 13 Feb 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/post/first_http_email_1991/</guid>
-      <description>From: timbl@info .cern.ch (Tim Berners-Lee)Newsgroups: alt.hypertextSubject: Re: Qualifiers on Hypertext links...Message-ID: &amp;lt;6484@cernvax.cern.ch&amp;gt;Date: 6 Aug 91 14:56:20 GMTReferences: &amp;lt;1991Aug2.115241@ardor.enet.dec.com&amp;gt;Sender: news@cernvax.cern.chLines: 52 ` In article 1991Aug2.115241@ardor.enet.dec.com kannan@ardor.enet.dec.com (Nari
-Kannan) writes:
- Is anyone reading this newsgroup aware of research or development efforts
-in the following areas:
-1. Hypertext links enabling retrieval from multiple heterogeneous sources   of
- information? The WorldWideWeb (WWW) project aims to allow links to be made to any information anywhere.</description>
-    </item>
-    
-    <item>
-      <title>HTTP 1.1 RFC - pt2</title>
-      <link>https://www.dinudev.com/post/http7230/</link>
-      <pubDate>Thu, 13 Feb 2020 10:32:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/http7230/</guid>
-      <description>Internet Engineering Task Force (IETF) R. Fielding, Ed. Request for Comments: 7230 Adobe Obsoletes: 2145, 2616 J. Reschke, Ed. Updates: 2817, 2818 greenbytes Category: Standards Track June 2014 ISSN: 2070-1721
-Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing
-Abstract
-The Hypertext Transfer Protocol (HTTP) is a stateless application- level protocol for distributed, collaborative, hypertext information systems. This document provides an overview of HTTP architecture and its associated terminology, defines the &amp;ldquo;http&amp;rdquo; and &amp;ldquo;https&amp;rdquo; Uniform Resource Identifier (URI) schemes, defines the HTTP/1.</description>
+      <description>From: timbl@info .cern.ch (Tim Berners-Lee)   Newsgroups: alt.hypertext   Subject: Re: Qualifiers on Hypertext links&amp;hellip;   Message-ID: 6484@cernvax.cern.ch   Date: 6 Aug 91 14:56:20 GMT   References: 1991Aug2.115241@ardor.enet.dec.com   Sender: news@cernvax.cern.ch   Lines: 52    In article &amp;lt;1991Aug2.115241@ardor.enet.dec.com&amp;gt; kannan@ardor.enet.dec.com (Nari Kannan) writes:&amp;gt; &amp;gt; Is anyone reading this newsgroup aware of research or development efforts in&amp;gt; the&amp;gt; following areas:&amp;gt; &amp;gt; 1.</description>
     </item>
     
     <item>
