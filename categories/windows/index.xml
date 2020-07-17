@@ -20,14 +20,5 @@
       <description>.NET:  structure:  runtime component languages compilers   platforms:  .NET Core .NET Framework Xamarin   it provides definitions for a set of Base Class Libraries(BCL) APIs to be implemented by all the platforms conforming to the standard  .NET Core:  components:  CoreCLR(Common Language Runtime):  open source refactoring of the original CLR manage usage and references to objects communication and interactions of objects written in the different languages supported garbage collection components:  garbage collector Just In Time(JIT) compiler Native interop:  allow managed(.</description>
     </item>
     
-    <item>
-      <title>COM</title>
-      <link>https://www.dinudev.com/post/com/</link>
-      <pubDate>Fri, 03 Apr 2020 18:59:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/com/</guid>
-      <description>COM(Component Object Model):  the designers took the best of classical, academic OOP and the best from their experiences, took into account human nature and capitalism although the main focus is encapsulation, not inheritance, COM relies on interface inheritance and much less so on implementation inheritance  </description>
-    </item>
-    
   </channel>
 </rss>

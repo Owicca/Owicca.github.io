@@ -27,8 +27,8 @@
   <h1>Assembly</h1>
 
   
-    <time datetime="2020-04-17 22:18:00 &#43;0200 &#43;0200">Post created: 04/04/2020</time>
-    <time datetime="2020-04-17 22:18:00 &#43;0200 &#43;0200">Last updated: <b>04/04/2020</b></time>
+    <time datetime="2020-04-17 00:00:00 &#43;0000 UTC">Post created: 17 Apr 2020</time>
+    <time datetime="2020-07-18 00:00:00 &#43;0000 UTC">Last updated: <b>18 Jul 2020</b></time>
   
 
   <nav class="site-nav">
@@ -163,6 +163,38 @@
 </li>
 <li>stdcall</li>
 <li>c++ thiscall</li>
+</ul>
+<h3 id="arm-isas">ARM ISAs:</h3>
+<ul>
+<li>ARM mode: 4-byte instruction set</li>
+<li>Thumb mode: 2-byte instruction set</li>
+<li>Thumb-2(ARM-v7): 4-byte instruction set; extension of Thumb that should compete with ARM mode</li>
+<li>x64 mode: 4-byte instruction set; not compatible to any other</li>
+</ul>
+<h3 id="numeral-systems">Numeral systems:</h3>
+<ul>
+<li>radix = numeral base</li>
+</ul>
+<h3 id="pe">PE:</h3>
+<ul>
+<li>sections always start at addresses ending in 3 hex zeros: 0x41000, 0x10001000,
+because sections are padded to a boundary of 0x1000(4096) bytes</li>
+</ul>
+<h3 id="misc">Misc:</h3>
+<ul>
+<li>why does the stack grow downwards?:
+<ul>
+<li>the reason is mainly historic, it is easy to split the memory in two parts:
+<ul>
+<li>0 to highest for heap</li>
+<li>highest to 0 for stack</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>shadow space, registers can be read if they are not properly cleaned up(read-after-free?!)</li>
+<li><code>JNE</code> and <code>JNZ</code> have the same OP code</li>
+<li><code>CMP</code> almost as <code>SUB</code>, it switches EFLAGS but does not modify the first operand</li>
 </ul>
 
     </article>

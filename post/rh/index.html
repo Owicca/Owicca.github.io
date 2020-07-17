@@ -27,8 +27,8 @@
   <h1>Red Hat</h1>
 
   
-    <time datetime="2020-07-07 00:00:00 &#43;0000 UTC">Post created: 07/07/2020</time>
-    <time datetime="2020-07-07 00:00:00 &#43;0000 UTC">Last updated: <b>07/07/2020</b></time>
+    <time datetime="2020-07-07 00:00:00 &#43;0000 UTC">Post created: 7 Jul 2020</time>
+    <time datetime="2020-07-18 00:00:00 &#43;0000 UTC">Last updated: <b>18 Jul 2020</b></time>
   
 
   <nav class="site-nav">
@@ -83,17 +83,12 @@
 </li>
 <li>enable if not enabled</li>
 <li>change images location:
-<ul>
-<li>`
-$ mkdir &lt;path/to/folder&gt;
-$ su - root</li>
-</ul>
-<h1 id="semanage-fcontext--a--t-virt_image_t-pathtofolder">semanage fcontext -a -t virt_image_t &lsquo;&lt;path/to/folder&gt;(/.*)?&rsquo;</h1>
-<h1 id="restorecon-pathtofolder">restorecon &lt;path/to/folder&gt;</h1>
-<h1 id="rmdir-varliblibvirtimages">rmdir /var/lib/libvirt/images</h1>
-<h1 id="ln--s-pathtofolder-varliblibvirtimages">ln -s &lt;path/to/folder&gt; /var/lib/libvirt/images</h1>
-<p>`</p>
-</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir &lt;path/to/folder&gt;
+$ su - root
+<span style="color:#75715e"># semanage fcontext -a -t virt_image_t &#39;&lt;path/to/folder&gt;(/.*)?&#39;</span>
+<span style="color:#75715e"># restorecon &lt;path/to/folder&gt;</span>
+<span style="color:#75715e"># rmdir /var/lib/libvirt/images</span>
+<span style="color:#75715e"># ln -s &lt;path/to/folder&gt; /var/lib/libvirt/images</span></code></pre></div></li>
 </ul>
 </li>
 <li>how to create a vm?:
@@ -119,9 +114,9 @@ $ su - root</li>
 <ul>
 <li>a config file on a http/ftp accesible host</li>
 <li>a http/ftp accesible .iso or mounted image</li>
-<li>a config file of the succesful install is /root/anaconda-ks.cfg</li>
 </ul>
 </li>
+<li>a config file of the succesful install is /root/anaconda-ks.cfg</li>
 </ul>
 </li>
 </ul>
@@ -130,6 +125,10 @@ $ su - root</li>
 <ul>
 <li>ssh</li>
 <li>scp</li>
+<li>mutt(cli mail client)</li>
+<li>lftp(scp but worse?!)</li>
+<li>nmap</li>
+<li>telnet(connection testing)</li>
 </ul>
 </li>
 </ul>

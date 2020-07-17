@@ -27,8 +27,8 @@
   <h1>Empire Framework Notes</h1>
 
   
-    <time datetime="2020-02-26 12:37:00 &#43;0200 EET">Post created: 02/02/2020</time>
-    <time datetime="2020-02-26 12:37:00 &#43;0200 EET">Last updated: <b>02/02/2020</b></time>
+    <time datetime="2020-02-26 00:00:00 &#43;0000 UTC">Post created: 26 Feb 2020</time>
+    <time datetime="2020-07-11 00:00:00 &#43;0000 UTC">Last updated: <b>11 Jul 2020</b></time>
   
 
   <nav class="site-nav">
@@ -454,16 +454,27 @@ install prerequisites and powershell(.dotnetcore)</li>
 <ul>
 <li>listeners:
 <ul>
-<li>pivot</li>
-<li>hop</li>
-<li>foreign</li>
+<li>pivot: open a port on an agent that acts as a proxy to a listener</li>
+<li>hop: proxy that is a single php file hosted somewhere</li>
+<li>foreign:</li>
 </ul>
 </li>
-<li>stagers(./lib/stagers/*):</li>
+<li>stagers(./lib/stagers/*):
+<ul>
+<li>launcher: a one-line stage0 for an agent</li>
+<li>launcher BAT: self-deleting .bat with a one-line stage0 for an agent</li>
+<li>launcher VBS: .vbs with a one-line stage0 for an agent</li>
+<li>macro: office macro with a stage0 for an agent</li>
+<li>PHT-wmis: (pass-the-hash?)</li>
+<li>DLL: (reflectively-injectable MSF-compliant .DLL?)</li>
+<li>hop.php: generates a hop.php to host on a machine</li>
+<li>ducky: (virtual device that acts as a keyboard and writes the launcher?)</li>
+</ul>
+</li>
+<li>agents:</li>
 </ul>
 </li>
 </ul>
-<h3 id="features">features:</h3>
 
     </article>
 

@@ -6,15 +6,24 @@
     <description>Recent content in Categories on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2020 22:09:00 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jul 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Uncategorized</title>
+      <link>https://www.dinudev.com/categories/uncategorized/</link>
+      <pubDate>Tue, 14 Jul 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/uncategorized/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Languages</title>
       <link>https://www.dinudev.com/categories/languages/</link>
-      <pubDate>Tue, 07 Jul 2020 22:09:00 +0200</pubDate>
+      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/categories/languages/</guid>
       <description></description>
@@ -32,7 +41,7 @@
     <item>
       <title>Learning</title>
       <link>https://www.dinudev.com/categories/learning/</link>
-      <pubDate>Sat, 04 Jul 2020 14:25:22 +0300</pubDate>
+      <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/categories/learning/</guid>
       <description></description>
@@ -77,7 +86,7 @@
     <item>
       <title>Programming</title>
       <link>https://www.dinudev.com/categories/programming/</link>
-      <pubDate>Fri, 17 Apr 2020 22:18:00 +0200</pubDate>
+      <pubDate>Fri, 17 Apr 2020 13:00:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/programming/</guid>
       <description></description>
@@ -138,11 +147,11 @@
     </item>
     
     <item>
-      <title>Programming Tools</title>
-      <link>https://www.dinudev.com/categories/programming-tools/</link>
-      <pubDate>Wed, 26 Feb 2020 12:37:00 +0200</pubDate>
+      <title>Tools</title>
+      <link>https://www.dinudev.com/categories/tools/</link>
+      <pubDate>Wed, 26 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.dinudev.com/categories/programming-tools/</guid>
+      <guid>https://www.dinudev.com/categories/tools/</guid>
       <description></description>
     </item>
     
