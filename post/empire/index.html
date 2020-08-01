@@ -58,94 +58,87 @@ install prerequisites and powershell(.dotnetcore)</li>
 
 <ul>
 <li>sqlite3</li>
-<li>setup users and passwords:
+<li>setup users and passwords
 
 <ul>
 <li>config:
-|&mdash;:|&mdash;:|
-|staging_key|text|
-|install_path|text|
-|ip_whitelist|text|
-|ip_blacklist|text|
-|autorun_command|text|
-|autorun_data|text|
-|rootuser|boolean|
-|api_username|text|
-|api_password|text|
-|api_current_token|text|
-|api_permanent_token|text|
-|obfuscate|integer|
-|obfuscate_command|text|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">staging_key: text
+install_path: text
+ip_whitelist: text
+ip_blacklist: text
+autorun_command: text
+autorun_data: text
+rootuser: boolean
+api_username: text
+api_password: text
+api_current_token: text
+api_permanent_token: text
+obfuscate: integer
+obfuscate_command: text</code></pre></div></li>
 <li>agents:
-|&mdash;:|&mdash;:|
-|id|integer|
-|session_id|text|
-|listener|text|
-|name|text|
-|language|text|
-|language_version|text|
-|delay|integer|
-|jitter|real|
-|external_ip|text|
-|internal_ip|text|
-|username|text|
-|high_integrity|integer|
-|process_name|text|
-|process_id|text|
-|hostname|text|
-|os_details|text|
-|session_key|text|
-|nonce|text|
-|checkin_time|text|
-|lastseen_time|text|
-|parent|text|
-|children|text|
-|servers|text|
-|profile|text|
-|functions|text|
-|kill_date|text|
-|working_hours|text|
-|lost_limit|integer|
-|taskings|text|
-|results|tex|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">id:integer
+session_id:text
+listener:text
+name:text
+language:text
+language_version:text
+delay:integer
+jitter:real
+external_ip:text
+internal_ip:text
+username:text
+high_integrity:integer
+process_name:text
+process_id:text
+hostname:text
+os_details:text
+session_key:text
+nonce:text
+checkin_time:text
+lastseen_time:text
+parent:text
+children:text
+servers:text
+profile:text
+functions:text
+kill_date:text
+working_hours:text
+lost_limit:integer
+taskings:text
+results:tex</code></pre></div></li>
 <li>listeners:
-|&mdash;:|&mdash;:|
-|id|integer|
-|name|text|
-|module|text|
-|listener_type|text|
-|listener_category|text|
-|enabled|boolean|
-|options|blo|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">id:integer
+name:text
+module:text
+listener_type:text
+listener_category:text
+enabled:boolean
+options:blo</code></pre></div></li>
 <li>credentials:
-|&mdash;:|&mdash;:|
-|id|integer|
-|credtype|text|
-|domain|text|
-|username|text|
-|password|text|
-|host|text|
-|os|text|
-|sid|text|
-|notes|tex|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">id:integer
+credtype:text
+domain:text
+username:text
+password:text
+host:text
+os:text
+sid:text
+notes:tex</code></pre></div></li>
 <li>taskings:
-|&mdash;:|&mdash;:|
-|id|integer|
-|data|text|
-|agent|text|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">id:integer
+data:text
+agent:text</code></pre></div></li>
 <li>results:
-|&mdash;:|&mdash;:|
-|id|integer|
-|data|text|
-|agent|text|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">id:integer
+data:text
+agent:text</code></pre></div></li>
 <li>reporting:
-|&mdash;:|&mdash;:|
-|id|integer|
-|name|text|
-|event_type|text|
-|message|text|
-|time_stamp|text|
-|taskID|integer|</li>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">id:integer
+name:text
+event_type:text
+message:text
+time_stamp:text
+taskID:integer</code></pre></div></li>
 </ul></li>
 </ul></li>
 <li>generate a self-signed certificate</li>
@@ -194,7 +187,7 @@ install prerequisites and powershell(.dotnetcore)</li>
 <li>hop.php: generates a hop.php to host on a machine</li>
 <li>ducky: (virtual device that acts as a keyboard and writes the launcher?)</li>
 </ul></li>
-<li>agents:</li>
+<li>agents</li>
 </ul></li>
 </ul>
 
