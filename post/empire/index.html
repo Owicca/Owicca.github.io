@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>Empire Framework Notes — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -46,390 +46,111 @@
 </header>
 
     <article>
-      <h3 id="setup">setup:</h3>
+      
+
+<h3 id="setup">setup:</h3>
+
 <ul>
 <li>based on some distro detection techniques,
 install prerequisites and powershell(.dotnetcore)</li>
 <li>works with python 2 and/or 3</li>
 <li>setup database from <code>setup/setup_database.py</code>:
+
 <ul>
 <li>sqlite3</li>
 <li>setup users and passwords:
+
 <ul>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">config:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">staging_key</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">install_path</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">ip_whitelist</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">ip_blacklist</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">autorun_command</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">autorun_data</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">rootuser</td>
-<td align="right">boolean</td>
-</tr>
-<tr>
-<td align="right">api_username</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">api_password</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">api_current_token</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">api_permanent_token</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">obfuscate</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">obfuscate_command</td>
-<td align="right">text</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">agents:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">id</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">session_id</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">listener</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">name</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">language</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">language_version</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">delay</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">jitter</td>
-<td align="right">real</td>
-</tr>
-<tr>
-<td align="right">external_ip</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">internal_ip</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">username</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">high_integrity</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">process_name</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">process_id</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">hostname</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">os_details</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">session_key</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">nonce</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">checkin_time</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">lastseen_time</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">parent</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">children</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">servers</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">profile</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">functions</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">kill_date</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">working_hours</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">lost_limit</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">taskings</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">results</td>
-<td align="right">tex</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">listeners:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">id</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">name</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">module</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">listener_type</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">listener_category</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">enabled</td>
-<td align="right">boolean</td>
-</tr>
-<tr>
-<td align="right">options</td>
-<td align="right">blo</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">credentials:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">id</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">credtype</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">domain</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">username</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">password</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">host</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">os</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">sid</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">notes</td>
-<td align="right">tex</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">taskings:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">id</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">data</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">agent</td>
-<td align="right">text</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">results:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">id</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">data</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">agent</td>
-<td align="right">text</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<table>
-<thead>
-<tr>
-<th align="right">reporting:</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="right">id</td>
-<td align="right">integer</td>
-</tr>
-<tr>
-<td align="right">name</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">event_type</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">message</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">time_stamp</td>
-<td align="right">text</td>
-</tr>
-<tr>
-<td align="right">taskID</td>
-<td align="right">integer</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>config:
+|&mdash;:|&mdash;:|
+|staging_key|text|
+|install_path|text|
+|ip_whitelist|text|
+|ip_blacklist|text|
+|autorun_command|text|
+|autorun_data|text|
+|rootuser|boolean|
+|api_username|text|
+|api_password|text|
+|api_current_token|text|
+|api_permanent_token|text|
+|obfuscate|integer|
+|obfuscate_command|text|</li>
+<li>agents:
+|&mdash;:|&mdash;:|
+|id|integer|
+|session_id|text|
+|listener|text|
+|name|text|
+|language|text|
+|language_version|text|
+|delay|integer|
+|jitter|real|
+|external_ip|text|
+|internal_ip|text|
+|username|text|
+|high_integrity|integer|
+|process_name|text|
+|process_id|text|
+|hostname|text|
+|os_details|text|
+|session_key|text|
+|nonce|text|
+|checkin_time|text|
+|lastseen_time|text|
+|parent|text|
+|children|text|
+|servers|text|
+|profile|text|
+|functions|text|
+|kill_date|text|
+|working_hours|text|
+|lost_limit|integer|
+|taskings|text|
+|results|tex|</li>
+<li>listeners:
+|&mdash;:|&mdash;:|
+|id|integer|
+|name|text|
+|module|text|
+|listener_type|text|
+|listener_category|text|
+|enabled|boolean|
+|options|blo|</li>
+<li>credentials:
+|&mdash;:|&mdash;:|
+|id|integer|
+|credtype|text|
+|domain|text|
+|username|text|
+|password|text|
+|host|text|
+|os|text|
+|sid|text|
+|notes|tex|</li>
+<li>taskings:
+|&mdash;:|&mdash;:|
+|id|integer|
+|data|text|
+|agent|text|</li>
+<li>results:
+|&mdash;:|&mdash;:|
+|id|integer|
+|data|text|
+|agent|text|</li>
+<li>reporting:
+|&mdash;:|&mdash;:|
+|id|integer|
+|name|text|
+|event_type|text|
+|message|text|
+|time_stamp|text|
+|taskID|integer|</li>
+</ul></li>
+</ul></li>
 <li>generate a self-signed certificate</li>
 <li>install python req:
+
 <ul>
 <li>network tools</li>
 <li>setup tools</li>
@@ -445,21 +166,24 @@ install prerequisites and powershell(.dotnetcore)</li>
 <li>netifaces(portable network interface information)</li>
 <li>pyminifier(minifier,obfuscator,compressor)</li>
 <li>xlutils(work with excel files)</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="architecture">architecture:</h3>
+
 <ul>
 <li>structure:
+
 <ul>
 <li>listeners:
+
 <ul>
 <li>pivot: open a port on an agent that acts as a proxy to a listener</li>
 <li>hop: proxy that is a single php file hosted somewhere</li>
 <li>foreign:</li>
-</ul>
-</li>
+</ul></li>
 <li>stagers(./lib/stagers/*):
+
 <ul>
 <li>launcher: a one-line stage0 for an agent</li>
 <li>launcher BAT: self-deleting .bat with a one-line stage0 for an agent</li>
@@ -469,11 +193,9 @@ install prerequisites and powershell(.dotnetcore)</li>
 <li>DLL: (reflectively-injectable MSF-compliant .DLL?)</li>
 <li>hop.php: generates a hop.php to host on a machine</li>
 <li>ducky: (virtual device that acts as a keyboard and writes the launcher?)</li>
-</ul>
-</li>
+</ul></li>
 <li>agents:</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
     </article>

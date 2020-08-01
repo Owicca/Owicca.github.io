@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>PowerShell — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -46,31 +46,36 @@
 </header>
 
     <article>
-      <h3 id="snap-ins">Snap-ins:</h3>
+      
+
+<h3 id="snap-ins">Snap-ins:</h3>
+
 <ul>
 <li>ms is moving away from the concept of snapins and more thowards modules</li>
 <li>structure:
+
 <ul>
 <li>name: PSSnapin</li>
 <li>files:
+
 <ul>
 <li>one or more dlls</li>
 <li>0 or more xml configuration files</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>they have to be installed and registered to be used</li>
 <li>control:
+
 <ul>
 <li><code>Add-PSSnapin</code></li>
 <li><code>Remove-PSSnapin</code></li>
 <li><code>Get-PSSnapin</code></li>
-</ul>
-</li>
+</ul></li>
 <li>help for loaded snapins: <code>Get-Command -PSSnapin &lt;snapinname&gt;</code></li>
 </ul>
+
 <h3 id="modules">Modules:</h3>
+
 <ul>
 <li>more self-contained and easier to distribute</li>
 <li>they dont need registration, ps will look in certain paths when searching for a command
@@ -80,40 +85,44 @@
 the last loaded module&rsquo;s command will be called</li>
 <li>user modules location: <code>$Home\Documents\WindowsPowerShell\Modules</code></li>
 </ul>
+
 <h3 id="profiles">Profiles:</h3>
+
 <ul>
 <li>a script that is run on shell init</li>
 <li>system profiles location: <code>a</code></li>
 <li>profile location:
+
 <ol>
 <li>current user, current host:
+
 <ul>
 <li><code>$PROFILE.CurrentUserCurrentHost</code></li>
 <li><code>$Home\Documents\WindowsPowerShell\Profile.ps1</code></li>
-</ul>
-</li>
+</ul></li>
 <li>current user, all hosts:
+
 <ul>
 <li><code>$PROFILE.CurrentUserAllHosts</code></li>
 <li><code>$Home\Documents\Profile.ps1</code></li>
-</ul>
-</li>
+</ul></li>
 <li>all users, current host:
+
 <ul>
 <li><code>$PROFILE.AllUsersCurrentHost</code></li>
 <li><code>$PsHome\Microsoft.PowerShell_profile.ps1</code></li>
-</ul>
-</li>
+</ul></li>
 <li>all users, all hosts:
+
 <ul>
 <li><code>$PROFILE.AllUsersAllHosts</code></li>
 <li><code>$PsHome\Profile.ps1</code></li>
+</ul></li>
+</ol></li>
 </ul>
-</li>
-</ol>
-</li>
-</ul>
+
 <h3 id="comment-based-help">Comment Based Help:</h3>
+
 <ul>
 <li>syntax:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-csharp" data-lang="csharp">&lt;<span style="color:#960050;background-color:#1e0010">#</span>
@@ -127,87 +136,89 @@ Short description here.
 <span style="color:#960050;background-color:#1e0010">#</span>&gt;
 </code></pre></div></li>
 <li>rules for functions:
+
 <ul>
 <li>before the function, no more than 1 blank line until function definition</li>
 <li>at the start of the function</li>
 <li>at the end of the function</li>
-</ul>
-</li>
+</ul></li>
 <li>rules for scripts:
+
 <ul>
 <li>at the beginning of the script</li>
 <li>at the end(if the script is signed, you should put the CBH at the start)</li>
-</ul>
-</li>
+</ul></li>
 <li>keywords:
+
 <ul>
 <li>most used:
+
 <ul>
 <li><code>SYNOPSYS</code>:
+
 <ul>
 <li>brief description</li>
 <li>once per topic</li>
-</ul>
-</li>
+</ul></li>
 <li><code>DESCRIPTION</code>:
+
 <ul>
 <li>detailed description</li>
 <li>once per topic</li>
-</ul>
-</li>
+</ul></li>
 <li><code>PARAMETER &lt;Parameter-Name&gt;</code>: one for each function/script parameter</li>
 <li><code>EXAMPLE</code>:
+
 <ul>
 <li>sample command + sample output + description</li>
 <li>multiple examples require multiple <code>EXAMPLE</code></li>
-</ul>
-</li>
+</ul></li>
 <li><code>INPUTS</code>: objects that can be piped to the function/script</li>
 <li><code>OUTPUTS</code>: objects that the function/script returns</li>
 <li><code>NOTES</code>: aditional information</li>
 <li><code>LINK</code>:
+
 <ul>
 <li>name of a related topic</li>
 <li>is displayed in the &ldquo;Related Links&rdquo;</li>
 <li>written on the next line</li>
 <li>one <code>LINK</code> for each related topic</li>
 <li>a link can also be a URI, it must begin with &ldquo;http&rdquo; or &ldquo;https&rdquo;</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>others:
+
 <ul>
 <li><code>COMPONENT</code>: technology or feature the script uses</li>
 <li><code>ROLE</code>: displays help customised for the specified user role</li>
 <li><code>FUNCTIONALITY</code>: the intended use of the function</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>to disable CBH enclose the comment in <code>@&quot;</code> and <code>&quot;@</code></li>
 </ul>
+
 <h3 id="best-practices">Best practices:</h3>
+
 <ul>
 <li>use named parameters, not positional</li>
 <li>avoid using <code>Write-Host</code>, instead use: <code>Write-Verbose</code>, <code>Write-Warning</code>, <code>Write-Error</code>, <code>Write-Debug</code></li>
 <li>use singular noun for cmdlet: <code>Device</code>, not <code>Devices</code></li>
 <li>use a verb from the aproved list: <code>Get-Verb</code></li>
 <li>use <code>WhatIf</code> and <code>Confirm</code> when working with commands that modify the system:
+
 <ul>
 <li><code>WhatIf</code>: dry-run</li>
 <li><code>Confirm</code>: creates a confirmation promp</li>
-</ul>
-</li>
+</ul></li>
 <li>use <code>Set-StrictMode -Version Latest</code> only when developing the script(equivalent to javascript&rsquo;s <code>use strict;</code>)</li>
 <li>dont <code>Out-Null</code> to supress output, instead use <code>$null</code> or <code>[void]</code>, its much faster:
+
 <ul>
 <li><code>Out-Null</code>(<code>Get-Verb | Out-Null</code>): 67,6656</li>
 <li><code>AssignedNull</code>(<code>$null = Get-Verb</code>): 2,6301</li>
 <li><code>RedirectedNull</code>(<code>Get-Verb &gt; $null</code>): 6,6363</li>
 <li><code>Void</code>(<code>[void]$PROFILE.Length</code>): 4,9686</li>
-</ul>
-</li>
+</ul></li>
 <li>use double quotes only when the string contains a variable or an escape sequence</li>
 <li>specify the extension for applications: &ldquo;sc.exe&rdquo; instead of &ldquo;sc&rdquo;</li>
 <li>execute script with <code>-NoProfile</code>(you make sure pshell does not load profile files):

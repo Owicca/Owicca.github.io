@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Networking on Down the wabbit&#39;s hole</title>
@@ -6,27 +6,18 @@
     <description>Recent content in Networking on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 02 Jul 2020 10:16:22 +0300</lastBuildDate>
+    <lastBuildDate>Sun, 16 Feb 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/networking/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Networking</title>
-      <link>https://www.dinudev.com/post/networking/</link>
-      <pubDate>Thu, 02 Jul 2020 10:16:22 +0300</pubDate>
+      <title>CCNA 1</title>
+      <link>https://www.dinudev.com/post/ccna1/</link>
+      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.dinudev.com/post/networking/</guid>
-      <description>introduction in tcp/ip networking:  what is a network?:  multiple computers connected together eases the process of moving data from a computer to another   what is a networking model?  big vendors each had their own communication protocols, these propietary protocols would work for their devices but not combined with other devices ISO(international organization for standardization) first tried to standardize a less complex, vendor-neutral network model, which was OSI(open systems interconnection) key terms:  adjacent-layer interaction(communication between two layers on the same computer) same-layer interaction(communication at the same layer between two computers) de-encapsulation: remove and parse header and trailer metadata encapsulation: generate and add header and trailer metadata frame(PDU at data-link) packet(PDU at network layer) segment(PDU at transport layer) protocol data unit(PDU):  a generic way to refer to messages(segments, packets, frames) data unit that will be sent to the lower layer it contains:  current layer header higher layer data unit         what is tcp/ip?</description>
-    </item>
-    
-    <item>
-      <title>CCNA</title>
-      <link>https://www.dinudev.com/post/ccna/</link>
-      <pubDate>Sun, 16 Feb 2020 15:33:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/post/ccna/</guid>
-      <description>ch1 internetworking:  Chapter concepts  Infrastructure components:  firewalls access points wireless controllers   Networking topologies:  star mesh hybrid     What is an internetwork:  two or more networks connected via a router and configured with a logical network addressing scheme with a protocol such as ip or ipv6   network segmentation:  use switches to segment each sw interface into a separate collision domain hubs connect network segments routers break up a broadcast domain   network broadcast:  every device on the network must read and process the broadcast, unless its a router   collision domain:  a device sends a packet out on a network segment and every other device is forced to pay attention no matter what if two devices try to send packets at the same time, a collision occurs and they need to retransmit the packet sequentially   devices:  routers:  break up broadcast domains break up collision domains don&amp;rsquo;t forward broadcasts by default can filter the net based on layer 3(network layer) ip address(logical addressing) packet switching packet filtering:  via access lists   internetwork communication:  connect two or more networks together   path selection:  uses a routing table to map networks to paths   L3 switches provide connection between virtual lans(vlans) can provide quality of service(QOS) for specific types of network traffic it only cares where a network is located and how to get to it   switches:  forward and filter frames L2 switches optimize LAN performance does not break up domains by default switch frames from a port to another withing a switched network each port is a different collision domain in a switched network, you still need a router to provide communication between VLANS it only cares about uniquelly identifying a lan device   wlan device(wireless nic) access points:  extend a collision domain they are in their own broadcast domain(vlan)   firewalls:  controll incoming and outgoing net traffic they are usually an ips(intrusion protection system)     common lan traffic congestion reasons:  too many hosts in a collision or broadcast domain broadcast storms too much multicast traffic low bandwidth adding hubs for connectivity to the network a bunch of arp broadcasts    Communication modes:  simplex: one-way communication(say something and not get a reply) half-duplex: two-way communication(receiver has to wait for the sender to finish sending the message, then it can send a response back) full-duplex: two-way communication(devices receive and transmit at the same time)  Communication types:  connection-oriented:  caracteristics:  virtual circuit(three-way handshake) uses sequencing uses acknowledgments uses flow control   steps:  first establish a connection-oriented session with a &amp;ldquo;three-way handshake&amp;rdquo;:  segment from sender to receiver to request for synchronization(SYN) segment from receiver to sender to acknowledge(ACK) the request and establish connection parameters segment from sender to receiver to acknowledge(ACK) that the connection agreement has been accepted and the actual connection has been established   transfer data termination call that tears down the virtual circuit      Flow control: (provide a way for the receiver to control the amount of data sent by the sender)</description>
+      <guid>https://www.dinudev.com/post/ccna1/</guid>
+      <description>CCNA1 required knowledge: What initial settings need setting up? passwords(switch and router) IP addressing(switch and end devices) default gateway(switch and end devices) Navigation &amp;amp;&amp;amp; Access Basic Device Configuration Save Configurations Ports and Addresses Configure IP Addressing Verify Connectivity  How network protocols enable devices to access local and remote network resources? How physical layer protocols, services, and network media support communications across data networks? Number base change: decimal binary hexadecimal systems  How media access control in the data link layer supports communications across networks?</description>
     </item>
     
   </channel>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>OS on Down the wabbit&#39;s hole</title>
@@ -6,19 +6,10 @@
     <description>Recent content in OS on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 07 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/os/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Red Hat</title>
-      <link>https://www.dinudev.com/post/rh/</link>
-      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.dinudev.com/post/rh/</guid>
-      <description>Virtual machines and automated installations:  what is kvm(kernel-based virtual machine)?  a kernel module that allows compatible processors to run vms() each vm is a regular process each vm has dedicated virtual hardware   how do you configure it on a fresh install?:  install:  # yum install &amp;quot;Virtualization Host&amp;quot; &amp;quot;Virtualization Client&amp;quot;:  qemu-kvm: main kvm package libvirt: hypervisor manager as a daemon libvirt-client: virsh and the API that controls vms virt-install virt-manager: GUI virsh virt-top virt-viewer: GUI to connect to vm consoles   check for kernel modules:  # lsmod | grep kvm:  kvm_intelkvm kvm_amdkvm   if not enabled # modprobe kvm_intel or # modeprobe kvm_amd   enable if not enabled change images location: $ mkdir &amp;lt;path/to/folder&amp;gt; $ su - root # semanage fcontext -a -t virt_image_t &amp;#39;&amp;lt;path/to/folder&amp;gt;(/.</description>
-    </item>
     
     <item>
       <title>Windows</title>
@@ -26,7 +17,7 @@
       <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/post/windows/</guid>
-      <description>Major Versions:  XP(2001) 5.1 Vista(2007) 6.0 7(2009) 6.1 8(2012) 6.2 8.1(2013) 6.3 10(2015) 10  Component Object Model(COM):  originally created to enable Office apps to communicate and exchange data between documents (Object Linking and Embedding - OLE) principles:  clients communicate with objects(COM server objects) through interfaces component implementation is loaded dynamically rather than begin statically linked to the client   it tipically refers to a DLL or EXE where the COM classes are implemented  Windows Runtime(WinRT):  platform services aimed particularlly at app developers for Windows Apps(Windows Store Apps) can target multiple device form factors(IoT, phones, tablets, desktops, xbox, hololens) built on top of COM  .</description>
+      <description>Major Versions:  XP(2001) 5.1 Vista(2007) 6.0 7(2009) 6.1 8(2012) 6.2 8.1(2013) 6.3 10(2015) 10  Component Object Model(COM):  originally created to enable Office apps to communicate and exchange data between documents (Object Linking and Embedding - OLE) principles:  clients communicate with objects(COM server objects) through interfaces component implementation is loaded dynamically rather than begin statically linked to the client  it tipically refers to a DLL or EXE where the COM classes are implemented  Windows Runtime(WinRT):  platform services aimed particularlly at app developers for Windows Apps(Windows Store Apps) can target multiple device form factors(IoT, phones, tablets, desktops, xbox, hololens) built on top of COM  .</description>
     </item>
     
   </channel>

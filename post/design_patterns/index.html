@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>Design Patterns — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -46,42 +46,56 @@
 </header>
 
     <article>
-      <h1 id="creational">Creational:</h1>
+      
+
+<h1 id="creational">Creational:</h1>
+
 <h3 id="factory">Factory:</h3>
+
 <ul>
 <li>a class that creates other classes</li>
 <li>when to use:
+
 <ul>
 <li>the object setup requires a high level of complexity</li>
 <li>generation of different objects is needed based on environment</li>
 <li>when working with many small objects that share the same properties</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="abstract-factory">Abstract Factory:</h3>
+
 <ul>
 <li>to be used when a system needs to be decouple from the way objects are generated</li>
 <li>the system needs to work with multiple objects</li>
 </ul>
+
 <h3 id="mixin">Mixin:</h3>
+
 <ul>
 <li>a bucket of reusable functionality(think of traits in php)</li>
 <li>collect functionality through extension</li>
 <li>it is argued it creates object pollution</li>
 <li>it is argued it adds an level of uncertainty regarding the origin of the functions(in large systems)</li>
 </ul>
+
 <h3 id="properties">Properties:</h3>
+
 <ul>
 <li>create objects based on a template of an existing object through cloning</li>
 <li>in js <code>Object.create</code> does that for you</li>
 <li>in js obj.<strong>proto</strong> is a non-constant pointer to its prototype(can be changed at runtime,
 with a massive speed penalty)</li>
 </ul>
+
 <h3 id="decorator">Decorator:</h3>
+
 <ul>
 <li>check python/java decorators</li>
 </ul>
+
 <h3 id="singleton">Singleton:</h3>
+
 <ul>
 <li>restricts the instantiation of an class to a single object</li>
 <li>there must be exactly one instance and it must be accessible from exactly one point</li>
@@ -105,12 +119,17 @@ instance without modifying their code
 }
 </code></pre></div></li>
 </ul>
+
 <h1 id="structural">Structural:</h1>
+
 <h3 id="adapter">Adapter:</h3>
+
 <ul>
 <li>translate an interface for an object into an interface compatible with a specific system</li>
 </ul>
+
 <h3 id="bridge">Bridge:</h3>
+
 <ul>
 <li>decouple an abstraction from an implementation so that the two can vary independently</li>
 <li>from:
@@ -140,7 +159,9 @@ instance without modifying their code
 <span style="color:#a6e22e">$</span>(<span style="color:#e6db74">&#34;.someElement&#34;</span>).<span style="color:#a6e22e">bind</span>(<span style="color:#e6db74">&#39;click&#39;</span>, <span style="color:#a6e22e">getXBridge</span>);
 </code></pre></div></li>
 </ul>
+
 <h3 id="facade">Facade:</h3>
+
 <ul>
 <li>provide a convenient higher-level interface to a larger body of code,
 hiding its tru underlying complexity</li>

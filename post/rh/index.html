@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>Red Hat — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -28,7 +28,7 @@
 
   
     <time datetime="2020-07-07 00:00:00 &#43;0000 UTC">Post created: 7 Jul 2020</time>
-    <time datetime="2020-07-18 00:00:00 &#43;0000 UTC">Last updated: <b>18 Jul 2020</b></time>
+    <time datetime="2020-07-26 00:00:00 &#43;0000 UTC">Last updated: <b>26 Jul 2020</b></time>
   
 
   <nav class="site-nav">
@@ -46,20 +46,26 @@
 </header>
 
     <article>
-      <h3 id="virtual-machines-and-automated-installations">Virtual machines and automated installations:</h3>
+      
+
+<h3 id="virtual-machines-and-automated-installations">Virtual machines and automated installations:</h3>
+
 <ul>
 <li>what is kvm(kernel-based virtual machine)?
+
 <ul>
 <li>a kernel module that allows compatible processors to run vms()</li>
 <li>each vm is a regular process</li>
 <li>each vm has dedicated virtual hardware</li>
-</ul>
-</li>
+</ul></li>
 <li>how do you configure it on a fresh install?:
+
 <ul>
 <li>install:
+
 <ul>
 <li><code># yum install &quot;Virtualization Host&quot; &quot;Virtualization Client&quot;</code>:
+
 <ul>
 <li>qemu-kvm: main kvm package</li>
 <li>libvirt: hypervisor manager as a daemon</li>
@@ -68,19 +74,20 @@
 <li>virt-manager: GUI <code>virsh</code></li>
 <li>virt-top</li>
 <li>virt-viewer: GUI to connect to vm consoles</li>
-</ul>
-</li>
+</ul></li>
 <li>check for kernel modules:
+
 <ul>
 <li><code># lsmod | grep kvm</code>:
+
 <ul>
-<li><code>kvm_intel kvm</code></li>
-<li><code>kvm_amd kvm</code></li>
-</ul>
-</li>
+<li><code>kvm_intel
+kvm</code></li>
+<li><code>kvm_amd
+kvm</code></li>
+</ul></li>
 <li>if not enabled <code># modprobe kvm_intel</code> or <code># modeprobe kvm_amd</code></li>
-</ul>
-</li>
+</ul></li>
 <li>enable if not enabled</li>
 <li>change images location:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir &lt;path/to/folder&gt;
@@ -89,39 +96,38 @@ $ su - root
 <span style="color:#75715e"># restorecon &lt;path/to/folder&gt;</span>
 <span style="color:#75715e"># rmdir /var/lib/libvirt/images</span>
 <span style="color:#75715e"># ln -s &lt;path/to/folder&gt; /var/lib/libvirt/images</span></code></pre></div></li>
-</ul>
-</li>
+</ul></li>
 <li>how to create a vm?:
+
 <ul>
 <li>install: with <code>virt-install</code></li>
 <li>access vm console:
+
 <ul>
 <li>use virt-manager&rsquo;s virt-viewer or configure a vnc/spice on the vm and connect with an external virt-viewer</li>
-</ul>
-</li>
+</ul></li>
 <li>start/stop: <code>virsh start &lt;domain&gt;</code> / <code>virsh destroy &lt;domain&gt;</code></li>
 <li>launch vm at boot:
+
 <ul>
 <li><code>--autostart</code> in virt-install</li>
 <li><code>virsh autostart &lt;domain&gt;</code></li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>how to automate the installation of a vm?
+
 <ul>
 <li>kickstart:
+
 <ul>
 <li>a config file on a http/ftp accesible host</li>
 <li>a http/ftp accesible .iso or mounted image</li>
-</ul>
-</li>
+</ul></li>
 <li>a config file of the succesful install is /root/anaconda-ks.cfg</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>generic cli tools:
+
 <ul>
 <li>ssh</li>
 <li>scp</li>
@@ -129,8 +135,7 @@ $ su - root
 <li>lftp(scp but worse?!)</li>
 <li>nmap</li>
 <li>telnet(connection testing)</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
     </article>

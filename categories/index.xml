@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Down the wabbit&#39;s hole</title>
@@ -6,10 +6,19 @@
     <description>Recent content in Categories on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 14 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 01 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Linux</title>
+      <link>https://www.dinudev.com/categories/linux/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/linux/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Uncategorized</title>
@@ -30,29 +39,11 @@
     </item>
     
     <item>
-      <title>OS</title>
-      <link>https://www.dinudev.com/categories/os/</link>
-      <pubDate>Tue, 07 Jul 2020 00:00:00 +0000</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/os/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Learning</title>
       <link>https://www.dinudev.com/categories/learning/</link>
       <pubDate>Sat, 04 Jul 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/categories/learning/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Networking</title>
-      <link>https://www.dinudev.com/categories/networking/</link>
-      <pubDate>Thu, 02 Jul 2020 10:16:22 +0300</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/networking/</guid>
       <description></description>
     </item>
     
@@ -68,7 +59,7 @@
     <item>
       <title>Computer Science</title>
       <link>https://www.dinudev.com/categories/computer-science/</link>
-      <pubDate>Mon, 22 Jun 2020 22:18:00 +0000</pubDate>
+      <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       
       <guid>https://www.dinudev.com/categories/computer-science/</guid>
       <description></description>
@@ -129,6 +120,15 @@
     </item>
     
     <item>
+      <title>OS</title>
+      <link>https://www.dinudev.com/categories/os/</link>
+      <pubDate>Mon, 16 Mar 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/os/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Random</title>
       <link>https://www.dinudev.com/categories/random/</link>
       <pubDate>Mon, 09 Mar 2020 15:36:00 +0200</pubDate>
@@ -161,6 +161,15 @@
       <pubDate>Mon, 24 Feb 2020 11:29:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/philosophy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Networking</title>
+      <link>https://www.dinudev.com/categories/networking/</link>
+      <pubDate>Sun, 16 Feb 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/networking/</guid>
       <description></description>
     </item>
     

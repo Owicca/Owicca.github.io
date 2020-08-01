@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>Data Structures and Algorithms — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -46,194 +46,205 @@
 </header>
 
     <article>
-      <h3 id="foundation">Foundation:</h3>
+      
+
+<h3 id="foundation">Foundation:</h3>
+
 <ul>
 <li>what is an algorithm?</li>
 <li>why use an algorithm?</li>
 <li>categories</li>
 </ul>
+
 <h1 id="algorithms">Algorithms:</h1>
+
 <ul>
-<li>
-<p>searching:</p>
+<li><p>searching:</p>
+
 <ul>
 <li>Binary search:
+
 <ul>
 <li>input: sorted list of elements</li>
 <li>guess the middle number and eliminate half the remaining
 numbers every time</li>
 <li>big o(list of n):
+
 <ul>
 <li>best</li>
 <li>avg</li>
 <li>worst: O(log n)</li>
-</ul>
-</li>
+</ul></li>
 <li>return position of element in list or null</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>sorting:</p>
+</ul></li>
+</ul></li>
+
+<li><p>sorting:</p>
+
 <ul>
 <li>selection sort:
+
 <ul>
 <li>big o:
+
 <ul>
 <li>worst: O(n^2)</li>
 <li>avg: O(n^2)</li>
 <li>best: O(n^2)</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>merge sort:
+
 <ul>
 <li>big o:
+
 <ul>
 <li>worst: O(n log n)</li>
 <li>avg: O(n log n)</li>
 <li>best: O(n log n)</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>Quicksort:
+
 <ul>
 <li>base case</li>
 <li>recursive case</li>
 <li>big o:
+
 <ul>
 <li>worst: O(n^2)</li>
 <li>avg: O(n log n)</li>
 <li>best: O(n log n)</li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+
 <h1 id="data-structures">Data structures:</h1>
+
 <ul>
 <li>primitives:
+
 <ul>
 <li>int</li>
 <li>float</li>
 <li>char</li>
-</ul>
-</li>
+</ul></li>
 <li>compound:
+
 <ul>
 <li>Array:
+
 <ul>
 <li>runtimes:
+
 <ul>
 <li>reading: O(1)</li>
 <li>insertion: O(n)</li>
 <li>deletion: O(n)</li>
-</ul>
-</li>
+</ul></li>
 <li>random access</li>
 <li>contigous spaces in memory</li>
 <li>to extend you have to find a bigger free space and
 copy the data there</li>
-<li>random access is easy, because they are contigous, 
-to access item at index n, BASE + n(based on the fact 
+<li>random access is easy, because they are contigous,
+to access item at index n, BASE + n(based on the fact
 that n is lower that BASE[MAX])</li>
 <li>all elements must be of the same data type</li>
-</ul>
-</li>
+</ul></li>
 <li>Linked list:
+
 <ul>
 <li>runtimes:
+
 <ul>
 <li>reading: O(n)</li>
 <li>insertion: O(1)</li>
 <li>deletion: O(1)</li>
-</ul>
-</li>
-<li>deletion is O(1) only if you can access instantly the 
+</ul></li>
+<li>deletion is O(1) only if you can access instantly the
 element</li>
 <li>sequential access</li>
 <li>each item holds a pointer to the next item in the list</li>
 <li>solves arrays problem of contigous memory allocation by randomly asigning one unit of space for every item in the list</li>
-<li>good if you want to access all the elements of the list 
+<li>good if you want to access all the elements of the list
 at once</li>
 <li>if you want to access the last, you need to start from the
-first and go through every one, until you find the searched 
+first and go through every one, until you find the searched
 one</li>
-</ul>
-</li>
+</ul></li>
 <li>hash map:
+
 <ul>
 <li>model relations from one item to another</li>
 <li>an array that uses an hash function to store the values</li>
 <li>a hash function:
+
 <ul>
 <li>for every string value a different number is created</li>
 <li>for the same string the same number is created,
 no matter the ammount of calls</li>
 <li>knows the array size and returns valid indexes
 (n=array lengt, hash &gt;= 0, hash &lt; n - 1)</li>
-</ul>
-</li>
+</ul></li>
 <li>runtime:
+
 <ul>
 <li>worst:
+
 <ul>
 <li>insert: O(n)</li>
 <li>delete: O(n)</li>
 <li>read: O(n)</li>
-</ul>
-</li>
+</ul></li>
 <li>avg:
+
 <ul>
 <li>insert: O(1)</li>
 <li>delete: O(1)</li>
 <li>read: O(1)</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>collision solutions:
+
 <ul>
 <li>start a linked list at the index with multiple values</li>
-</ul>
-</li>
+</ul></li>
 <li>implement:
+
 <ul>
 <li>take into account the load factor:
+
 <ul>
 <li>items in htable/total slots in htable</li>
 <li>at &gt;1 load factor the access time is O(n),
 multiple values with the same hash</li>
 <li>resize storage when lf is greater than 0.7</li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+
 <h3 id="recursion">Recursion:</h3>
+
 <ul>
 <li>structure:
+
 <ul>
 <li>base case: when it finds the item</li>
 <li>recursion case: when it calls itself</li>
+</ul></li>
 </ul>
-</li>
-</ul>
+
 <h3 id="big-o-notation">Big O Notation:</h3>
+
 <ul>
 <li>algorithm speed is measured in number of operations</li>
 <li>how long an algorithm takes to run(time)</li>
 <li>how much memory does it use(space)</li>
 <li>how running time increases based on input size:
+
 <ul>
 <li>constant time: O(1)</li>
 <li>linear time: O(n)</li>
@@ -241,8 +252,7 @@ multiple values with the same hash</li>
 <li>fast sorting algorithm: O(n * log n)</li>
 <li>slow sorting algorithm: O(n^2)</li>
 <li>really slow algorithm: O(n!)</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
     </article>

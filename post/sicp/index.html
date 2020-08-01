@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>SICP — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -27,8 +27,8 @@
   <h1>SICP</h1>
 
   
-    <time datetime="2020-06-22 22:18:00 &#43;0000 UTC">Post created: 22 Jun 2020</time>
-    <time datetime="2020-06-22 00:00:00 &#43;0000 UTC">Last updated: <b>22 Jun 2020</b></time>
+    <time datetime="2020-06-22 00:00:00 &#43;0000 UTC">Post created: 22 Jun 2020</time>
+    <time datetime="2020-07-31 00:00:00 &#43;0000 UTC">Last updated: <b>31 Jul 2020</b></time>
   
 
   <nav class="site-nav">
@@ -46,55 +46,87 @@
 </header>
 
     <article>
-      <h3 id="building-abstractions-with-procedures">Building Abstractions with Procedures:</h3>
+      
+
+<h3 id="scheme-syntax">Scheme syntax:</h3>
+
+<ul>
+<li>reverse enginered from book code snipets and &ldquo;trial and error&rdquo;</li>
+<li><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-ebnf" data-lang="ebnf"><span style="color:#66d9ef">start_delimiter </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;(&#34;</span>;
+<span style="color:#66d9ef">end_delimiter </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;)&#34;</span>;
+<span style="color:#66d9ef">space </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34; &#34;</span>;
+<span style="color:#66d9ef">definition_keyword </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;define&#34;</span>;
+<span style="color:#66d9ef">keyword </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">definition_keyword</span>;
+
+<span style="color:#66d9ef">digit </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;1&#34;</span>|<span style="color:#e6db74">&#34;2&#34;</span>|<span style="color:#e6db74">&#34;3&#34;</span>|<span style="color:#e6db74">&#34;4&#34;</span>|<span style="color:#e6db74">&#34;5&#34;</span>|<span style="color:#e6db74">&#34;6&#34;</span>|<span style="color:#e6db74">&#34;7&#34;</span>|<span style="color:#e6db74">&#34;8&#34;</span>|<span style="color:#e6db74">&#34;9&#34;</span> [{, <span style="color:#e6db74">&#34;0&#34;</span>|<span style="color:#e6db74">&#34;1&#34;</span>|<span style="color:#e6db74">&#34;2&#34;</span>|<span style="color:#e6db74">&#34;3&#34;</span>|<span style="color:#e6db74">&#34;4&#34;</span>|<span style="color:#e6db74">&#34;5&#34;</span>|<span style="color:#e6db74">&#34;6&#34;</span>|<span style="color:#e6db74">&#34;7&#34;</span>|<span style="color:#e6db74">&#34;8&#34;</span>|<span style="color:#e6db74">&#34;9&#34;</span> }];
+<span style="color:#66d9ef">float </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">digit </span>, <span style="color:#e6db74">&#34;.&#34;</span> , <span style="color:#66d9ef">digit </span>[{, <span style="color:#66d9ef">digit </span>}];
+<span style="color:#66d9ef">number </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">digit </span>[{, <span style="color:#66d9ef">digit </span>}];
+
+<span style="color:#66d9ef">alpha_character </span><span style="color:#f92672">=</span> {<span style="color:#66d9ef">a</span>.<span style="color:#960050;background-color:#1e0010">..</span><span style="color:#66d9ef">z</span><span style="color:#960050;background-color:#1e0010">}|{</span><span style="color:#66d9ef">A</span><span style="color:#960050;background-color:#1e0010">...</span><span style="color:#66d9ef">Z</span><span style="color:#960050;background-color:#1e0010">}</span>
+<span style="color:#66d9ef">character </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">alpha_character</span>|<span style="color:#e6db74">&#34;_&#34;</span>|<span style="color:#66d9ef">digit</span>|<span style="color:#66d9ef">float</span>;
+<span style="color:#66d9ef">string </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">alpha_character </span>[{, <span style="color:#66d9ef">character </span>}];
+
+<span style="color:#66d9ef">primitive_operator </span><span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;+&#34;</span>|<span style="color:#e6db74">&#34;-&#34;</span>|<span style="color:#e6db74">&#34;*&#34;</span>|<span style="color:#e6db74">&#34;/&#34;</span>|<span style="color:#e6db74">&#34;%&#34;</span>;
+<span style="color:#66d9ef">operator </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">primitive_operator</span>|<span style="color:#66d9ef">expression_between_parentheses</span>;
+<span style="color:#66d9ef">expression_between_parentheses </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">start_delimiter </span>, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">expression </span>, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">end_delimiter</span>;
+<span style="color:#66d9ef">expression </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">start_delimiter </span>, [<span style="color:#66d9ef">operator</span>] , <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">digit</span>|<span style="color:#66d9ef">float</span>|<span style="color:#66d9ef">number</span>|<span style="color:#66d9ef">character</span>|<span style="color:#66d9ef">string</span>|<span style="color:#66d9ef">expression</span>,<span style="color:#66d9ef">function_call </span>[{, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">digit</span>|<span style="color:#66d9ef">float</span>|<span style="color:#66d9ef">number</span>|<span style="color:#66d9ef">character</span>|<span style="color:#66d9ef">string</span>|<span style="color:#66d9ef">expression</span>|<span style="color:#66d9ef">function_call </span>}] , <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">end_delimiter</span>;<span style="color:#75715e">(* can a compound operator receive a single param? *)</span>
+
+<span style="color:#66d9ef">identifier_definition </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">start_delimiter </span>, <span style="color:#66d9ef">definition_keyword </span>, <span style="color:#66d9ef">space</span>, <span style="color:#66d9ef">start_delimiter </span>, <span style="color:#66d9ef">string </span>[{, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">string</span>}] , <span style="color:#66d9ef">end_delimiter </span>, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">expression_between_parentheses </span>, <span style="color:#66d9ef">end_delimiter</span>;
+<span style="color:#66d9ef">function_call </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">start_delimiter </span>, <span style="color:#66d9ef">string </span>[, {(, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">identifier_0</span>).<span style="color:#960050;background-color:#1e0010">..(,</span> <span style="color:#66d9ef">space </span><span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#66d9ef">identifier_N</span><span style="color:#960050;background-color:#1e0010">)}]</span> <span style="color:#960050;background-color:#1e0010">,</span> <span style="color:#66d9ef">end_delimiter</span><span style="color:#960050;background-color:#1e0010">;</span>
+<span style="color:#66d9ef">function_definition </span><span style="color:#f92672">=</span> <span style="color:#66d9ef">stat_delimiter </span>, <span style="color:#66d9ef">definition_keyword </span>, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">function_call </span>, <span style="color:#66d9ef">space </span>, <span style="color:#66d9ef">function_body </span>, <span style="color:#66d9ef">end_delimiter</span>;</code></pre></div></li>
+</ul>
+
+<h3 id="building-abstractions-with-procedures">Building Abstractions with Procedures:</h3>
+
 <ul>
 <li>complex software is built modularly so that the parts can be constructed, replaced and debugged separatedly</li>
 <li>three mechanisms to create complex expressions:
+
 <ul>
 <li>primitive expressions</li>
 <li>means of combinations: used to build compound elements from simpler ones</li>
 <li>means of abstraction: how compound elements can be named and manipulated as units</li>
-</ul>
-</li>
+</ul></li>
+<li>you can&rsquo;t express computation without defining the environment in which is to be expressed</li>
 <li>primitives:
+
 <ul>
 <li>data: stuff</li>
 <li>procedures: descriptions of the rules for manipulating data</li>
-</ul>
-</li>
+</ul></li>
 <li>tree accumulation:
+
 <ul>
 <li>evaluate the values of every child of the node(recursively)</li>
 <li>and THEN evaluate the value of the node</li>
-</ul>
-</li>
+</ul></li>
 <li>lexical scoping: variables in a procedure are bound by the enclosing block scope(they are looked up in the environment)</li>
 <li>block scoping: variables and definitions in a procedure are bound(private) to the scope of said procedure</li>
 <li>recursivity alone, enables every mathematical computation if tail-call optimization is present</li>
 <li>process types:
+
 <ul>
 <li>iterative:
+
 <ul>
 <li>the environment needs to only keep track of the counter and check if the limit was reached</li>
 <li>the program variables provide a complete description of the state of the process at any point</li>
-<li>a fixed number of state variables, 
-a fixed rule that states how the variables should be updated as the process moves from state to state and 
+<li>a fixed number of state variables,
+a fixed rule that states how the variables should be updated as the process moves from state to state and
 optional end test that specifies the conditions under which the process should end</li>
-</ul>
-</li>
+</ul></li>
 <li>recursive:
+
 <ul>
 <li>procedure vs process:
+
 <ul>
 <li>a recursive procedure refers to itself</li>
 <li>a recursive process expresses the way a process evolves</li>
-</ul>
-</li>
+</ul></li>
 <li>the environment needs to keep track of the deffered operations</li>
-</ul>
-</li>
-</ul>
-</li>
+</ul></li>
+</ul></li>
 <li>tail-recursivenes refers to an iterative process(in constant space) described as an recursive procedure</li>
 </ul>
 

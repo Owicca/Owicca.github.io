@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.74.0-DEV" />
+  <meta name="generator" content="Hugo 0.58.0-DEV" />
   <title>Cuckoo Sandbox Notes — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -46,16 +46,19 @@
 </header>
 
     <article>
-      <h3 id="structure">Structure:</h3>
+      
+
+<h3 id="structure">Structure:</h3>
+
 <ul>
 <li>CWD is implemented so multiple configurations can work with the same cuckoo install</li>
 <li>logging is standard python2 logging:
+
 <ul>
 <li>INFO(all)</li>
 <li>DEBUG</li>
 <li>WARN</li>
-</ul>
-</li>
+</ul></li>
 <li>tries to rise soft</li>
 <li>a dir is created(&ldquo;pidfiles&rdquo;) that holds the pid with the id of the current cuckoo process
 (maybe an abstraction layer that merges win/linux process viewpoints?)</li>
