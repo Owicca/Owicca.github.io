@@ -6,10 +6,19 @@
     <description>Recent content in Programming on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 17 Apr 2020 13:00:00 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://www.dinudev.com/categories/programming/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Databases</title>
+      <link>https://www.dinudev.com/post/databases/</link>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/post/databases/</guid>
+      <description>General: Misc: Posgresql: what are the basics?:  why postgresql?:  they say they are fast stored procedures and functions in a lot of languages: python, ruby, c, sql, javascript, r, perl a lot more built-in types + custom types can be used not only as a db, but as a development platform mature: 20 years of development licensing:  distribute, modify, commercial use allowed can&amp;rsquo;t hold liable you must include copyright and license   why not?</description>
+    </item>
     
     <item>
       <title>.NET</title>

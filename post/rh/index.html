@@ -28,7 +28,7 @@
 
   
     <time datetime="2020-07-07 00:00:00 &#43;0000 UTC">Post created: 7 Jul 2020</time>
-    <time datetime="2020-07-26 00:00:00 &#43;0000 UTC">Last updated: <b>26 Jul 2020</b></time>
+    <time datetime="2020-08-05 00:00:00 &#43;0000 UTC">Last updated: <b>5 Aug 2020</b></time>
   
 
   <nav class="site-nav">
@@ -126,15 +126,98 @@ $ su - root
 <li>a config file of the succesful install is /root/anaconda-ks.cfg</li>
 </ul></li>
 </ul></li>
-<li>generic cli tools:
+<li>generic cli tools that you need thoughrouly understand:
 
 <ul>
-<li>ssh</li>
-<li>scp</li>
-<li>mutt(cli mail client)</li>
-<li>lftp(scp but worse?!)</li>
-<li>nmap</li>
-<li>telnet(connection testing)</li>
+<li><code>scp</code></li>
+<li><code>grep</code></li>
+<li><code>find</code></li>
+<li><code>ps</code></li>
+<li><code>ssh</code></li>
+<li><code>sudo</code></li>
+<li><code>kill</code></li>
+<li><code>sed</code></li>
+<li><code>awk</code></li>
+<li><code>nmap</code></li>
+</ul></li>
+</ul>
+
+<h3 id="documentation">Documentation:</h3>
+
+<ul>
+<li>documentation is saved in &ldquo;/usr/share/doc&rdquo;</li>
+<li>index is a database that holds records for:
+
+<ul>
+<li><code>whatis</code> descriptions</li>
+<li>man page locations</li>
+</ul></li>
+<li>apropos and whatis use a database in /var/cache/man:
+
+<ul>
+<li>is updated daily</li>
+<li>to force an update <code>/etc/cron.daily/man-db.cron</code></li>
+</ul></li>
+<li>commands:
+
+<ul>
+<li><code>apropos</code>: search for a keyword in the man db and return all pages that contain it</li>
+<li><code>whatis</code>: show a short description of a command</li>
+<li><code>man</code>: open the manual page of a particular command</li>
+<li><code>info</code>:</li>
+<li>information manuals(a small number of them, but very extensive)</li>
+<li>location is in &ldquo;/usr/share/info&rdquo;</li>
+</ul></li>
+</ul>
+
+<h3 id="networking">Networking:</h3>
+
+<table>
+<thead>
+<tr>
+<th align="right">old</th>
+<th align="right">new</th>
+<th align="right">description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td align="right">ifconfig</td>
+<td align="right">ip link / ip addr</td>
+<td align="right">address information for all network interfaces</td>
+</tr>
+
+<tr>
+<td align="right">arp</td>
+<td align="right">ip neigh</td>
+<td align="right">show arp table</td>
+</tr>
+
+<tr>
+<td align="right">route / netstat -r</td>
+<td align="right">ip route</td>
+<td align="right">routing table</td>
+</tr>
+
+<tr>
+<td align="right">netstat -npltu</td>
+<td align="right">ss -npltu</td>
+<td align="right">sockets and the programs they belong to</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li><code>arp</code>, <code>ifconfig</code>, <code>netstat</code>, <code>route</code> have been deprecated in favor of <code>ip</code></li>
+<li>temporary changes with the use of <code>ip</code>, but persistence is achieved with the files in &ldquo;/etc/sysconfig/network-scripts&rdquo;</li>
+<li>main host network configuration files:
+
+<ul>
+<li>&rdquo;/etc/hosts&rdquo;: a static map of domains and their ips</li>
+<li>&rdquo;/etc/resolv.conf&rdquo;: a static map of dns domains and their ips</li>
+<li>&rdquo;/etc/hostname&rdquo;: contains the hosts hostname</li>
+<li>&rdquo;/etc/nsswitch.conf&rdquo;: configure the order in which the host will look up a domain</li>
 </ul></li>
 </ul>
 
