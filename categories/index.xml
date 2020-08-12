@@ -12,11 +12,11 @@
     
     
     <item>
-      <title>Programming</title>
-      <link>https://www.dinudev.com/categories/programming/</link>
+      <title>Databases</title>
+      <link>https://www.dinudev.com/categories/databases/</link>
       <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
       
-      <guid>https://www.dinudev.com/categories/programming/</guid>
+      <guid>https://www.dinudev.com/categories/databases/</guid>
       <description></description>
     </item>
     
@@ -66,7 +66,7 @@
     </item>
     
     <item>
-      <title>Computer Science</title>
+      <title>Computer science</title>
       <link>https://www.dinudev.com/categories/computer-science/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       
@@ -84,20 +84,20 @@
     </item>
     
     <item>
+      <title>Programming</title>
+      <link>https://www.dinudev.com/categories/programming/</link>
+      <pubDate>Fri, 17 Apr 2020 13:00:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>Windows</title>
       <link>https://www.dinudev.com/categories/windows/</link>
       <pubDate>Fri, 17 Apr 2020 13:00:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/windows/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Malware Analysis</title>
-      <link>https://www.dinudev.com/categories/malware-analysis/</link>
-      <pubDate>Tue, 14 Apr 2020 22:00:00 +0200</pubDate>
-      
-      <guid>https://www.dinudev.com/categories/malware-analysis/</guid>
       <description></description>
     </item>
     
@@ -161,6 +161,15 @@
       <pubDate>Mon, 24 Feb 2020 11:29:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/categories/philosophy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Malware Analysis</title>
+      <link>https://www.dinudev.com/categories/malware-analysis/</link>
+      <pubDate>Sun, 16 Feb 2020 21:18:00 +0200</pubDate>
+      
+      <guid>https://www.dinudev.com/categories/malware-analysis/</guid>
       <description></description>
     </item>
     

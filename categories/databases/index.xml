@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Databases on Down the wabbit&#39;s hole</title>
+    <link>https://www.dinudev.com/categories/databases/</link>
+    <description>Recent content in Databases on Down the wabbit&#39;s hole</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://www.dinudev.com/categories/databases/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>PostgreSQL</title>
+      <link>https://www.dinudev.com/post/postgresql/</link>
+      <pubDate>Mon, 03 Aug 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.dinudev.com/post/postgresql/</guid>
+      <description>Why postgresql?:  they say they are fast stored procedures and functions in a lot of languages: python, ruby, c, sql, javascript, r, perl a lot more built-in types + custom types can be used not only as a db, but as a development platform mature: 20 years of development licensing:  distribute, modify, commercial use allowed can&amp;rsquo;t hold liable you must include copyright and license   Why not?</description>
+    </item>
+    
+  </channel>
+</rss>
