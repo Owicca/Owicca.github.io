@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Down the wabbit&#39;s hole</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Categories on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 03 Aug 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://www.dinudev.com/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Databases</title>
       <link>https://www.dinudev.com/categories/databases/</link>
@@ -66,7 +62,7 @@
     </item>
     
     <item>
-      <title>Computer science</title>
+      <title>Computer Science</title>
       <link>https://www.dinudev.com/categories/computer-science/</link>
       <pubDate>Mon, 22 Jun 2020 00:00:00 +0000</pubDate>
       

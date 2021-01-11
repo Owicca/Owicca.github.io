@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <title>Red Hat — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
   <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
   <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
-  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/main.css">
 </head>
 
 
@@ -25,15 +25,10 @@
 
     <header>
   <h1>Red Hat</h1>
-
-  
-    <time datetime="2020-07-07 00:00:00 &#43;0000 UTC">Post created: 7 Jul 2020</time>
-    <time datetime="2020-08-05 00:00:00 &#43;0000 UTC">Last updated: <b>5 Aug 2020</b></time>
-  
-
   <nav class="site-nav">
-  <a href="/">Home</a>
+  <a href="">Home</a>
   <a href="/post/">All posts</a>
+  <a href="/why/">But, why?</a>
 
   
 
@@ -42,30 +37,24 @@
   
 </nav>
 
-  
 </header>
 
+
     <article>
-      
-
-<h3 id="virtual-machines-and-automated-installations">Virtual machines and automated installations:</h3>
-
+      <h3 id="virtual-machines-and-automated-installations">Virtual machines and automated installations:</h3>
 <ul>
 <li>what is kvm(kernel-based virtual machine)?
-
 <ul>
 <li>a kernel module that allows compatible processors to run vms()</li>
 <li>each vm is a regular process</li>
 <li>each vm has dedicated virtual hardware</li>
-</ul></li>
+</ul>
+</li>
 <li>how do you configure it on a fresh install?:
-
 <ul>
 <li>install:
-
 <ul>
 <li><code># yum install &quot;Virtualization Host&quot; &quot;Virtualization Client&quot;</code>:
-
 <ul>
 <li>qemu-kvm: main kvm package</li>
 <li>libvirt: hypervisor manager as a daemon</li>
@@ -74,20 +63,19 @@
 <li>virt-manager: GUI <code>virsh</code></li>
 <li>virt-top</li>
 <li>virt-viewer: GUI to connect to vm consoles</li>
-</ul></li>
+</ul>
+</li>
 <li>check for kernel modules:
-
 <ul>
 <li><code># lsmod | grep kvm</code>:
-
 <ul>
-<li><code>kvm_intel
-kvm</code></li>
-<li><code>kvm_amd
-kvm</code></li>
-</ul></li>
+<li><code>kvm_intel kvm</code></li>
+<li><code>kvm_amd kvm</code></li>
+</ul>
+</li>
 <li>if not enabled <code># modprobe kvm_intel</code> or <code># modeprobe kvm_amd</code></li>
-</ul></li>
+</ul>
+</li>
 <li>enable if not enabled</li>
 <li>change images location:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ mkdir &lt;path/to/folder&gt;
@@ -96,38 +84,39 @@ $ su - root
 <span style="color:#75715e"># restorecon &lt;path/to/folder&gt;</span>
 <span style="color:#75715e"># rmdir /var/lib/libvirt/images</span>
 <span style="color:#75715e"># ln -s &lt;path/to/folder&gt; /var/lib/libvirt/images</span></code></pre></div></li>
-</ul></li>
+</ul>
+</li>
 <li>how to create a vm?:
-
 <ul>
 <li>install: with <code>virt-install</code></li>
 <li>access vm console:
-
 <ul>
 <li>use virt-manager&rsquo;s virt-viewer or configure a vnc/spice on the vm and connect with an external virt-viewer</li>
-</ul></li>
+</ul>
+</li>
 <li>start/stop: <code>virsh start &lt;domain&gt;</code> / <code>virsh destroy &lt;domain&gt;</code></li>
 <li>launch vm at boot:
-
 <ul>
 <li><code>--autostart</code> in virt-install</li>
 <li><code>virsh autostart &lt;domain&gt;</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>how to automate the installation of a vm?
-
 <ul>
 <li>kickstart:
-
 <ul>
 <li>a config file on a http/ftp accesible host</li>
 <li>a http/ftp accesible .iso or mounted image</li>
-</ul></li>
+</ul>
+</li>
 <li>a config file of the succesful install is /root/anaconda-ks.cfg</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>generic cli tools that you need thoughrouly understand:
-
 <ul>
 <li><code>scp</code></li>
 <li><code>grep</code></li>
@@ -137,95 +126,94 @@ $ su - root
 <li><code>sudo</code></li>
 <li><code>kill</code></li>
 <li><code>sed</code></li>
-<li><code>awk</code></li>
+<li><code>awk</code>
+<ul>
 <li><code>nmap</code></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="documentation">Documentation:</h3>
-
 <ul>
 <li>documentation is saved in &ldquo;/usr/share/doc&rdquo;</li>
 <li>index is a database that holds records for:
-
 <ul>
 <li><code>whatis</code> descriptions</li>
 <li>man page locations</li>
-</ul></li>
+</ul>
+</li>
 <li>apropos and whatis use a database in /var/cache/man:
-
 <ul>
 <li>is updated daily</li>
 <li>to force an update <code>/etc/cron.daily/man-db.cron</code></li>
-</ul></li>
+</ul>
+</li>
 <li>commands:
-
 <ul>
 <li><code>apropos</code>: search for a keyword in the man db and return all pages that contain it</li>
 <li><code>whatis</code>: show a short description of a command</li>
 <li><code>man</code>: open the manual page of a particular command</li>
-<li><code>info</code>:</li>
+<li><code>info</code>:
+<ul>
 <li>information manuals(a small number of them, but very extensive)</li>
 <li>location is in &ldquo;/usr/share/info&rdquo;</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="networking">Networking:</h3>
-
 <table>
 <thead>
 <tr>
-<th align="right">old</th>
-<th align="right">new</th>
-<th align="right">description</th>
+<th style="text-align:right">old</th>
+<th style="text-align:right">new</th>
+<th style="text-align:right">description</th>
 </tr>
 </thead>
-
 <tbody>
 <tr>
-<td align="right">ifconfig</td>
-<td align="right">ip link / ip addr</td>
-<td align="right">address information for all network interfaces</td>
+<td style="text-align:right">ifconfig</td>
+<td style="text-align:right">ip link / ip addr</td>
+<td style="text-align:right">address information for all network interfaces</td>
 </tr>
-
 <tr>
-<td align="right">arp</td>
-<td align="right">ip neigh</td>
-<td align="right">show arp table</td>
+<td style="text-align:right">arp</td>
+<td style="text-align:right">ip neigh</td>
+<td style="text-align:right">show arp table</td>
 </tr>
-
 <tr>
-<td align="right">route / netstat -r</td>
-<td align="right">ip route</td>
-<td align="right">routing table</td>
+<td style="text-align:right">route / netstat -r</td>
+<td style="text-align:right">ip route</td>
+<td style="text-align:right">routing table</td>
 </tr>
-
 <tr>
-<td align="right">netstat -npltu</td>
-<td align="right">ss -npltu</td>
-<td align="right">sockets and the programs they belong to</td>
+<td style="text-align:right">netstat -npltu</td>
+<td style="text-align:right">ss -npltu</td>
+<td style="text-align:right">sockets and the programs they belong to</td>
 </tr>
 </tbody>
 </table>
-
 <ul>
 <li><code>arp</code>, <code>ifconfig</code>, <code>netstat</code>, <code>route</code> have been deprecated in favor of <code>ip</code></li>
 <li>temporary changes with the use of <code>ip</code>, but persistence is achieved with the files in &ldquo;/etc/sysconfig/network-scripts&rdquo;</li>
 <li>main host network configuration files:
-
 <ul>
-<li>&rdquo;/etc/hosts&rdquo;: a static map of domains and their ips</li>
-<li>&rdquo;/etc/resolv.conf&rdquo;: a static map of dns domains and their ips</li>
-<li>&rdquo;/etc/hostname&rdquo;: contains the hosts hostname</li>
-<li>&rdquo;/etc/nsswitch.conf&rdquo;: configure the order in which the host will look up a domain</li>
-</ul></li>
+<li>&ldquo;/etc/hosts&rdquo;: a static map of domains and their ips</li>
+<li>&ldquo;/etc/resolv.conf&rdquo;: a static map of dns domains and their ips</li>
+<li>&ldquo;/etc/hostname&rdquo;: contains the hosts hostname</li>
+<li>&ldquo;/etc/nsswitch.conf&rdquo;: configure the order in which the host will look up a domain</li>
+</ul>
+</li>
 </ul>
 
     </article>
 
     <nav class="site-nav">
-  <a href="/">Home</a>
-  <a href="/post/">All posts</a>
+  <a href="https://www.dinudev.com/">Home</a>
+  <a href="https://www.dinudev.com//post/">All posts</a>
+  <a href="https://www.dinudev.com//why/">But, why?</a>
 
   
 
@@ -237,18 +225,13 @@ $ su - root
 
 
     <footer class="site-footer">
-  <span class="owner">©2020 OWicca</span>
-
-  
-
-  
+  <span class="owner">©2021 OWicca</span>
 </footer>
 
 
   </div>
 
-  
-<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+  <script src="https://www.dinudev.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 

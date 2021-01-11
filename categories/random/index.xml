@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Random on Down the wabbit&#39;s hole</title>
@@ -6,11 +6,7 @@
     <description>Recent content in Random on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Mar 2020 15:36:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.dinudev.com/categories/random/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 09 Mar 2020 15:36:00 +0200</lastBuildDate><atom:link href="https://www.dinudev.com/categories/random/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Random urls</title>
       <link>https://www.dinudev.com/post/random_urls/</link>
@@ -26,9 +22,9 @@
       <pubDate>Mon, 24 Feb 2020 15:44:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/random_notes/</guid>
-      <description>Network upgrade:  Before:
- 3.65 dl 1.74 up Connection failed 0.25 dl 0.01 up 0.56 dl 0.00 up 0.12 dl 0.00 up  After
- 4.91 dl 6.61 up 10.1 dl 6.09 up 9.08 dl 7.44 up 16.4 dl 7.04 up 11.9 dl 6.03 up   Some algorithm:  get a directory and a hash in directory there can be 0 or more children if there are more than 0 children get the hash keys of the children iterate through the keys truncate the curent key to the hash size and compare them if they are the same, if the child is a file return the file path, if the child is a directory, goroutine recursively else go to the next if no match is found, return nil  How to be as pompous as you can:  only the awake may think seeing is for open eyes cognition is a lie i dream the world awake dreaming is a vestige sleep is pretend a dream is a cowardly thought sleep is not civilized the mind is a tyrant this is your time now i will never dream again stay out of your bedrom there is work to be done dreams are just screaming with pictures the pure of mind do not slumber no good thought follows instinct the lie of sleep seeks many vessels we are our own gods let cognizance nourish itself logic is the final burden the primitive mind deserves its nightmares when we sleep we die i am an idea thinking itself they are no faces the subconscious is a parasite dreaming is a cancer on the face of sleep they follow night to bleed dreams your home has another door unconsciousness is a threat we are not meant to dream you owe the messenger what is true unmakes the false sleep is a scavenger this message will repeat until there are none to read it  Set &amp;ldquo;offline&amp;rdquo; in lol chat:  RADS &amp;gt; Projects &amp;gt; lol_air_clientconfig[your server here] &amp;gt; releases &amp;gt; 0.</description>
+      <description>Network upgrade:   Before:
+ 3.65 dl 1.74 up Connection failed 0.25 dl 0.01 up 0.56 dl 0.00 up 0.12 dl 0.00 up    After
+ 4.91 dl 6.61 up 10.1 dl 6.09 up 9.08 dl 7.44 up 16.4 dl 7.04 up 11.9 dl 6.03 up    Some algorithm:  get a directory and a hash in directory there can be 0 or more children if there are more than 0 children get the hash keys of the children iterate through the keys truncate the curent key to the hash size and compare them if they are the same, if the child is a file return the file path, if the child is a directory, goroutine recursively else go to the next if no match is found, return nil  How to be as pompous as you can:  only the awake may think seeing is for open eyes cognition is a lie i dream the world awake dreaming is a vestige sleep is pretend a dream is a cowardly thought sleep is not civilized the mind is a tyrant this is your time now i will never dream again stay out of your bedrom there is work to be done dreams are just screaming with pictures the pure of mind do not slumber no good thought follows instinct the lie of sleep seeks many vessels we are our own gods let cognizance nourish itself logic is the final burden the primitive mind deserves its nightmares when we sleep we die i am an idea thinking itself they are no faces the subconscious is a parasite dreaming is a cancer on the face of sleep they follow night to bleed dreams your home has another door unconsciousness is a threat we are not meant to dream you owe the messenger what is true unmakes the false sleep is a scavenger this message will repeat until there are none to read it  Set &amp;ldquo;offline&amp;rdquo; in lol chat:  RADS &amp;gt; Projects &amp;gt; lol_air_client_config_[your server here] &amp;gt; releases &amp;gt; 0.</description>
     </item>
     
   </channel>

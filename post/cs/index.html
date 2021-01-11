@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <title>Computer Science — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
   <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
   <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
-  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/main.css">
 </head>
 
 
@@ -25,15 +25,10 @@
 
     <header>
   <h1>Computer Science</h1>
-
-  
-    <time datetime="2020-03-01 17:22:00 &#43;0200 EET">Post created: 1 Mar 2020</time>
-    <time datetime="2020-02-28 00:00:00 &#43;0000 UTC">Last updated: <b>28 Feb 2020</b></time>
-  
-
   <nav class="site-nav">
-  <a href="/">Home</a>
+  <a href="">Home</a>
   <a href="/post/">All posts</a>
+  <a href="/why/">But, why?</a>
 
   
 
@@ -42,30 +37,25 @@
   
 </nav>
 
-  
 </header>
 
+
     <article>
-      
-
-<h3 id="general">General:</h3>
-
+      <h3 id="general">General:</h3>
 <ul>
 <li>everything that is tedious is error-prone</li>
 <li>try to design your types so that values are guaranteed to be valid:
-
 <ul>
 <li>hide the representation</li>
 <li>provide a constructor that creates  only valid objects</li>
 <li>design all member functions to expect valid values
 and leave only valid values behind when they return</li>
-</ul></li>
+</ul>
+</li>
 <li>a rule for what constitues an valid values is an <code>invariant</code></li>
 <li>types for objects in main memory is the same as formats for files on disk</li>
 </ul>
-
 <h3 id="interface-construction-rules">Interface construction rules:</h3>
-
 <ul>
 <li>keep interfaces complete</li>
 <li>keep interfaces minimal</li>
@@ -75,9 +65,7 @@ and leave only valid values behind when they return</li>
 <li>identify nonmodifying member functions</li>
 <li>free all resources in the destructor</li>
 </ul>
-
 <h3 id="attributes-of-a-program">Attributes of a program:</h3>
-
 <ul>
 <li>should produce the desired results for all legal inputs</li>
 <li>should give reasonable error messages for all ilegal imputs</li>
@@ -85,17 +73,13 @@ and leave only valid values behind when they return</li>
 <li>need not worry about misbehaving system software</li>
 <li>is allowed to terminate after finding an error</li>
 </ul>
-
 <h3 id="approaches-to-acceptable-software">Approaches to acceptable software:</h3>
-
 <ul>
 <li>organize software to minimize errors</li>
 <li>eliminate most of the errors we made through debugging and testing</li>
 <li>make sure the remaining errors are not serious</li>
 </ul>
-
 <h3 id="sources-of-errors">Sources of errors:</h3>
-
 <ul>
 <li>Poor specification: if we are not specific of the software functionality we can&rsquo;t asses
 the &ldquo;dark corners&rdquo; and make sure all cases are handled</li>
@@ -105,35 +89,30 @@ the &ldquo;dark corners&rdquo; and make sure all cases are handled</li>
 <li>Unexpected state</li>
 <li>Logical Errors: code that simply does not do what is supposed to do</li>
 </ul>
-
 <h3 id="types-of-errors">Types of errors:</h3>
-
 <ul>
 <li>compile-time:
-
 <ul>
 <li>syntax errors</li>
 <li>type errors(values assigned to variables of the wrong tipe)</li>
 <li>non-errors(<code>area(10, -7)</code>, a rectangle can&rsquo;t have a negative width, but the pc can&rsquo;t
 know that)</li>
-</ul></li>
+</ul>
+</li>
 <li>link-time:
-
 <ul>
 <li>every function in the program must be declared with exactly the same type in every
 translation unit in which is used</li>
 <li>every function must be defined exactly once in the program</li>
-</ul></li>
+</ul>
+</li>
 <li>run-time</li>
 <li>logic errors</li>
 </ul>
-
 <h3 id="debugging">Debugging:</h3>
-
 <ul>
 <li>how would i know if the program actually worked correctly?</li>
 <li>comment the code:
-
 <ul>
 <li>name of the program</li>
 <li>purpose of the program</li>
@@ -144,31 +123,28 @@ translation unit in which is used</li>
 <li>how the source code is organized</li>
 <li>what assumptions are made about the inputs</li>
 <li>what parts of the code are still missing and what cases are still not handled</li>
-</ul></li>
+</ul>
+</li>
 <li>use meaningful names</li>
 <li>use a consistent layout of the code</li>
 <li>break code into small functions, each expressing a logical action:
-
 <ul>
 <li>avoid functions longer than a page or two</li>
-</ul></li>
+</ul>
+</li>
 <li>avoid complicated code sequences:
-
 <ul>
 <li>nested loops</li>
 <li>nested ifs</li>
-</ul></li>
+</ul>
+</li>
 <li>use library facilities rather than your code</li>
 </ul>
-
-<h3 id="pre-post-conditions">Pre/post conditions:</h3>
-
+<h3 id="prepost-conditions">Pre/post conditions:</h3>
 <ul>
 <li>document preconditions in comments</li>
 </ul>
-
 <h3 id="steps-of-software-development">Steps of software development:</h3>
-
 <ul>
 <li>clear description of the problem to be solved</li>
 <li>categorize the problem and choose the best way to resolve it</li>
@@ -177,35 +153,31 @@ translation unit in which is used</li>
 <li>testing and debugging</li>
 <li>maintenance</li>
 </ul>
-
 <h3 id="logic">Logic:</h3>
-
 <ul>
 <li>propositional: relationships among whole statements</li>
 <li>predicate(first-order): internal structure of statements</li>
 </ul>
-
 <h3 id="proposition">Proposition:</h3>
-
 <ul>
 <li>declarative statement which is true or false,
-but not both simultaneously
-
+but not both simultaneously</li>
+<li>examples of propositions:
 <ul>
-<li>examples of propositions:</li>
 <li>6 is less than 24 (true)</li>
 <li>The sun is bigger than the moon!  (true)</li>
-<li>examples of statements that are not propositions:</li>
+</ul>
+</li>
+<li>examples of statements that are not propositions:
+<ul>
 <li>Please close the door.</li>
 <li>Long live the queen!</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="well-formed-formulas">Well-formed formulas:</h3>
-
 <ul>
 <li>combinations of propositions using:
-
 <ul>
 <li>negation(not)</li>
 <li><code>^</code> conjunction(and)</li>
@@ -213,49 +185,49 @@ but not both simultaneously
 <li><code>=&gt;</code> implication
 (false only when the implication is true and the result is false)</li>
 <li><code>&lt;=&gt;</code> equivalence(equality; ==)</li>
-</ul></li>
 </ul>
-
-<h3 id="s-o-l-i-d">S.O.L.I.D:</h3>
-
+</li>
+</ul>
+<h3 id="solid">S.O.L.I.D:</h3>
 <ul>
 <li>Single Reponsibility principle(SRP):
-
 <ul>
 <li>a class should have only one reason to change</li>
-</ul></li>
+</ul>
+</li>
 <li>Open-Closed principle:
-
 <ul>
 <li>a class should be open for extension but closed to change</li>
 <li>a module is open if it is possible to add new fields to the data structure
 it contains, or new elements to the set of functions it performs</li>
 <li>a module is closed if the module has been given a well defined, stable description
 (an interface)</li>
-</ul></li>
+</ul>
+</li>
 <li>Liskov Substitution principle:
-
 <ul>
 <li>if S extends T, objects of type S may be replaced with objects of type T,
 without changing anything</li>
-</ul></li>
+</ul>
+</li>
 <li>Interface Segregation principle:
-
 <ul>
 <li>no client should be forced to depend on methods it does not use</li>
-</ul></li>
+</ul>
+</li>
 <li>Dependency Inversion principle:
-
 <ul>
 <li>one should depend upon abstractions not upon concretions</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 
     </article>
 
     <nav class="site-nav">
-  <a href="/">Home</a>
-  <a href="/post/">All posts</a>
+  <a href="https://www.dinudev.com/">Home</a>
+  <a href="https://www.dinudev.com//post/">All posts</a>
+  <a href="https://www.dinudev.com//why/">But, why?</a>
 
   
 
@@ -267,18 +239,13 @@ without changing anything</li>
 
 
     <footer class="site-footer">
-  <span class="owner">©2020 OWicca</span>
-
-  
-
-  
+  <span class="owner">©2021 OWicca</span>
 </footer>
 
 
   </div>
 
-  
-<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+  <script src="https://www.dinudev.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 

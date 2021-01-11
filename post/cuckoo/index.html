@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <title>Cuckoo Sandbox Notes — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
   <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
   <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
-  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/main.css">
 </head>
 
 
@@ -25,15 +25,10 @@
 
     <header>
   <h1>Cuckoo Sandbox Notes</h1>
-
-  
-    <time datetime="2020-02-11 00:00:00 &#43;0000 UTC">Post created: 11 Feb 2020</time>
-    <time datetime="2020-07-11 00:00:00 &#43;0000 UTC">Last updated: <b>11 Jul 2020</b></time>
-  
-
   <nav class="site-nav">
-  <a href="/">Home</a>
+  <a href="">Home</a>
   <a href="/post/">All posts</a>
+  <a href="/why/">But, why?</a>
 
   
 
@@ -42,23 +37,20 @@
   
 </nav>
 
-  
 </header>
 
+
     <article>
-      
-
-<h3 id="structure">Structure:</h3>
-
+      <h3 id="structure">Structure:</h3>
 <ul>
 <li>CWD is implemented so multiple configurations can work with the same cuckoo install</li>
 <li>logging is standard python2 logging:
-
 <ul>
 <li>INFO(all)</li>
 <li>DEBUG</li>
 <li>WARN</li>
-</ul></li>
+</ul>
+</li>
 <li>tries to rise soft</li>
 <li>a dir is created(&ldquo;pidfiles&rdquo;) that holds the pid with the id of the current cuckoo process
 (maybe an abstraction layer that merges win/linux process viewpoints?)</li>
@@ -69,8 +61,9 @@
     </article>
 
     <nav class="site-nav">
-  <a href="/">Home</a>
-  <a href="/post/">All posts</a>
+  <a href="https://www.dinudev.com/">Home</a>
+  <a href="https://www.dinudev.com//post/">All posts</a>
+  <a href="https://www.dinudev.com//why/">But, why?</a>
 
   
 
@@ -82,18 +75,13 @@
 
 
     <footer class="site-footer">
-  <span class="owner">©2020 OWicca</span>
-
-  
-
-  
+  <span class="owner">©2021 OWicca</span>
 </footer>
 
 
   </div>
 
-  
-<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+  <script src="https://www.dinudev.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 

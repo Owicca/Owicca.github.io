@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Scripting on Down the wabbit&#39;s hole</title>
@@ -6,18 +6,14 @@
     <description>Recent content in Scripting on Down the wabbit&#39;s hole</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 14 Jun 2020 21:45:00 +0200</lastBuildDate>
-    
-	<atom:link href="https://www.dinudev.com/categories/scripting/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sun, 14 Jun 2020 21:45:00 +0200</lastBuildDate><atom:link href="https://www.dinudev.com/categories/scripting/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Bash</title>
       <link>https://www.dinudev.com/post/bash/</link>
       <pubDate>Sun, 14 Jun 2020 21:45:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/bash/</guid>
-      <description>Environment variables:  HISTCONTROL:  don&amp;rsquo;t add to history certain lines options:  ignorespace: don&amp;rsquo;t add lines that start with a space ignoredups: don&amp;rsquo;t add duplicates ignoreboth: ignorespace AND ignoredups    Commands:  shopt:  toggle values of variables controlling shell behaviour:  -s: set option name  histappend: append instead of overwriting history list to file pointed by HISTFILE     Conditions:  -a: file exists -b: file is a block file -c: file is a character file -d: file is a directory -e: file exists -f: file is a regular file(not block or character or directory) -g: file is set-group-id -G: file is owned by effective group -h: file is a symbolic link -k: file has sticky bit set -L: file is a symbolic link -N: file has been modified after the last read -O: file is owned by effective user -p: file is a named pipe -r: file is readable -s: file has size bigger than 0 -S: file is a socket -t: file refers to an open terminal -u: file is set-user-id -w: file is writeable -x: file is executable -nt: file1 was changed more recently than file2 -ot: file2 was changed more recently than file1 -ef: file1 and file2 refer to the same device/inode number</description>
+      <description>Environment variables:  HISTCONTROL:  don&amp;rsquo;t add to history certain lines options:  ignorespace: don&amp;rsquo;t add lines that start with a space ignoredups: don&amp;rsquo;t add duplicates ignoreboth: ignorespace AND ignoredups      Commands:  shopt:  toggle values of variables controlling shell behaviour:  -s: set option name  histappend: append instead of overwriting history list to file pointed by HISTFILE        Conditions:   -a: file exists</description>
     </item>
     
     <item>
@@ -26,7 +22,7 @@
       <pubDate>Fri, 10 Apr 2020 07:00:00 +0200</pubDate>
       
       <guid>https://www.dinudev.com/post/powershell/</guid>
-      <description>Snap-ins:  ms is moving away from the concept of snapins and more thowards modules structure:  name: PSSnapin files:  one or more dlls 0 or more xml configuration files   they have to be installed and registered to be used control:  Add-PSSnapin Remove-PSSnapin Get-PSSnapin  help for loaded snapins: Get-Command -PSSnapin &amp;lt;snapinname&amp;gt;  Modules:  more self-contained and easier to distribute they dont need registration, ps will look in certain paths when searching for a command ($env:PSModulePath) if a module is not in modulepath you can add it with Import-Module if multiple modules are loaded and have a command with the same name, the last loaded module&amp;rsquo;s command will be called user modules location: $Home\Documents\WindowsPowerShell\Modules  Profiles:  a script that is run on shell init system profiles location: a profile location:  current user, current host:  $PROFILE.</description>
+      <description>Snap-ins:  ms is moving away from the concept of snapins and more thowards modules structure:  name: PSSnapin files:  one or more dlls 0 or more xml configuration files     they have to be installed and registered to be used control:  Add-PSSnapin Remove-PSSnapin Get-PSSnapin   help for loaded snapins: Get-Command -PSSnapin &amp;lt;snapinname&amp;gt;  Modules:  more self-contained and easier to distribute they dont need registration, ps will look in certain paths when searching for a command ($env:PSModulePath) if a module is not in modulepath you can add it with Import-Module if multiple modules are loaded and have a command with the same name, the last loaded module&amp;rsquo;s command will be called user modules location: $Home\Documents\WindowsPowerShell\Modules  Profiles:  a script that is run on shell init system profiles location: a profile location:  current user, current host:  $PROFILE.</description>
     </item>
     
   </channel>

@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <title>PostgreSQL — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
   <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
   <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
-  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/main.css">
 </head>
 
 
@@ -25,15 +25,10 @@
 
     <header>
   <h1>PostgreSQL</h1>
-
-  
-    <time datetime="2020-08-03 00:00:00 &#43;0000 UTC">Post created: 3 Aug 2020</time>
-    <time datetime="2020-08-07 00:00:00 &#43;0000 UTC">Last updated: <b>7 Aug 2020</b></time>
-  
-
   <nav class="site-nav">
-  <a href="/">Home</a>
+  <a href="">Home</a>
   <a href="/post/">All posts</a>
+  <a href="/why/">But, why?</a>
 
   
 
@@ -42,14 +37,11 @@
   
 </nav>
 
-  
 </header>
 
+
     <article>
-      
-
-<h3 id="why-postgresql">Why postgresql?:</h3>
-
+      <h3 id="why-postgresql">Why postgresql?:</h3>
 <ul>
 <li>they say they are fast</li>
 <li>stored procedures and functions in a lot of languages: python, ruby, c, sql, javascript, r, perl</li>
@@ -57,270 +49,258 @@
 <li>can be used not only as a db, but as a development platform</li>
 <li>mature: 20 years of development</li>
 <li>licensing:
-
 <ul>
 <li>distribute, modify, commercial use allowed</li>
 <li>can&rsquo;t hold liable</li>
 <li>you must include copyright and license</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="why-not">Why not?:</h3>
-
 <ul>
 <li>mainly geared thowards big enterprise uses:
-
 <ul>
 <li>big installation size</li>
 <li>complex security settings</li>
 <li>not recommended as a cache server</li>
 <li>not recommended for simplistic crud applications</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="what-are-some-common-administration-tools">What are some common administration tools?:</h3>
-
 <ul>
 <li>mantained by core developers:
-
 <ul>
 <li>psql(cli):</li>
 <li>pgAdmin(web):</li>
 <li>phpPgAdmin(web)</li>
-</ul></li>
+</ul>
+</li>
 <li>third-party:
-
 <ul>
 <li>adminer(web)</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="administration">Administration:</h3>
-
 <ul>
 <li>configuration:
-
 <ul>
 <li>&ldquo;postgresql.conf&rdquo;:
-
 <ul>
 <li>memory allocation</li>
 <li>storage location</li>
 <li>ip adresses to listen on</li>
 <li>location of logs</li>
-</ul></li>
+</ul>
+</li>
 <li>&ldquo;pg_hba.conf&rdquo;(host-based authentication):
-
 <ul>
 <li>access controll</li>
-<li>role authentication methods:</li>
+<li>role authentication methods:
+<ul>
 <li>trust: no password needed, every os user connects to every database</li>
 <li>md5: requires a password to connect</li>
 <li>ident: check if the user has a mapping in pg_ident.conf</li>
 <li>cert: the user must have an installed cert, and be allowed from pg_ident.conf</li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>&ldquo;pg_ident.conf&rdquo;:
-
 <ul>
 <li>a map of an os user to a postgresql role</li>
-</ul></li>
+</ul>
+</li>
 <li>reload configuration by:
-
 <ul>
 <li><code>pg_ctl reload</code></li>
 <li><code>systemctl reload &lt;postgres_name&gt;</code></li>
 <li>logged as a superuser: <code>select pg_config_reload()</code></li>
-</ul></li>
+</ul>
+</li>
 <li>&ldquo;postmaster&rdquo; role is the global postgres service</li>
-</ul></li>
+</ul>
+</li>
 <li>connection management:
-
 <ul>
 <li>cancel a running query:
-
 <ul>
 <li>search for a pid in <code>select * from pg_stat_activity</code></li>
 <li><code>select pg_cancel_backend(&lt;pid_found&gt;)</code></li>
 <li><code>select pg_terminate_backend(&lt;pid_found&gt;)</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>roles:
-
 <ul>
 <li>users are roles with login privileges</li>
-<li>on setup a &ldquo;postgres&rdquo; user and a subsequent database, &ldquo;postgres&rdquo; are created</li>
+<li>on setup a &ldquo;postgres&rdquo; user and a subsequent &ldquo;postgres&rdquo; database are created</li>
 <li>create user: <code>CREATE ROLE &lt;role_name&gt; LOGIN PASSWORD '&lt;role_password&gt;' VALID UNTIL 'infinity'</code></li>
 <li>delete user:
-
 <ul>
 <li>drop privileges from external objects:
-
 <ul>
 <li><code>REVOKE &lt;WHATEVER_PRIVILEGES_IT_HAD&gt; ON &lt;OBJECT_TYPE&gt; &lt;OBJECT_NAME&gt; FROM &lt;role_name&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>drop privileges and access from objects owned by the role:
-
 <ul>
 <li><code>REVOKE ALL ON SCHEMA public FROM &lt;role_name&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>drop databases owned by the role:
-
 <ul>
 <li><code>DROP DATABASE &lt;role_owned_db&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>drop role:
-
 <ul>
 <li><code>DROP ROLE &lt;role_name&gt;</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>add roles to another role: <code>GRANT &lt;parent_role&gt; to &lt;child_role&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>database creation:
-
 <ul>
 <li><code>CREATE DATABASE &lt;db_name&gt; [TEMPLATE &lt;template_name&gt;]</code></li>
 <li>templates:
-
 <ul>
 <li>default: &ldquo;template0&rdquo; and &ldquo;template1&rdquo;</li>
-</ul></li>
+</ul>
+</li>
 <li>make a database a template:
-
 <ul>
 <li><code>UPDATE pg_database SET datistemplate = TRUE WHERE datname = '&lt;db_name&gt;'</code></li>
-</ul></li>
+</ul>
+</li>
 <li>create a schema:
-
 <ul>
 <li><code>CREATE SCHEMA &lt;schema_name&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>alter search path(effect on the next connection):
-
 <ul>
 <li><code>ALTER DATABASE &lt;db_name&gt; SET search_path = &lt;an_array_of_schemas&gt;</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>privileges:
-
 <ul>
 <li>common: <code>SELECT</code>, <code>INSERT</code>, <code>UPDATE</code>, <code>ALTER</code>, <code>EXECUTE</code>, <code>DELETE</code>, <code>TRUNCATE</code></li>
 <li>each privilege must have a context</li>
 <li>grant privileges:
-
 <ul>
 <li><code>GRANT &lt;privilege&gt; ON [&lt;OBJECT_TYPE&gt;] &lt;object_name&gt; TO &lt;target&gt; [WITH GRANT OPTION]</code></li>
 <li><code>WITH GRANT OPTION</code> allows the user to grant this privilege further</li>
-</ul></li>
+</ul>
+</li>
 <li>revoke privileges:
-
 <ul>
 <li><code>REVOKE &lt;privilege&gt; ON [&lt;OBJECT_TYPE&gt;] &lt;object_name&gt; FROM &lt;target&gt; [CASCADE | RESTRICT]</code></li>
 <li><code>CASCADE</code>: if a privilege is granted to others, that privilege becomes dependent, cascade will revoke dependend privileges</li>
-</ul></li>
+</ul>
+</li>
 <li>owning a database does not give access to contents(you can always DROP),
 explicit &ldquo;GRANT USAGE&rdquo; must be issued</li>
-</ul></li>
+</ul>
+</li>
 <li>backup and restore:
-
 <ul>
 <li>utilities:
-
 <ul>
 <li>core:
-
 <ul>
 <li><code>pg_dump</code>: backup specific databases</li>
 <li><code>pg_dumpall</code>:
-
 <ul>
 <li>backup all databases and some globals</li>
 <li>backup globals only: <code>pg_dumpall -h &lt;host&gt; -p &lt;port&gt; -U &lt;user&gt; -f &lt;file_name&gt; --globals-only</code></li>
-</ul></li>
+</ul>
+</li>
 <li><code>pg_basebackup</code>: system-level disk backup</li>
-</ul></li>
+</ul>
+</li>
 <li>third-party:
-
 <ul>
 <li><code>pgBackTest</code></li>
 <li><code>Barman</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>restoring backups:
-
-<ul>
-<li><code>psql</code> for plain-text backups: <code>psql -U &lt;user&gt; [-d &lt;db_name&gt;] -f &lt;backup_file.sql&gt;</code></li>
-<li><code>pg_restore</code> for compressed, tar, and directory backups:
-
-<ul>
-<li>entire backup: <code>pg_restore -d &lt;db_name&gt; -j 4 --verbose &lt;backup_file.sql&gt;</code></li>
-<li>just the structure: <code>pg_restore -d &lt;db_name&gt; -j 4 --section=pre-data --verbose &lt;backup_file.sql&gt;</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
+- <code>psql</code> for plain-text backups: <code>psql -U &lt;user&gt; [-d &lt;db_name&gt;] -f &lt;backup_file.sql&gt;</code>
+- <code>pg_restore</code> for compressed, tar, and directory backups:
+- entire backup: <code>pg_restore -d &lt;db_name&gt; -j 4 --verbose &lt;backup_file.sql&gt;</code>
+- just the structure: <code>pg_restore -d &lt;db_name&gt; -j 4 --section=pre-data --verbose &lt;backup_file.sql&gt;</code></li>
+</ul>
+</li>
 <li>managing disk storage with tablespaces:
-
 <ul>
 <li>a tablespace is a mapping of a logical name to a path</li>
 <li>create:
-
 <ul>
 <li><code>CREATE TABLESPACE &lt;tbsp_name&gt; LOCATION &lt;os_path&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>move object to tablespace:
-
 <ul>
 <li><code>ALTER &lt;OBJ_TYPE&gt; &lt;obj_name&gt; SET TABLESPACE &lt;tbsp_name&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>move objects in bulk:
-
 <ul>
 <li><code>ALTER TABLESPACE &lt;tbsp_name&gt; MOVE ALL TO &lt;tbsp_name&gt;</code></li>
-</ul></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="data-types">Data types:</h3>
-
 <ul>
 <li>numerics:
-
 <ul>
 <li>serials:
-
 <ul>
 <li>create sequence:
-
 <ul>
 <li><code>CREATE SEQUENCE s START 1</code></li>
-</ul></li>
+</ul>
+</li>
 <li>to use the sequence value, set it as default value to an int/bigint column:
-
 <ul>
 <li><code>CREATE TABLE table_name(id bigint DEFAULT nextval('s') PRIMARY KEY, name text)</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>generate series function:
-
 <ul>
 <li><code>SELECT x FROM generate_series(&lt;min&gt;, &lt;max&gt;, &lt;step&gt;) AS x</code></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>textuals:
-
 <ul>
 <li>character:
-
 <ul>
 <li>when the values stored are fixed length</li>
 <li>postal codes, phone numbers</li>
 <li>values smaller than the max are padded with spaces</li>
-</ul></li>
+</ul>
+</li>
 <li>varchar:
-
 <ul>
 <li>withouth a max length it behaves like a text</li>
-</ul></li>
+</ul>
+</li>
 <li>text</li>
 <li>string functions:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">ltrim(<span style="color:#f92672">&lt;</span>string_to_trim<span style="color:#f92672">&gt;</span> [, <span style="color:#f92672">&lt;</span>character_to_trim_instead_of_whitespace<span style="color:#f92672">&gt;</span>]);
@@ -330,7 +310,6 @@ lpad(<span style="color:#f92672">&lt;</span>string_to_pad<span style="color:#f92
 rpad(<span style="color:#f92672">&lt;</span>string_to_pad<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>up_to_what_limit<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span>character_to_pad_with<span style="color:#f92672">&gt;</span>);
 <span style="color:#66d9ef">substring</span>(<span style="color:#f92672">&lt;</span>string<span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">start</span><span style="color:#f92672">&gt;</span>, <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">end</span><span style="color:#f92672">&gt;</span>);
         </code></pre></div>
-
 <ul>
 <li>concatenation <code>||</code></li>
 <li>regular expressions:
@@ -340,13 +319,13 @@ regexp_match(<span style="color:#f92672">&lt;</span>string<span style="color:#f9
 <span style="color:#75715e">--- SIMILAR TO(~)
 </span><span style="color:#75715e"></span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span> <span style="color:#66d9ef">WHERE</span> description <span style="color:#f92672">~</span> E<span style="color:#e6db74">&#39;.*&#39;</span>;
         </code></pre></div></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 <li>temporals:
-
 <ul>
 <li>types:
-
 <ul>
 <li>date: month, day and year</li>
 <li>time: hours, minutes and seconds</li>
@@ -357,102 +336,101 @@ regexp_match(<span style="color:#f92672">&lt;</span>string<span style="color:#f9
 <li>tsrange: ?!??</li>
 <li>tstzrange: ??!?!? with timezone</li>
 <li>daterange: ?!!??</li>
-</ul></li>
+</ul>
+</li>
 <li>the timezone data is not stored,
 the tz is used to convert the date to UTC(this date is stored),
 when the date is read, tz data(from server default or service config or user or session) is used to calculate the local time</li>
 <li>OVERLAPS:
-
 <ul>
 <li>returns a boolean</li>
 <li><code>(&lt;range_start_1&gt;, &lt;range_end_1&gt;) OVERLAPS (&lt;range_start_2&gt;, &lt;range_end_2&gt;)</code></li>
-</ul></li>
+</ul>
+</li>
 <li><code>generate_series(&lt;start_date&gt;, &lt;end_date&gt; [, step/interval])</code></li>
-</ul></li>
+</ul>
+</li>
 <li>arrays</li>
 <li>range types:
-
 <ul>
 <li>wtf is discrete vs continous?</li>
-</ul></li>
+</ul>
+</li>
 <li>JSON:
-
 <ul>
 <li>adding:
-
 <ul>
 <li>just set the value as the serialized representation of the json</li>
-</ul></li>
+</ul>
+</li>
 <li>querying:
-
 <ul>
 <li>object:
-
 <ul>
 <li><code>SELECT parent-&gt;'child'-&gt;'child_of_child' FROM users</code></li>
-</ul></li>
+</ul>
+</li>
 <li>array:
-
 <ul>
 <li><code>SELECT parent-&gt;0-&gt;'child_of_array' FROM users</code></li>
-</ul></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>JSONB:
-
 <ul>
 <li>much faster than JSON</li>
 <li>stored internally as a binary object</li>
 <li>does not mantain formatting</li>
 <li>attributes are sorted</li>
 <li>does not allow duplicates</li>
-</ul></li>
+</ul>
+</li>
 <li>XML</li>
 <li>full text search</li>
 <li>custom and composite data types</li>
 </ul>
-
 <h3 id="tables">Tables:</h3>
-
 <ul>
 <li>default:
-
 <ul>
 <li>for primary keys use a serial/bigserial or new pg 10 identity column:
-
 <ul>
 <li>serial/bigserial is an external sequence(a separate object from the table) that can be used by other objects</li>
 <li>identity is bound to the table:
-
 <ul>
 <li>creation:
-
 <ul>
 <li><code>id int GENERATED BY DEFAULT AS IDENTITY PRIMARY KEY,</code></li>
-</ul></li>
+</ul>
+</li>
 <li>move from serial to identity:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DROP</span> SEQUENCE <span style="color:#f92672">&lt;</span>sequence_name<span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">CASCADE</span>;
 <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span>
 <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">GENERATED</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">IDENTITY</span>;
 <span style="color:#75715e">--- if you have existing data, make sure the new values will not overlap with the existing ones:
-</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">RESTART</span> <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">&lt;</span>arbitrary_number<span style="color:#f92672">&gt;</span>;
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">table_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#f92672">&lt;</span><span style="color:#66d9ef">column_name</span><span style="color:#f92672">&gt;</span> <span style="color:#66d9ef">RESTART</span> <span style="color:#66d9ef">WITH</span> <span style="color:#f92672">&lt;</span>last_value_in_db <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">&gt;</span>;
         </code></pre></div></li>
-</ul></li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>inherited:
-
 <ul>
 <li>inherit columns from a base table:
-
 <ul>
 <li><code>CREATE TABLE &lt;table_name&gt; (PRIMARY KEY(&lt;column_name&gt;)) INHERITS &lt;base_table_name&gt;</code></li>
-</ul></li>
+</ul>
+</li>
 <li>can inherit from multiple base tables</li>
 <li>inherited tables can have extra columns</li>
-</ul></li>
+</ul>
+</li>
 <li>partitioned:
-
 <ul>
 <li>child tables that hold parts of a master table, each child table is a different file:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#75715e">--- parent table creation
@@ -468,104 +446,94 @@ table_range <span style="color:#66d9ef">timestamp</span> <span style="color:#66d
 <li>potentially makes queries faster</li>
 <li>less querried data can be added to a child that resides on a hdd, or remote</li>
 <li>from pg 11 parent tables can have primary keys, indexes and unique keys</li>
-</ul></li>
+</ul>
+</li>
 <li>unlogged:
-
 <ul>
 <li>for ephemeral data that does not need to be restored after a crash:
-
 <ul>
 <li><code>CREATE UNLOGGED TABLE table_name</code></li>
-</ul></li>
+</ul>
+</li>
 <li>not part of any write-ahead logs</li>
 <li>10x - 15x speedup on writing speed</li>
 <li>set unlogged table as logged:
-
 <ul>
 <li><code>ALTER TABLE table_name SET LOGGED</code></li>
-</ul></li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
+</li>
+</ul>
 <h3 id="constraints">Constraints:</h3>
-
 <ul>
 <li>foreign key:
-
 <ul>
 <li>alter:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> <span style="color:#66d9ef">table_name</span> <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> <span style="color:#66d9ef">constraint_name</span> <span style="color:#66d9ef">FOREIGN</span> <span style="color:#66d9ef">KEY</span> (<span style="color:#66d9ef">column_name</span>)
 <span style="color:#66d9ef">REFERENCES</span> other_table_name (other_table_column) <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">UPDATE</span> <span style="color:#66d9ef">CASCADE</span><span style="color:#f92672">/</span><span style="color:#66d9ef">RESTRICT</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">CASCADE</span><span style="color:#f92672">/</span><span style="color:#66d9ef">RESTRICT</span>;
         </code></pre></div></li>
-</ul></li>
+</ul>
+</li>
 <li>unique:
-
 <ul>
 <li><code>ALTER TABLE table_name ADD CONSTRAINT constraint_name UNIQUE (col1, col2, etc)</code></li>
-</ul></li>
+</ul>
+</li>
 <li>check:
-
-<ul>
-<li>conditions for a columns value to be true(more specific constraint than a column type):
-
-<ul>
-<li><code>ALTER TABLE table_name ADD CONSTRAINT constraint_name CHECK (&lt;operand&gt; &lt;operator&gt; &lt;operand&gt;)</code></li>
-</ul></li>
-</ul></li>
+- conditions for a columns value to be true(more specific constraint than a column type):
+- <code>ALTER TABLE table_name ADD CONSTRAINT constraint_name CHECK (&lt;operand&gt; &lt;operator&gt; &lt;operand&gt;)</code></li>
 <li>exclusion:
-
 <ul>
 <li>TODO: review this</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="indexes">Indexes:</h3>
-
 <ul>
 <li>stock indexes:
-
 <ul>
 <li>B-Tree</li>
 <li>BRIN(block range index):
-
 <ul>
 <li>for very large tables</li>
 <li>less space</li>
 <li>slower than b-tree</li>
 <li>can not be used for a primary key</li>
-</ul></li>
+</ul>
+</li>
 <li>GiST(generalized search tree):
-
 <ul>
 <li>optimized for spatial data, scientific data, unstructured data, hierarhical data</li>
 <li>does not store the indexed value, it stores a bounding value(another lookup is needed for the real value)</li>
-</ul></li>
+</ul>
+</li>
 <li>GIN(generalized inverted index):
-
 <ul>
 <li>optimized for full text search and jsonb</li>
 <li>GiST without the lossiness</li>
-</ul></li>
+</ul>
+</li>
 <li>SP-GiST(space-partitioned generalized search tree)</li>
 <li>hash:
-
 <ul>
 <li>although it got transactional safety, write-ahead logging and performance improvements in pg10 it is legacy</li>
-</ul></li>
+</ul>
+</li>
 <li>B-Tree-GiSTR/B-Tree-GIN</li>
-</ul></li>
+</ul>
+</li>
 <li>operator classes:
-
 <ul>
 <li>TODO: review</li>
-</ul></li>
+</ul>
+</li>
 <li>functional indexes:
-
 <ul>
 <li>indexes for functions of columns</li>
-</ul></li>
+</ul>
+</li>
 <li>partial indexes:
-
 <ul>
 <li>indexes that only cover a range from a total:
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> subscribers (
@@ -574,112 +542,245 @@ name varchar(<span style="color:#ae81ff">50</span>) <span style="color:#66d9ef">
 is_active boolean);
 <span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">UNIQUE</span> <span style="color:#66d9ef">INDEX</span> index_name <span style="color:#66d9ef">ON</span> subscribers <span style="color:#66d9ef">USING</span> btree(<span style="color:#66d9ef">lower</span>(name)) <span style="color:#66d9ef">WHERE</span> is_active;
         </code></pre></div></li>
-</ul></li>
+</ul>
+</li>
 <li>multicolumn indexes</li>
 </ul>
-
+<h3 id="sql-writing">SQL Writing:</h3>
+<ul>
+<li>views:
+<ul>
+<li>a query permanently stored in the db(does not hold the data it queries)</li>
+<li><code>CREATE OR REPLACE VIEW &lt;view_name&gt; AS &lt;query&gt; [WITH CHECK]</code></li>
+<li>if you do not add &lsquo;WITH CHECK&rsquo;, the following are allowed:
+<ul>
+<li>you can insert data that is outside of the view</li>
+<li>you can update data so it won&rsquo;t show in the view</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>handy constructions:
+<ul>
+<li>casting:
+<ul>
+<li><code>CAST('2011-11-11' as DATE)</code></li>
+<li><code>'2011-11-11'::date</code></li>
+</ul>
+</li>
+<li>&ldquo;VALUES&rdquo; as a value list:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> (
+  <span style="color:#66d9ef">VALUES</span> (<span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;test1&#39;</span>, <span style="color:#e6db74">&#39;2020-10-10&#39;</span>::date),
+  (<span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#39;test2&#39;</span>, <span style="color:#e6db74">&#39;2020-10-11&#39;</span>::date),
+  (<span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#39;test3&#39;</span>, <span style="color:#e6db74">&#39;2020-10-12&#39;</span>::date)
+) <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">values</span> (id, val, val_date);</code></pre></div></li>
+<li>case insensitive search:
+<ul>
+<li><code>SELECT * FROM table WHERE table.name ILIKE '%name%'</code></li>
+<li><code>SELECT * FROM table WHERE table.name ~~* '%name%'</code></li>
+</ul>
+</li>
+<li>returning deleted/updated rows:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">DELETE</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table</span>;
+RETURNING col_name1, col_name2;</code></pre></div></li>
+<li>dollar quoting:
+<ul>
+<li>if a text has a lot of single quotes, instead of escaping every one of them
+(with another single quote in front of the one you want to escape)</li>
+<li><code>$$It's O'Neil's play. $$</code> instead of <code>'It''s O''Neil''s play. '</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>window functions: TODO</li>
+<li>common table expressions: TODO</li>
+<li>lateral joins: TODO</li>
+<li>ordinality: TODO</li>
+<li>grouping sets, cube, rollup: TODO</li>
+</ul>
+<h3 id="query-performance-optimization">Query performance optimization:</h3>
+<ul>
+<li>explain:
+<ul>
+<li>planned execution analytics:
+<ul>
+<li><code>EXPLAIN &lt;query&gt;</code></li>
+</ul>
+</li>
+<li>execute and return planned execution analytics + actual execution analytics:
+<ul>
+<li><code>EXPLAIN ANALYZE &lt;query&gt;</code></li>
+<li>the amount of cache hits:
+<ul>
+<li><code>EXPLAIN (ANALYZE, BUFFERS) &lt;query&gt;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>same as &ldquo;ANALYZE&rdquo;, but more verbose:
+<ul>
+<li><code>EXPLAIN VERBOSE &lt;query&gt;</code></li>
+</ul>
+</li>
+<li>if you do not want to execute an &ldquo;ANALYZE&rdquo;, wrap it in a transaction and then rollback</li>
+<li>planner execution analytics explanation:
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql"><span style="color:#66d9ef">EXPLAIN</span> <span style="color:#66d9ef">ANALYZE</span>
+<span style="color:#66d9ef">SELECT</span> tract_id, hispanic_or_latino,
+<span style="color:#66d9ef">FROM</span> hisp_pop 
+<span style="color:#66d9ef">WHERE</span> tract_id<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;125245&#39;</span>;
+<span style="color:#75715e">/*
+</span><span style="color:#75715e">Seq Scan on hisp_pop
+</span><span style="color:#75715e">  (cost=0.00..33.48 rows=1 width=16)
+</span><span style="color:#75715e">  (actual time=0.213..0.346 rows=1 loops=1)
+</span><span style="color:#75715e">  Filter: ((tract_id)::text = &#39;25025010103&#39;::text)
+</span><span style="color:#75715e">  Rows Removed by Filter: 1477
+</span><span style="color:#75715e">Planning time: 0.095 ms
+</span><span style="color:#75715e">Execution time: 0.381 ms
+</span><span style="color:#75715e">*/</span></code></pre></div>
+<ul>
+<li>&ldquo;(cost=0.00..33.48)&rdquo; = &ldquo;(cost=<!-- raw HTML omitted -->..<!-- raw HTML omitted -->)&quot;:
+<ul>
+<li>startup cost:
+<ul>
+<li>scanning indexes</li>
+<li>joins of tables</li>
+<li>all done before retrieval</li>
+</ul>
+</li>
+<li>retrieval cost</li>
+<li>the cost is specified in arbitrary units used to compare on the same machine</li>
+</ul>
+</li>
+<li>&ldquo;Rows Removed By Filter&rdquo;:
+<ul>
+<li>the amount of rows examined before excluded</li>
+</ul>
+</li>
+<li>&ldquo;Planning time&rdquo;:
+<ul>
+<li>the amount of time it takes for the planner to come up with the execution plan</li>
+</ul>
+</li>
+<li>&ldquo;Execution time&rdquo;:
+<ul>
+<li>everything else</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>statistics</li>
+<li>writing better queries</li>
+<li>paralelized queries</li>
+<li>the query planner</li>
+<li>caching</li>
+</ul>
 <h3 id="miscelaneous">Miscelaneous:</h3>
-
 <ul>
 <li>drivers:
-
 <ul>
 <li>php: pdo_pgsql</li>
 <li>java: JDBC</li>
 <li>.NET: npgsql</li>
 <li>python: psycopg2</li>
 <li>node: node-dbi</li>
-</ul></li>
+</ul>
+</li>
 <li>important db objects:
-
 <ul>
 <li>databases</li>
 <li>schemas:
-
 <ul>
 <li>similar to namespaces</li>
 <li>on database creation a &ldquo;public&rdquo; schema is created</li>
-</ul></li>
+</ul>
+</li>
 <li>tables:
-
 <ul>
 <li>they are inheritable</li>
 <li>a custom type is created</li>
-</ul></li>
+</ul>
+</li>
 <li>views:
-
 <ul>
 <li>data abstraction that gathers data one or multiple tables</li>
 <li>read-only(except for materialized views)</li>
-</ul></li>
+</ul>
+</li>
 <li>extensions:
-
 <ul>
 <li>add-ons</li>
-</ul></li>
+</ul>
+</li>
 <li>functions:
-
 <ul>
 <li>custom computation</li>
-</ul></li>
+</ul>
+</li>
 <li>languages:
-
 <ul>
 <li>defaults are sql, pl/pgsql and c</li>
-</ul></li>
+</ul>
+</li>
 <li>operators:
-
 <ul>
 <li>symbolically named aliases</li>
 <li>foreign tables and foreign data wrappers:
-
 <ul>
 <li>link to databases from another server, local files, tables from other types of databases(oracle, mysql, etc)</li>
 <li>a form of rpc with drivers that handle the translation between formats</li>
-</ul></li>
+</ul>
+</li>
 <li>triggers and trigger functions:
-
 <ul>
 <li>event based computation</li>
-</ul></li>
+</ul>
+</li>
 <li>catalogs:
-
 <ul>
 <li>system schemas</li>
 <li>store builtin functions and metadata</li>
-<li>schemas:</li>
+<li>schemas:
+<ul>
 <li>&ldquo;pg_catalog&rdquo;:
-
 <ul>
 <li>functions</li>
 <li>tables</li>
 <li>system views</li>
 <li>casts</li>
 <li>types</li>
-</ul></li>
+</ul>
+</li>
 <li>&ldquo;information_schema&rdquo;:
-
 <ul>
 <li>metadata</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 <li>types</li>
 <li>full text search</li>
 <li>casts:
-
 <ul>
 <li>logic to cast a type to another</li>
-</ul></li>
+</ul>
+</li>
 <li>squences</li>
-</ul></li>
-</ul></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
     </article>
 
     <nav class="site-nav">
-  <a href="/">Home</a>
-  <a href="/post/">All posts</a>
+  <a href="https://www.dinudev.com/">Home</a>
+  <a href="https://www.dinudev.com//post/">All posts</a>
+  <a href="https://www.dinudev.com//why/">But, why?</a>
 
   
 
@@ -691,18 +792,13 @@ is_active boolean);
 
 
     <footer class="site-footer">
-  <span class="owner">©2020 OWicca</span>
-
-  
-
-  
+  <span class="owner">©2021 OWicca</span>
 </footer>
 
 
   </div>
 
-  
-<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+  <script src="https://www.dinudev.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 

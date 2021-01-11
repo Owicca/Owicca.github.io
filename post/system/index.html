@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="OWicca">
-  <meta name="generator" content="Hugo 0.58.0-DEV" />
+  <meta name="generator" content="Hugo 0.80.0" />
   <title>Systemd — Down the wabbit&#39;s hole</title>
 
   <meta name="description" content="">
@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700">
   <link rel="stylesheet" href="https://www.dinudev.com/css/highlight.css">
   <link rel="stylesheet" href="https://www.dinudev.com/css/paperback.css">
-  <link rel="stylesheet" href="https://www.dinudev.com//main.css">
+  <link rel="stylesheet" href="https://www.dinudev.com/css/main.css">
 </head>
 
 
@@ -25,15 +25,10 @@
 
     <header>
   <h1>Systemd</h1>
-
-  
-    <time datetime="2020-08-01 00:00:00 &#43;0000 UTC">Post created: 1 Aug 2020</time>
-    <time datetime="2020-08-01 00:00:00 &#43;0000 UTC">Last updated: <b>1 Aug 2020</b></time>
-  
-
   <nav class="site-nav">
-  <a href="/">Home</a>
+  <a href="">Home</a>
   <a href="/post/">All posts</a>
+  <a href="/why/">But, why?</a>
 
   
 
@@ -42,14 +37,11 @@
   
 </nav>
 
-  
 </header>
 
+
     <article>
-      
-
-<h3 id="reasons-why-rhel-migrated-from-upstart-init-daemon-rhel-6-to-systemd">Reasons why RHEL migrated from Upstart init daemon(RHEL 6) to systemd:</h3>
-
+      <h3 id="reasons-why-rhel-migrated-from-upstart-init-daemonrhel-6-to-systemd">Reasons why RHEL migrated from Upstart init daemon(RHEL 6) to systemd:</h3>
 <ul>
 <li>faster boot times because targets units startup can be paralelized(<code>systemd-analyze time</code>/<code>systemd-analyze blame</code>)</li>
 <li>only needed units are started, others are started on demand</li>
@@ -57,26 +49,22 @@
 ensure all processes of the service are terminated upon service stop)
 and limit processes started by a service(<code>systemd-cgls</code>)</li>
 <li>a central logging system(<code>journalctl</code>):
-
 <ul>
 <li>for log disk persistence:
 mkdir /var/log/journal
 chgrp systemd-journal /var/log/journal
 chmod 2775 /var/log/journal
 systemctl restart systemd-journald.service</li>
-</ul></li>
 </ul>
-
+</li>
+</ul>
 <h3 id="location">Location</h3>
-
 <ul>
 <li>default files are in /usr/lib/systemd/system, don&rsquo;t overwrite this,
 they are writen upon software updates.</li>
 <li>custom files are in /etc/systemd/system.</li>
 </ul>
-
-<h3 id="unit-types-systemctl-list-units">Unit Types(<code>systemctl list-units</code>):</h3>
-
+<h3 id="unit-typessystemctl-list-units">Unit Types(<code>systemctl list-units</code>):</h3>
 <ul>
 <li><strong>Target</strong> -&gt; a set of units</li>
 <li><strong>Service</strong> -&gt; a service, daemon</li>
@@ -98,8 +86,9 @@ of a set of system processes</li>
     </article>
 
     <nav class="site-nav">
-  <a href="/">Home</a>
-  <a href="/post/">All posts</a>
+  <a href="https://www.dinudev.com/">Home</a>
+  <a href="https://www.dinudev.com//post/">All posts</a>
+  <a href="https://www.dinudev.com//why/">But, why?</a>
 
   
 
@@ -111,18 +100,13 @@ of a set of system processes</li>
 
 
     <footer class="site-footer">
-  <span class="owner">©2020 OWicca</span>
-
-  
-
-  
+  <span class="owner">©2021 OWicca</span>
 </footer>
 
 
   </div>
 
-  
-<script src="https://www.dinudev.com/js/highlight.pack.js"></script>
+  <script src="https://www.dinudev.com/js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 
 
