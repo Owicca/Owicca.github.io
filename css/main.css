@@ -32,3 +32,7 @@ body > div {
 body > div.container {
 	max-width: 800px;
 }*/
+
+code[data-lang] {
+	background-color: initial;
+}

@@ -1,5 +1,6 @@
 <!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.80.0"><title>C# — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/csharp/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com/css/main.css></head><body><div class=container><header><h1>C#</h1><nav class=site-nav><a href=/>Home</a>
 <a href=/post/>All posts</a>
+<a href=/journey/>The journey</a>
 <a href=/paper/>Papers</a></nav></header><article><h3 id=general>General:</h3><ul><li>expression-bodied members: <code>public string Func(param) => "result" + param</code></li><li>string interpolation: <code>var str = "string"; $"This is a {string}"</code></li><li><code>using static</code>:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cls</span>
 {
 	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>string</span> staticString = <span style=color:#e6db74>&#34;str&#34;</span>;
@@ -93,5 +94,6 @@ anonHandler(<span style=color:#e6db74>&#34;CAPS LOCK&#34;</span>);
 }
 </code></pre></div></li></ul><h3 id=entrypoint>Entrypoint:</h3><ul><li>must be a method</li><li>must be called <code>Main</code></li><li>must be static</li><li>must return void or int</li><li>either parameterless or have a single <code>string[]</code></li><li>nongeneric and declared in a nongeneric type</li><li>can&rsquo;t be async</li><li>can&rsquo;t be a partial method without implementation</li></ul></article><nav class=site-nav><a href=https://www.dinudev.com//>Home</a>
 <a href=https://www.dinudev.com//post/>All posts</a>
+<a href=https://www.dinudev.com//journey/>The journey</a>
 <a href=https://www.dinudev.com//paper/>Papers</a>
 <a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2021 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>

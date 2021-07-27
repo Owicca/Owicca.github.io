@@ -88,6 +88,10 @@ kbd, code {
   background-color: #e5e5e5;
 }
 
+code[data-lang] {
+  background-color: initial;
+}
+
 article, section {
   margin-bottom: 1rem;
 }
