@@ -1,99 +1,84 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.80.0"><title>C# — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/csharp/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com/css/main.css></head><body><div class=container><header><h1>C#</h1><nav class=site-nav><a href=/>Home</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.102.3"><title>C# — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/csharp/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com/css/main.css></head><body><div class=container><header><h1>C#</h1><nav class=site-nav><a href=/>Home</a>
 <a href=/post/>All posts</a>
 <a href=/journey/>The journey</a>
-<a href=/paper/>Papers</a></nav></header><article><h3 id=general>General:</h3><ul><li>expression-bodied members: <code>public string Func(param) => "result" + param</code></li><li>string interpolation: <code>var str = "string"; $"This is a {string}"</code></li><li><code>using static</code>:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cls</span>
-{
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>string</span> staticString = <span style=color:#e6db74>&#34;str&#34;</span>;
-}
-<span style=color:#66d9ef>using</span> static Cls;
-Console.WriteLine(staticString)
-</code></pre></div></li><li>deconstruction:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> (<span style=color:#66d9ef>string</span>, <span style=color:#66d9ef>int</span>) Func(<span style=color:#66d9ef>string</span>)
-{
-	<span style=color:#66d9ef>var</span> rnd = <span style=color:#66d9ef>new</span> Random();
-	<span style=color:#66d9ef>return</span> (<span style=color:#66d9ef>string</span>, rnd.Next());
-}
-
-<span style=color:#66d9ef>var</span> (someString, someInt) = Func(<span style=color:#e6db74>&#34;test&#34;</span>);
-<span style=color:#75715e>// with types
-</span><span style=color:#75715e></span>(<span style=color:#66d9ef>string</span> someString, <span style=color:#66d9ef>int</span> someInts) = Func(<span style=color:#e6db74>&#34;test&#34;</span>);
-<span style=color:#75715e>// with discards
-</span><span style=color:#75715e></span>(<span style=color:#960050;background-color:#1e0010>\</span>_, someInt) = Func(<span style=color:#e6db74>&#34;test&#34;</span>);
-</code></pre></div></li><li>blazor are razor pages running in the browser, a mono runtime compiled to web assembly</li><li><code>Func&lt;string, int, decimal></code>: a delegate type with <code>string, int</code> parameters
+<a href=/paper/>Papers</a></nav></header><article><h3 id=general>General:</h3><ul><li>expression-bodied members: <code>public string Func(param) => "result" + param</code></li><li>string interpolation: <code>var str = "string"; $"This is a {string}"</code></li><li><code>using static</code>:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Cls</span>
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>string</span> staticString = <span style=color:#e6db74>&#34;str&#34;</span>;
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>using</span> static Cls;
+</span></span><span style=display:flex><span>Console.WriteLine(staticString)</span></span></code></pre></div></li><li>deconstruction:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> (<span style=color:#66d9ef>string</span>, <span style=color:#66d9ef>int</span>) Func(<span style=color:#66d9ef>string</span>)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>var</span> rnd = <span style=color:#66d9ef>new</span> Random();
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>return</span> (<span style=color:#66d9ef>string</span>, rnd.Next());
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> (someString, someInt) = Func(<span style=color:#e6db74>&#34;test&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#75715e>// with types</span>
+</span></span><span style=display:flex><span>(<span style=color:#66d9ef>string</span> someString, <span style=color:#66d9ef>int</span> someInts) = Func(<span style=color:#e6db74>&#34;test&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#75715e>// with discards</span>
+</span></span><span style=display:flex><span>(<span style=color:#960050;background-color:#1e0010>\</span>_, someInt) = Func(<span style=color:#e6db74>&#34;test&#34;</span>);</span></span></code></pre></div></li><li>blazor are razor pages running in the browser, a mono runtime compiled to web assembly</li><li><code>Func&lt;string, int, decimal></code>: a delegate type with <code>string, int</code> parameters
 and <code>decimal</code> return type</li><li>delegate that does not return a value:<ul><li><code>Action</code></li><li><code>Action&lt;T></code>(<code>T</code> is the param to the delegate)</li></ul></li></ul><h3 id=generics>Generics:</h3><ul><li>type safety at compile time without knowing the type beforehand</li></ul><h3 id=representing-nullable-values>Representing nullable values:</h3><ul><li></li></ul><h3 id=iterators>Iterators:</h3><ul><li>lazy computation at run-time</li></ul><h2 id=c-3>C# 3:</h2><ul><li>object and collection initializer:<ul><li><code>new Agent() {Name = "James", Surname = "Bond"}</code></li><li><code>new Agency() { Agents = { new Agent() {Name = "James", Surname = "Bond"}, new Agent() {Name = "Bond", Surname = "James"} } }</code></li></ul></li><li>Expresion trees:<ul><li>code available for inspection at execution-time</li><li>data structure that represents executable code</li><li>it is much easier to translate a data structure to SQL instead of IL to SQL</li><li>only expression-bodied lambda expressions can be converted to expression trees,
 this is less of a problem with the addition of object and collection initializers
 (which are initialized as single expressions)</li><li><code>Expression&lt;Func&lt;int, int, int>> adder = (x, y) => x + y; Console.WriteLine(adder);</code>
-is equivalent of<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp>	ParameterExpression xParameter = Expression.Parameter(<span style=color:#66d9ef>typeof</span>(<span style=color:#66d9ef>int</span>), <span style=color:#e6db74>&#34;x&#34;</span>);
-	ParameterExpression yParameter = Expression.Parameter(<span style=color:#66d9ef>typeof</span>(<span style=color:#66d9ef>int</span>), <span style=color:#e6db74>&#34;y&#34;</span>);
-	Expression body = Expression.Add(xParameter, yParameter);
-	ParameterExpression[] parameters = <span style=color:#66d9ef>new</span>[] { xParameter, yParameter };
-	Expression&lt;Func&lt;<span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>&gt;&gt; adder = Expression.Lambda&lt;Func&lt;<span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>&gt;&gt;(body, parameters);
-	Console.WriteLine(adder);
-	
-</code></pre></div></li><li>used to execute queries against remote data sources</li></ul></li><li>Extension Methods:<ul><li>static methods that can be called as if they&rsquo;re instance methods based on their first parameter</li><li><code>ExampleClass.Method(x, y);</code> is equivalent of <code>x.Method(y)</code></li><li>the compiler will prefer a valid method over the extension method</li><li></li></ul><p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp>	<span style=color:#66d9ef>string</span>[] words = { <span style=color:#e6db74>&#34;keys&#34;</span>, <span style=color:#e6db74>&#34;coat&#34;</span>, <span style=color:#e6db74>&#34;laptop&#34;</span>, <span style=color:#e6db74>&#34;bottle&#34;</span> };
-	IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = words
-		.Where(word =&gt; word.Length &gt; <span style=color:#ae81ff>4</span>)
-		.OrderBy(word =&gt; word)
-		.Select(word =&gt; word.ToUpper());
-	
-</code></pre></div>but without extension methods we have<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp>	<span style=color:#66d9ef>string</span>[] words = { <span style=color:#e6db74>&#34;keys&#34;</span>, <span style=color:#e6db74>&#34;coat&#34;</span>, <span style=color:#e6db74>&#34;laptop&#34;</span>, <span style=color:#e6db74>&#34;bottle&#34;</span> };
-	IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = Enumerable.Select(
-		Enumerable.OrderBy(
-			Enumerable.Where(words, word =&gt; word.Length &gt; <span style=color:#ae81ff>4</span>),
-			word =&gt; word),
-		word =&gt; word.ToUpper());
-	
-</code></pre></div></p></li><li>Query Expressions(LINQ native):<ul><li>query expressions are first translated to c# and THEN processed</li><li>not every LINQ method has a counterpart in query expressions</li><li></li></ul><p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp>	<span style=color:#66d9ef>string</span>[] words = { <span style=color:#e6db74>&#34;keys&#34;</span>, <span style=color:#e6db74>&#34;coat&#34;</span>, <span style=color:#e6db74>&#34;laptop&#34;</span>, <span style=color:#e6db74>&#34;bottle&#34;</span> };
-	IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = words
-		.Where(word =&gt; word.Length &gt; <span style=color:#ae81ff>4</span>)
-		.OrderBy(word =&gt; word)
-		.Select(word =&gt; word.ToUpper());
-	
-</code></pre></div>is translated to a query expression as<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp>	IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = <span style=color:#66d9ef>from</span> word <span style=color:#66d9ef>in</span> words
-		<span style=color:#66d9ef>where</span> word.Length &gt; <span style=color:#ae81ff>4</span>
-		<span style=color:#66d9ef>orderby</span> word
-		<span style=color:#66d9ef>select</span> word.ToUpper();
-	
-</code></pre></div></p><ul><li>range variables:<ul><li>per item input within each clause of the query</li><li><code>for word in words</code></li></ul></li></ul></li></ul><h3 id=delegates>Delegates:</h3><ul><li>are associations with methods of same signature</li><li>are used to pass methods as arguments to other methods</li><li>similar to c++ function pointers, but object-oriented, type safe and secure</li><li>events are delegates that call class methods</li><li>can be chained together(multiple methods can be called on a single event)</li><li>syntax:<ul><li>declaration:<ul><li><code>public delegate void Del(string someVal)</code></li><li>delegate named &ldquo;Del&rdquo; to a pointer that receives a string and returns void</li></ul></li><li>instantiation:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>var</span> sc = <span style=color:#66d9ef>new</span> SampleClass();
-<span style=color:#75715e>// class method delegate
-</span><span style=color:#75715e></span>Del handler = sc.Func;
-handler(<span style=color:#e6db74>&#34;some string&#34;</span>);
-<span style=color:#75715e>// anonymous function delegate
-</span><span style=color:#75715e></span>Del anonHandler = (<span style=color:#66d9ef>string</span> wot) =&gt; wot.ToLower();
-anonHandler(<span style=color:#e6db74>&#34;CAPS LOCK&#34;</span>);
-		
-</code></pre></div></li><li>multicast: <code>Del multiHandler = sc.Func + sc.ToLower</code></li></ul></li><li>covariance:</li><li>contravariance:</li></ul><h3 id=asyncawait>async/await:</h3><ul><li>lifecycle:<ul><li>an async function HAS to return a void, Task or Task(the token):<ul><li>inside the function, a return can return a void or a TResult and a wrapper will be returned:<ul><li>void for void</li><li>Task for void</li><li>Task for TResult</li></ul></li><li>wrappers are returned to ease the chain async processing of multiple async function calls</li></ul></li><li>an await can only be used on a token and blocks the processing until the result is returned(void or a TResult type)</li></ul></li><li>returned vs completed:<ul><li>an async method returns when an await is not yet completed</li><li>the task returned from an async method completes after all the awaits have been completed and the final <code>return</code></li></ul></li><li>contexts where using await is forbidden:<ul><li>outside of an <code>async</code> function</li><li>within an unsafe context</li><li>within a lock</li></ul></li></ul><h3 id=pattern-matching>Pattern matching:</h3><ul><li><code>if</code> type pattern:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Shape</span> {...}
-<span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Circle</span> : Shape {...}
-<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> Func(<span style=color:#66d9ef>object</span> obj)
-{
-	<span style=color:#66d9ef>if</span>(obj <span style=color:#66d9ef>is</span> Shape) {
-		<span style=color:#66d9ef>var</span> sh = (Shape)obj;
-		Console.WriteLine(sh.Area());
-	}
-	<span style=color:#66d9ef>if</span>(obj <span style=color:#66d9ef>is</span> Shape sh) {
-		Console.WriteLine(sh.Area());
-	}
-}
-</code></pre></div></li><li><code>switch</code> type pattern:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> Func(<span style=color:#66d9ef>object</span> obj)
-{
-	<span style=color:#66d9ef>switch</span>(obj)
-	{
-		<span style=color:#66d9ef>case</span> Shape sh:
-			Console.WriteLine(sh.Area());
-			<span style=color:#66d9ef>break</span>;
-		<span style=color:#66d9ef>case</span> Circle ch:
-			Console.WriteLine(ch.Radius);
-			<span style=color:#66d9ef>break</span>;
-	}
-
-	<span style=color:#66d9ef>switch</span>(obj)
-	{
-		<span style=color:#66d9ef>case</span> Circle ch when ch.Radius &gt; <span style=color:#ae81ff>0</span>:
-			Console.WriteLine(ch.Radius);
-			<span style=color:#66d9ef>break</span>;
-	}
-}
-</code></pre></div></li></ul><h3 id=entrypoint>Entrypoint:</h3><ul><li>must be a method</li><li>must be called <code>Main</code></li><li>must be static</li><li>must return void or int</li><li>either parameterless or have a single <code>string[]</code></li><li>nongeneric and declared in a nongeneric type</li><li>can&rsquo;t be async</li><li>can&rsquo;t be a partial method without implementation</li></ul></article><nav class=site-nav><a href=https://www.dinudev.com//>Home</a>
+is equivalent of<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>ParameterExpression xParameter = Expression.Parameter(<span style=color:#66d9ef>typeof</span>(<span style=color:#66d9ef>int</span>), <span style=color:#e6db74>&#34;x&#34;</span>);
+</span></span><span style=display:flex><span>ParameterExpression yParameter = Expression.Parameter(<span style=color:#66d9ef>typeof</span>(<span style=color:#66d9ef>int</span>), <span style=color:#e6db74>&#34;y&#34;</span>);
+</span></span><span style=display:flex><span>Expression body = Expression.Add(xParameter, yParameter);
+</span></span><span style=display:flex><span>ParameterExpression[] parameters = <span style=color:#66d9ef>new</span>[] { xParameter, yParameter };
+</span></span><span style=display:flex><span>Expression&lt;Func&lt;<span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>&gt;&gt; adder = Expression.Lambda&lt;Func&lt;<span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>, <span style=color:#66d9ef>int</span>&gt;&gt;(body, parameters);
+</span></span><span style=display:flex><span>Console.WriteLine(adder);</span></span></code></pre></div></li><li>used to execute queries against remote data sources</li></ul></li><li>Extension Methods:<ul><li>static methods that can be called as if they&rsquo;re instance methods based on their first parameter</li><li><code>ExampleClass.Method(x, y);</code> is equivalent of <code>x.Method(y)</code></li><li>the compiler will prefer a valid method over the extension method</li><li></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>string</span>[] words = { <span style=color:#e6db74>&#34;keys&#34;</span>, <span style=color:#e6db74>&#34;coat&#34;</span>, <span style=color:#e6db74>&#34;laptop&#34;</span>, <span style=color:#e6db74>&#34;bottle&#34;</span> };
+</span></span><span style=display:flex><span>IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = words
+</span></span><span style=display:flex><span>	.Where(word =&gt; word.Length &gt; <span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>	.OrderBy(word =&gt; word)
+</span></span><span style=display:flex><span>	.Select(word =&gt; word.ToUpper());</span></span></code></pre></div>but without extension methods we have<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>string</span>[] words = { <span style=color:#e6db74>&#34;keys&#34;</span>, <span style=color:#e6db74>&#34;coat&#34;</span>, <span style=color:#e6db74>&#34;laptop&#34;</span>, <span style=color:#e6db74>&#34;bottle&#34;</span> };
+</span></span><span style=display:flex><span>IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = Enumerable.Select(
+</span></span><span style=display:flex><span>	Enumerable.OrderBy(
+</span></span><span style=display:flex><span>		Enumerable.Where(words, word =&gt; word.Length &gt; <span style=color:#ae81ff>4</span>),
+</span></span><span style=display:flex><span>		word =&gt; word),
+</span></span><span style=display:flex><span>	word =&gt; word.ToUpper());</span></span></code></pre></div></li><li>Query Expressions(LINQ native):<ul><li>query expressions are first translated to c# and THEN processed</li><li>not every LINQ method has a counterpart in query expressions</li><li></li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>string</span>[] words = { <span style=color:#e6db74>&#34;keys&#34;</span>, <span style=color:#e6db74>&#34;coat&#34;</span>, <span style=color:#e6db74>&#34;laptop&#34;</span>, <span style=color:#e6db74>&#34;bottle&#34;</span> };
+</span></span><span style=display:flex><span>IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = words
+</span></span><span style=display:flex><span>	.Where(word =&gt; word.Length &gt; <span style=color:#ae81ff>4</span>)
+</span></span><span style=display:flex><span>	.OrderBy(word =&gt; word)
+</span></span><span style=display:flex><span>	.Select(word =&gt; word.ToUpper());</span></span></code></pre></div>is translated to a query expression as<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span>IEnumerable&lt;<span style=color:#66d9ef>string</span>&gt; query = <span style=color:#66d9ef>from</span> word <span style=color:#66d9ef>in</span> words
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>where</span> word.Length &gt; <span style=color:#ae81ff>4</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>orderby</span> word
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>select</span> word.ToUpper();</span></span></code></pre></div><ul><li>range variables:<ul><li>per item input within each clause of the query</li><li><code>for word in words</code></li></ul></li></ul></li></ul><h3 id=delegates>Delegates:</h3><ul><li>are associations with methods of same signature</li><li>are used to pass methods as arguments to other methods</li><li>similar to c++ function pointers, but object-oriented, type safe and secure</li><li>events are delegates that call class methods</li><li>can be chained together(multiple methods can be called on a single event)</li><li>syntax:<ul><li>declaration:<ul><li><code>public delegate void Del(string someVal)</code></li><li>delegate named &ldquo;Del&rdquo; to a pointer that receives a string and returns void</li></ul></li><li>instantiation:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>var</span> sc = <span style=color:#66d9ef>new</span> SampleClass();
+</span></span><span style=display:flex><span><span style=color:#75715e>// class method delegate</span>
+</span></span><span style=display:flex><span>Del handler = sc.Func;
+</span></span><span style=display:flex><span>handler(<span style=color:#e6db74>&#34;some string&#34;</span>);
+</span></span><span style=display:flex><span><span style=color:#75715e>// anonymous function delegate</span>
+</span></span><span style=display:flex><span>Del anonHandler = (<span style=color:#66d9ef>string</span> wot) =&gt; wot.ToLower();
+</span></span><span style=display:flex><span>anonHandler(<span style=color:#e6db74>&#34;CAPS LOCK&#34;</span>);</span></span></code></pre></div></li><li>multicast: <code>Del multiHandler = sc.Func + sc.ToLower</code></li></ul></li><li>covariance:</li><li>contravariance:</li></ul><h3 id=asyncawait>async/await:</h3><ul><li>lifecycle:<ul><li>an async function HAS to return a void, Task or Task(the token):<ul><li>inside the function, a return can return a void or a TResult and a wrapper will be returned:<ul><li>void for void</li><li>Task for void</li><li>Task for TResult</li></ul></li><li>wrappers are returned to ease the chain async processing of multiple async function calls</li></ul></li><li>an await can only be used on a token and blocks the processing until the result is returned(void or a TResult type)</li></ul></li><li>returned vs completed:<ul><li>an async method returns when an await is not yet completed</li><li>the task returned from an async method completes after all the awaits have been completed and the final <code>return</code></li></ul></li><li>contexts where using await is forbidden:<ul><li>outside of an <code>async</code> function</li><li>within an unsafe context</li><li>within a lock</li></ul></li></ul><h3 id=pattern-matching>Pattern matching:</h3><ul><li><code>if</code> type pattern:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Shape</span> {...}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Circle</span> : Shape {...}
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> Func(<span style=color:#66d9ef>object</span> obj)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span>(obj <span style=color:#66d9ef>is</span> Shape) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>var</span> sh = (Shape)obj;
+</span></span><span style=display:flex><span>		Console.WriteLine(sh.Area());
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span>(obj <span style=color:#66d9ef>is</span> Shape sh) {
+</span></span><span style=display:flex><span>		Console.WriteLine(sh.Area());
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}</span></span></code></pre></div></li><li><code>switch</code> type pattern:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-csharp data-lang=csharp><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> Func(<span style=color:#66d9ef>object</span> obj)
+</span></span><span style=display:flex><span>{
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>switch</span>(obj)
+</span></span><span style=display:flex><span>	{
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>case</span> Shape sh:
+</span></span><span style=display:flex><span>			Console.WriteLine(sh.Area());
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>case</span> Circle ch:
+</span></span><span style=display:flex><span>			Console.WriteLine(ch.Radius);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>switch</span>(obj)
+</span></span><span style=display:flex><span>	{
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>case</span> Circle ch when ch.Radius &gt; <span style=color:#ae81ff>0</span>:
+</span></span><span style=display:flex><span>			Console.WriteLine(ch.Radius);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}</span></span></code></pre></div></li></ul><h3 id=entrypoint>Entrypoint:</h3><ul><li>must be a method</li><li>must be called <code>Main</code></li><li>must be static</li><li>must return void or int</li><li>either parameterless or have a single <code>string[]</code></li><li>nongeneric and declared in a nongeneric type</li><li>can&rsquo;t be async</li><li>can&rsquo;t be a partial method without implementation</li></ul></article><nav class=site-nav><a href=https://www.dinudev.com//>Home</a>
 <a href=https://www.dinudev.com//post/>All posts</a>
 <a href=https://www.dinudev.com//journey/>The journey</a>
 <a href=https://www.dinudev.com//paper/>Papers</a>
-<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2021 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2022 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script>
+<script>hljs.initHighlightingOnLoad()</script></body></html>

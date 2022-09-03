@@ -1,0 +1,19 @@
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.102.3"><title>OTW Natas8 — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/journey/otw_natas8/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com/css/main.css></head><link rel=stylesheet href=https://www.dinudev.com/css/tabs.css><body><div class=container><header><h1>OTW Natas8</h1><nav class=site-nav><a href=/>Home</a>
+<a href=/post/>All posts</a>
+<a href=/journey/>The journey</a>
+<a href=/paper/>Papers</a></nav></header><h3>Table of Contents</h3><aside><nav id=TableOfContents><ul><li><ul><li><a href=#steps>steps:</a></li><li><a href=#lessons>lessons:</a></li></ul></li></ul></nav></aside><article><h3 id=steps>steps:</h3><ol><li>a input is present and a link to the source code,
+the source code reveals the input is processed through a function and compared to a static value</li><li>create a function that runs the operations in the oposite direction <sup id=fnref:1><a href=#fn:1 class=footnote-ref role=doc-noteref>1</a></sup>, modeled by the function from the source</li><li>by sending the static value found in the source code through our function we get the initial input</li><li>use the initial input in the page and we will get the flag</li></ol><h3 id=lessons>lessons:</h3><ul><li>this is probably a simple introduction to hashing</li></ul><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-php data-lang=php><span style=display:flex><span><span style=color:#f92672>&lt;?</span><span style=color:#a6e22e>php</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>encode</span>(<span style=color:#a6e22e>string</span> $input)<span style=color:#f92672>:</span> <span style=color:#a6e22e>string</span> {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>base64_decode</span>(<span style=color:#a6e22e>strrev</span>(<span style=color:#a6e22e>hex2bin</span>($input)));
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>$input <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&lt;secret from source code&gt;&#34;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>echo</span> <span style=color:#a6e22e>encode</span>($input) <span style=color:#f92672>.</span> <span style=color:#a6e22e>PHP_EOL</span>;
+</span></span></code></pre></div><div class=footnotes role=doc-endnotes><hr><ol><li id=fn:1><p>Reversing function:&#160;<a href=#fnref:1 class=footnote-backref role=doc-backlink>&#8617;&#xfe0e;</a></p></li></ol></div></article><nav class=site-nav><a href=https://www.dinudev.com//>Home</a>
+<a href=https://www.dinudev.com//post/>All posts</a>
+<a href=https://www.dinudev.com//journey/>The journey</a>
+<a href=https://www.dinudev.com//paper/>Papers</a>
+<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2022 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script>
+<script>hljs.initHighlightingOnLoad()</script></body></html>

@@ -1,73 +1,74 @@
-<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.80.0"><title>Empire Framework Notes — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/empire/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com/css/main.css></head><body><div class=container><header><h1>Empire Framework Notes</h1><nav class=site-nav><a href=/>Home</a>
+<!doctype html><html lang=en-us><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="OWicca"><meta name=generator content="Hugo 0.102.3"><title>Empire Framework Notes — Down the wabbit's hole</title><meta name=description content><link rel=canonical href=https://www.dinudev.com/post/empire/><link href rel=alternate type=application/rss+xml title="Down the wabbit's hole"><link rel=stylesheet href="https://fonts.googleapis.com/css?family=Source+Code+Pro|Arvo:400,700"><link rel=stylesheet href=https://www.dinudev.com/css/highlight.css><link rel=stylesheet href=https://www.dinudev.com/css/paperback.css><link rel=stylesheet href=https://www.dinudev.com/css/main.css></head><body><div class=container><header><h1>Empire Framework Notes</h1><nav class=site-nav><a href=/>Home</a>
 <a href=/post/>All posts</a>
 <a href=/journey/>The journey</a>
 <a href=/paper/>Papers</a></nav></header><article><h3 id=setup>setup:</h3><ul><li>based on some distro detection techniques,
-install prerequisites and powershell(.dotnetcore)</li><li>works with python 2 and/or 3</li><li>setup database from <code>setup/setup_database.py</code>:<ul><li>sqlite3</li><li>setup users and passwords<ul><li>config:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>staging_key: text
-install_path: text
-ip_whitelist: text
-ip_blacklist: text
-autorun_command: text
-autorun_data: text
-rootuser: boolean
-api_username: text
-api_password: text
-api_current_token: text
-api_permanent_token: text
-obfuscate: integer
-obfuscate_command: text</code></pre></div></li><li>agents:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>id:integer
-session_id:text
-listener:text
-name:text
-language:text
-language_version:text
-delay:integer
-jitter:real
-external_ip:text
-internal_ip:text
-username:text
-high_integrity:integer
-process_name:text
-process_id:text
-hostname:text
-os_details:text
-session_key:text
-nonce:text
-checkin_time:text
-lastseen_time:text
-parent:text
-children:text
-servers:text
-profile:text
-functions:text
-kill_date:text
-working_hours:text
-lost_limit:integer
-taskings:text
-results:tex</code></pre></div></li><li>listeners:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>id:integer
-name:text
-module:text
-listener_type:text
-listener_category:text
-enabled:boolean
-options:blo</code></pre></div></li><li>credentials:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>id:integer
-credtype:text
-domain:text
-username:text
-password:text
-host:text
-os:text
-sid:text
-notes:tex</code></pre></div></li><li>taskings:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>id:integer
-data:text
-agent:text</code></pre></div></li><li>results:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>id:integer
-data:text
-agent:text</code></pre></div></li><li>reporting:<div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash>id:integer
-name:text
-event_type:text
-message:text
-time_stamp:text
-taskID:integer</code></pre></div></li></ul></li></ul></li><li>generate a self-signed certificate</li><li>install python req:<ul><li>network tools</li><li>setup tools</li><li>cryptographic tools</li><li>iptools(manipulate ipv4/ip6 addresses)</li><li>pydispatcher(signal dispatching mechanism)</li><li>web framework(flask/jinja)</li><li>pe/macho header readers</li><li>dropbox(api wrapper)</li><li>pyOpenSSL(openssl wrapper)</li><li>pyinstaller(make an exe)</li><li>zlib_wrapper</li><li>netifaces(portable network interface information)</li><li>pyminifier(minifier,obfuscator,compressor)</li><li>xlutils(work with excel files)</li></ul></li></ul><h3 id=architecture>architecture:</h3><ul><li>structure:<ul><li>listeners:<ul><li>pivot: open a port on an agent that acts as a proxy to a listener</li><li>hop: proxy that is a single php file hosted somewhere</li><li>foreign:</li></ul></li><li>stagers(./lib/stagers/*):<ul><li>launcher: a one-line stage0 for an agent</li><li>launcher BAT: self-deleting .bat with a one-line stage0 for an agent</li><li>launcher VBS: .vbs with a one-line stage0 for an agent</li><li>macro: office macro with a stage0 for an agent</li><li>PHT-wmis: (pass-the-hash?)</li><li>DLL: (reflectively-injectable MSF-compliant .DLL?)</li><li>hop.php: generates a hop.php to host on a machine</li><li>ducky: (virtual device that acts as a keyboard and writes the launcher?)</li></ul></li><li>agents</li></ul></li></ul></article><nav class=site-nav><a href=https://www.dinudev.com//>Home</a>
+install prerequisites and powershell(.dotnetcore)</li><li>works with python 2 and/or 3</li><li>setup database from <code>setup/setup_database.py</code>:<ul><li>sqlite3</li><li>setup users and passwords<ul><li>config:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>staging_key: text
+</span></span><span style=display:flex><span>install_path: text
+</span></span><span style=display:flex><span>ip_whitelist: text
+</span></span><span style=display:flex><span>ip_blacklist: text
+</span></span><span style=display:flex><span>autorun_command: text
+</span></span><span style=display:flex><span>autorun_data: text
+</span></span><span style=display:flex><span>rootuser: boolean
+</span></span><span style=display:flex><span>api_username: text
+</span></span><span style=display:flex><span>api_password: text
+</span></span><span style=display:flex><span>api_current_token: text
+</span></span><span style=display:flex><span>api_permanent_token: text
+</span></span><span style=display:flex><span>obfuscate: integer
+</span></span><span style=display:flex><span>obfuscate_command: text</span></span></code></pre></div></li><li>agents:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>id:integer
+</span></span><span style=display:flex><span>session_id:text
+</span></span><span style=display:flex><span>listener:text
+</span></span><span style=display:flex><span>name:text
+</span></span><span style=display:flex><span>language:text
+</span></span><span style=display:flex><span>language_version:text
+</span></span><span style=display:flex><span>delay:integer
+</span></span><span style=display:flex><span>jitter:real
+</span></span><span style=display:flex><span>external_ip:text
+</span></span><span style=display:flex><span>internal_ip:text
+</span></span><span style=display:flex><span>username:text
+</span></span><span style=display:flex><span>high_integrity:integer
+</span></span><span style=display:flex><span>process_name:text
+</span></span><span style=display:flex><span>process_id:text
+</span></span><span style=display:flex><span>hostname:text
+</span></span><span style=display:flex><span>os_details:text
+</span></span><span style=display:flex><span>session_key:text
+</span></span><span style=display:flex><span>nonce:text
+</span></span><span style=display:flex><span>checkin_time:text
+</span></span><span style=display:flex><span>lastseen_time:text
+</span></span><span style=display:flex><span>parent:text
+</span></span><span style=display:flex><span>children:text
+</span></span><span style=display:flex><span>servers:text
+</span></span><span style=display:flex><span>profile:text
+</span></span><span style=display:flex><span>functions:text
+</span></span><span style=display:flex><span>kill_date:text
+</span></span><span style=display:flex><span>working_hours:text
+</span></span><span style=display:flex><span>lost_limit:integer
+</span></span><span style=display:flex><span>taskings:text
+</span></span><span style=display:flex><span>results:tex</span></span></code></pre></div></li><li>listeners:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>id:integer
+</span></span><span style=display:flex><span>name:text
+</span></span><span style=display:flex><span>module:text
+</span></span><span style=display:flex><span>listener_type:text
+</span></span><span style=display:flex><span>listener_category:text
+</span></span><span style=display:flex><span>enabled:boolean
+</span></span><span style=display:flex><span>options:blo</span></span></code></pre></div></li><li>credentials:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>id:integer
+</span></span><span style=display:flex><span>credtype:text
+</span></span><span style=display:flex><span>domain:text
+</span></span><span style=display:flex><span>username:text
+</span></span><span style=display:flex><span>password:text
+</span></span><span style=display:flex><span>host:text
+</span></span><span style=display:flex><span>os:text
+</span></span><span style=display:flex><span>sid:text
+</span></span><span style=display:flex><span>notes:tex</span></span></code></pre></div></li><li>taskings:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>id:integer
+</span></span><span style=display:flex><span>data:text
+</span></span><span style=display:flex><span>agent:text</span></span></code></pre></div></li><li>results:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>id:integer
+</span></span><span style=display:flex><span>data:text
+</span></span><span style=display:flex><span>agent:text</span></span></code></pre></div></li><li>reporting:<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span>id:integer
+</span></span><span style=display:flex><span>name:text
+</span></span><span style=display:flex><span>event_type:text
+</span></span><span style=display:flex><span>message:text
+</span></span><span style=display:flex><span>time_stamp:text
+</span></span><span style=display:flex><span>taskID:integer</span></span></code></pre></div></li></ul></li></ul></li><li>generate a self-signed certificate</li><li>install python req:<ul><li>network tools</li><li>setup tools</li><li>cryptographic tools</li><li>iptools(manipulate ipv4/ip6 addresses)</li><li>pydispatcher(signal dispatching mechanism)</li><li>web framework(flask/jinja)</li><li>pe/macho header readers</li><li>dropbox(api wrapper)</li><li>pyOpenSSL(openssl wrapper)</li><li>pyinstaller(make an exe)</li><li>zlib_wrapper</li><li>netifaces(portable network interface information)</li><li>pyminifier(minifier,obfuscator,compressor)</li><li>xlutils(work with excel files)</li></ul></li></ul><h3 id=architecture>architecture:</h3><ul><li>structure:<ul><li>listeners:<ul><li>pivot: open a port on an agent that acts as a proxy to a listener</li><li>hop: proxy that is a single php file hosted somewhere</li><li>foreign:</li></ul></li><li>stagers(./lib/stagers/*):<ul><li>launcher: a one-line stage0 for an agent</li><li>launcher BAT: self-deleting .bat with a one-line stage0 for an agent</li><li>launcher VBS: .vbs with a one-line stage0 for an agent</li><li>macro: office macro with a stage0 for an agent</li><li>PHT-wmis: (pass-the-hash?)</li><li>DLL: (reflectively-injectable MSF-compliant .DLL?)</li><li>hop.php: generates a hop.php to host on a machine</li><li>ducky: (virtual device that acts as a keyboard and writes the launcher?)</li></ul></li><li>agents</li></ul></li></ul></article><nav class=site-nav><a href=https://www.dinudev.com//>Home</a>
 <a href=https://www.dinudev.com//post/>All posts</a>
 <a href=https://www.dinudev.com//journey/>The journey</a>
 <a href=https://www.dinudev.com//paper/>Papers</a>
-<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2021 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script><script>hljs.initHighlightingOnLoad();</script></body></html>
+<a href=https://github.com/Owicca>GitHub</a></nav><footer class=site-footer><span class=owner>©2022 OWicca</span></footer></div><script src=https://www.dinudev.com/js/highlight.pack.js></script>
+<script>hljs.initHighlightingOnLoad()</script></body></html>
